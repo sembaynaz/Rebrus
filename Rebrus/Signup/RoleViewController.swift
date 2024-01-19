@@ -81,7 +81,7 @@ extension RoleViewController {
         
         nextButton.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(33)
-            make.top.equalTo(drButton.snp.bottom).offset(152)
+            make.bottom.equalTo(view.snp.bottom).offset(-150)
             make.height.equalTo(52)
         }
     }
@@ -89,7 +89,8 @@ extension RoleViewController {
 
 extension RoleViewController {
     @objc private func nextButtonTapped() {
-        
+        let vc = OTPViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func specialistButtonTapped() {

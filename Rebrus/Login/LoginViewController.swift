@@ -147,7 +147,7 @@ extension LoginViewController {
     private func setLoginButton() {
         view.addSubview(loginButton)
         
-//        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         
         loginButton.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(33)
@@ -158,6 +158,8 @@ extension LoginViewController {
     
     private func setForgotPasswordButton() {
         view.addSubview(forgotPasswordButton)
+        
+        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
         
         forgotPasswordButton.snp.makeConstraints { make in
             make.centerX.equalTo(view.snp.centerX)
@@ -198,5 +200,14 @@ extension LoginViewController {
         let vc = UINavigationController(rootViewController: SignupViewController())
         vc.modalPresentationStyle = .fullScreen
         show(vc, sender: self)
+    }
+    
+    @objc func loginButtonTapped() {
+        
+    }
+    
+    @objc func forgotPasswordButtonTapped() {
+        let vc = ForgotPasswordViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
