@@ -36,6 +36,9 @@
 		6FA83BDC2B5A6394008957BE /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FA83BD32B5A6394008957BE /* Montserrat-Regular.ttf */; };
 		6FA83BDD2B5A6394008957BE /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FA83BD42B5A6394008957BE /* Roboto-Bold.ttf */; };
 		6FA83BE02B5A648E008957BE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA83BDF2B5A648E008957BE /* SnapKit */; };
+		6FA83BE22B5A677A008957BE /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BE12B5A677A008957BE /* OTPViewController.swift */; };
+		6FA83BE42B5A67C2008957BE /* knOTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BE32B5A67C2008957BE /* knOTPView.swift */; };
+		6FA83BE62B5A67DA008957BE /* knConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BE52B5A67DA008957BE /* knConstraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +72,9 @@
 		6FA83BD22B5A6394008957BE /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		6FA83BD32B5A6394008957BE /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		6FA83BD42B5A6394008957BE /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		6FA83BE12B5A677A008957BE /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		6FA83BE32B5A67C2008957BE /* knOTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = knOTPView.swift; sourceTree = "<group>"; };
+		6FA83BE52B5A67DA008957BE /* knConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = knConstraints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,9 @@
 				6FA83BA62B5A637C008957BE /* SignupViewController.swift */,
 				6FA83BA72B5A637C008957BE /* RoleViewController.swift */,
 				6FA83BA82B5A637C008957BE /* TwoTextButton.swift */,
+				6FA83BE12B5A677A008957BE /* OTPViewController.swift */,
+				6FA83BE32B5A67C2008957BE /* knOTPView.swift */,
+				6FA83BE52B5A67DA008957BE /* knConstraints.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -310,7 +319,9 @@
 				6FA83BAA2B5A637C008957BE /* RoleViewController.swift in Sources */,
 				6FA83BC62B5A6388008957BE /* ProfileTableViewCell.swift in Sources */,
 				6FA83BC32B5A6388008957BE /* LanguageViewController.swift in Sources */,
+				6FA83BE22B5A677A008957BE /* OTPViewController.swift in Sources */,
 				6FA83BC22B5A6388008957BE /* TabbarViewController.swift in Sources */,
+				6FA83BE42B5A67C2008957BE /* knOTPView.swift in Sources */,
 				6FA83BBE2B5A6388008957BE /* StartViewController.swift in Sources */,
 				6FA83BC82B5A6388008957BE /* ProfileViewController.swift in Sources */,
 				6FA83BC72B5A6388008957BE /* ProfileHeaderView.swift in Sources */,
@@ -325,6 +336,7 @@
 				6FA83BA92B5A637C008957BE /* SignupViewController.swift in Sources */,
 				6FA83B942B5A6317008957BE /* SceneDelegate.swift in Sources */,
 				6FA83BC12B5A6388008957BE /* MainViewController.swift in Sources */,
+				6FA83BE62B5A67DA008957BE /* knConstraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
