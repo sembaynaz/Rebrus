@@ -79,7 +79,7 @@ class ProfileViewController: UIViewController {
 //MARK: - UITableViewDelegate, UITableViewDataSource
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        titles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

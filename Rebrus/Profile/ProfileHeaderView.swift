@@ -11,7 +11,8 @@ class ProfileHeaderView: UIView {
     
     private let userImageView: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = .gray
+        view.backgroundColor = .white
+        view.image = UIImage(named: "avatar")
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
         view.layer.cornerRadius = 31

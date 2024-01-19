@@ -14,4 +14,5 @@ struct ColorManager {
     static let lightGrey = UIColor(named: "lightGrey")
     static let darkGrey = UIColor(named: "darkGrey")
     static let borderColor = UIColor(named: "borderColor")
+    static let blueTextColor = UIColor(named: "blueTextColor")
 }

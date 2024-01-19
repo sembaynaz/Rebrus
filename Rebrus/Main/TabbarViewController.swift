@@ -9,7 +9,6 @@ import UIKit
 class TabBarController: UITabBarController {
     
     let standardAttributes: [NSAttributedString.Key: Any] = [.font: UIFont(name: "Montserrat-Medium", size: 16)!, .foregroundColor: ColorManager.blue!]
-    let largeTitleAttributes: [NSAttributedString.Key: Any] = [.font: UIFont(name: "Montserrat-Regular", size: 28)!, .foregroundColor: ColorManager.black!]
     var chatTabBarItem: UITabBarItem?
     
     override func viewDidLoad() {
@@ -20,7 +19,7 @@ class TabBarController: UITabBarController {
         
         let mainNavigationController = UINavigationController(rootViewController: createViewController(
             vc: MainViewController(),
-            title: "Главная",
+            title: "",
             tabBarTitle: "Главная",
             image: UIImage(named: "homeIcon"),
             tag: 0))
