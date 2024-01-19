@@ -36,6 +36,11 @@
 		6FA83BDC2B5A6394008957BE /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FA83BD32B5A6394008957BE /* Montserrat-Regular.ttf */; };
 		6FA83BDD2B5A6394008957BE /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FA83BD42B5A6394008957BE /* Roboto-Bold.ttf */; };
 		6FA83BE02B5A648E008957BE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA83BDF2B5A648E008957BE /* SnapKit */; };
+		6FA83BE22B5A677A008957BE /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BE12B5A677A008957BE /* OTPViewController.swift */; };
+		6FA83BE42B5A67C2008957BE /* knOTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BE32B5A67C2008957BE /* knOTPView.swift */; };
+		6FA83BE62B5A67DA008957BE /* knConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BE52B5A67DA008957BE /* knConstraints.swift */; };
+		6FA83BE82B5A94F1008957BE /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BE72B5A94F1008957BE /* ForgotPasswordViewController.swift */; };
+		6FA83BEB2B5A98E2008957BE /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BEA2B5A98E2008957BE /* ChangePasswordViewController.swift */; };
 		B15C6D0A2B5A680200E8F895 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6D092B5A680200E8F895 /* Extensions.swift */; };
 		B15C6D0C2B5A681D00E8F895 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6D0B2B5A681D00E8F895 /* Delegates.swift */; };
 		B15C6D0F2B5A769B00E8F895 /* DeleteAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6D0E2B5A769B00E8F895 /* DeleteAccountViewController.swift */; };
@@ -74,6 +79,11 @@
 		6FA83BD22B5A6394008957BE /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		6FA83BD32B5A6394008957BE /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		6FA83BD42B5A6394008957BE /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		6FA83BE12B5A677A008957BE /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		6FA83BE32B5A67C2008957BE /* knOTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = knOTPView.swift; sourceTree = "<group>"; };
+		6FA83BE52B5A67DA008957BE /* knConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = knConstraints.swift; sourceTree = "<group>"; };
+		6FA83BE72B5A94F1008957BE /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		6FA83BEA2B5A98E2008957BE /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		B15C6D092B5A680200E8F895 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B15C6D0B2B5A681D00E8F895 /* Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 		B15C6D0E2B5A769B00E8F895 /* DeleteAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +143,7 @@
 		6FA83BA52B5A637C008957BE /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				6FA83BE92B5A9805008957BE /* OTP */,
 				6FA83BA62B5A637C008957BE /* SignupViewController.swift */,
 				6FA83BA72B5A637C008957BE /* RoleViewController.swift */,
 				6FA83BA82B5A637C008957BE /* TwoTextButton.swift */,
@@ -153,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				6FA83BB02B5A6388008957BE /* LoginViewController.swift */,
+				6FA83BE72B5A94F1008957BE /* ForgotPasswordViewController.swift */,
+				6FA83BEA2B5A98E2008957BE /* ChangePasswordViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -237,6 +250,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		6FA83BE92B5A9805008957BE /* OTP */ = {
+			isa = PBXGroup;
+			children = (
+				6FA83BE12B5A677A008957BE /* OTPViewController.swift */,
+				6FA83BE32B5A67C2008957BE /* knOTPView.swift */,
+				6FA83BE52B5A67DA008957BE /* knConstraints.swift */,
+			);
+			path = OTP;
 		B15C6D0D2B5A767600E8F895 /* DeleteteAccount */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,9 +357,12 @@
 				6FA83BAA2B5A637C008957BE /* RoleViewController.swift in Sources */,
 				6FA83BC62B5A6388008957BE /* ProfileTableViewCell.swift in Sources */,
 				6FA83BC32B5A6388008957BE /* LanguageViewController.swift in Sources */,
+				6FA83BE22B5A677A008957BE /* OTPViewController.swift in Sources */,
 				6FA83BC22B5A6388008957BE /* TabbarViewController.swift in Sources */,
+				6FA83BE42B5A67C2008957BE /* knOTPView.swift in Sources */,
 				6FA83BBE2B5A6388008957BE /* StartViewController.swift in Sources */,
 				6FA83BC82B5A6388008957BE /* ProfileViewController.swift in Sources */,
+				6FA83BE82B5A94F1008957BE /* ForgotPasswordViewController.swift in Sources */,
 				B15C6D0A2B5A680200E8F895 /* Extensions.swift in Sources */,
 				6FA83BC72B5A6388008957BE /* ProfileHeaderView.swift in Sources */,
 				6FA83BD52B5A6394008957BE /* RoundOptionButton.swift in Sources */,
@@ -348,11 +372,13 @@
 				6FA83B962B5A6317008957BE /* ViewController.swift in Sources */,
 				B15C6D0F2B5A769B00E8F895 /* DeleteAccountViewController.swift in Sources */,
 				6FA83BC52B5A6388008957BE /* SettingsViewController.swift in Sources */,
+				6FA83BEB2B5A98E2008957BE /* ChangePasswordViewController.swift in Sources */,
 				6FA83BD72B5A6394008957BE /* Button.swift in Sources */,
 				6FA83B922B5A6317008957BE /* AppDelegate.swift in Sources */,
 				6FA83BA92B5A637C008957BE /* SignupViewController.swift in Sources */,
 				6FA83B942B5A6317008957BE /* SceneDelegate.swift in Sources */,
 				6FA83BC12B5A6388008957BE /* MainViewController.swift in Sources */,
+				6FA83BE62B5A67DA008957BE /* knConstraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
