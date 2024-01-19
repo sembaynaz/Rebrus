@@ -15,7 +15,6 @@ class ProfileTableViewCell: UITableViewCell {
         let view = UIImageView()
         view.backgroundColor = ColorManager.lightGrey
         view.layer.cornerRadius = 22
-        //view.contentMode = .scaleAspectFit
         return view
     }()
     
@@ -29,7 +28,7 @@ class ProfileTableViewCell: UITableViewCell {
     private let subtitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 11)
-        label.textColor = ColorManager.grey
+        label.textColor = ColorManager.darkGrey
         return label
     }()
     
