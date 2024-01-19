@@ -1,14 +1,14 @@
-//
-//  StartViewController.swift
-//  Rebrus
-//
-//  Created by Nazerke Sembay on 17.01.2024.
-//
+    //
+    //  StartViewController.swift
+    //  Rebrus
+    //
+    //  Created by Nazerke Sembay on 17.01.2024.
+    //
 
 import UIKit
 
 class StartViewController: UIViewController {
-
+    
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "LogoWhite")
@@ -83,7 +83,7 @@ extension StartViewController {
 
 extension StartViewController {
     @objc func loginButtonTapped() {
-        let vc = LoginViewController()
+        let vc = UINavigationController(rootViewController: LoginViewController())
         vc.modalPresentationStyle = .fullScreen
         show(vc, sender: self)
     }
