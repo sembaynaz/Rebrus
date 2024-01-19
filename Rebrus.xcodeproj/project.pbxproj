@@ -1,0 +1,560 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6FA83B922B5A6317008957BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83B912B5A6317008957BE /* AppDelegate.swift */; };
+		6FA83B942B5A6317008957BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83B932B5A6317008957BE /* SceneDelegate.swift */; };
+		6FA83B962B5A6317008957BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83B952B5A6317008957BE /* ViewController.swift */; };
+		6FA83B9B2B5A631A008957BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FA83B9A2B5A631A008957BE /* Assets.xcassets */; };
+		6FA83B9E2B5A631A008957BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FA83B9C2B5A631A008957BE /* LaunchScreen.storyboard */; };
+		6FA83BA92B5A637C008957BE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BA62B5A637C008957BE /* SignupViewController.swift */; };
+		6FA83BAA2B5A637C008957BE /* RoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BA72B5A637C008957BE /* RoleViewController.swift */; };
+		6FA83BAB2B5A637C008957BE /* TwoTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BA82B5A637C008957BE /* TwoTextButton.swift */; };
+		6FA83BBE2B5A6388008957BE /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BAD2B5A6388008957BE /* StartViewController.swift */; };
+		6FA83BBF2B5A6388008957BE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BAE2B5A6388008957BE /* OnboardingViewController.swift */; };
+		6FA83BC02B5A6388008957BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BB02B5A6388008957BE /* LoginViewController.swift */; };
+		6FA83BC12B5A6388008957BE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BB22B5A6388008957BE /* MainViewController.swift */; };
+		6FA83BC22B5A6388008957BE /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BB32B5A6388008957BE /* TabbarViewController.swift */; };
+		6FA83BC32B5A6388008957BE /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BB72B5A6388008957BE /* LanguageViewController.swift */; };
+		6FA83BC42B5A6388008957BE /* ConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BB92B5A6388008957BE /* ConditionsViewController.swift */; };
+		6FA83BC52B5A6388008957BE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BBA2B5A6388008957BE /* SettingsViewController.swift */; };
+		6FA83BC62B5A6388008957BE /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BBB2B5A6388008957BE /* ProfileTableViewCell.swift */; };
+		6FA83BC72B5A6388008957BE /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BBC2B5A6388008957BE /* ProfileHeaderView.swift */; };
+		6FA83BC82B5A6388008957BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BBD2B5A6388008957BE /* ProfileViewController.swift */; };
+		6FA83BD52B5A6394008957BE /* RoundOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BCA2B5A6394008957BE /* RoundOptionButton.swift */; };
+		6FA83BD62B5A6394008957BE /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BCB2B5A6394008957BE /* TextField.swift */; };
+		6FA83BD72B5A6394008957BE /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BCC2B5A6394008957BE /* Button.swift */; };
+		6FA83BD82B5A6394008957BE /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BCE2B5A6394008957BE /* ColorManager.swift */; };
+		6FA83BD92B5A6394008957BE /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FA83BD02B5A6394008957BE /* Montserrat-Medium.ttf */; };
+		6FA83BDA2B5A6394008957BE /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FA83BD12B5A6394008957BE /* Roboto-Regular.ttf */; };
+		6FA83BDB2B5A6394008957BE /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FA83BD22B5A6394008957BE /* Montserrat-Bold.ttf */; };
+		6FA83BDC2B5A6394008957BE /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FA83BD32B5A6394008957BE /* Montserrat-Regular.ttf */; };
+		6FA83BDD2B5A6394008957BE /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FA83BD42B5A6394008957BE /* Roboto-Bold.ttf */; };
+		6FA83BE02B5A648E008957BE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA83BDF2B5A648E008957BE /* SnapKit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6FA83B8E2B5A6317008957BE /* Rebrus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rebrus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FA83B912B5A6317008957BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6FA83B932B5A6317008957BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6FA83B952B5A6317008957BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6FA83B9A2B5A631A008957BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6FA83B9D2B5A631A008957BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6FA83B9F2B5A631A008957BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FA83BA62B5A637C008957BE /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		6FA83BA72B5A637C008957BE /* RoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleViewController.swift; sourceTree = "<group>"; };
+		6FA83BA82B5A637C008957BE /* TwoTextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoTextButton.swift; sourceTree = "<group>"; };
+		6FA83BAD2B5A6388008957BE /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		6FA83BAE2B5A6388008957BE /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		6FA83BB02B5A6388008957BE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6FA83BB22B5A6388008957BE /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		6FA83BB32B5A6388008957BE /* TabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		6FA83BB72B5A6388008957BE /* LanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		6FA83BB92B5A6388008957BE /* ConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionsViewController.swift; sourceTree = "<group>"; };
+		6FA83BBA2B5A6388008957BE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		6FA83BBB2B5A6388008957BE /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		6FA83BBC2B5A6388008957BE /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		6FA83BBD2B5A6388008957BE /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		6FA83BCA2B5A6394008957BE /* RoundOptionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundOptionButton.swift; sourceTree = "<group>"; };
+		6FA83BCB2B5A6394008957BE /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		6FA83BCC2B5A6394008957BE /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		6FA83BCE2B5A6394008957BE /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		6FA83BD02B5A6394008957BE /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		6FA83BD12B5A6394008957BE /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		6FA83BD22B5A6394008957BE /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		6FA83BD32B5A6394008957BE /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		6FA83BD42B5A6394008957BE /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6FA83B8B2B5A6317008957BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FA83BE02B5A648E008957BE /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6FA83B852B5A6317008957BE = {
+			isa = PBXGroup;
+			children = (
+				6FA83B902B5A6317008957BE /* Rebrus */,
+				6FA83B8F2B5A6317008957BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6FA83B8F2B5A6317008957BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6FA83B8E2B5A6317008957BE /* Rebrus.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6FA83B902B5A6317008957BE /* Rebrus */ = {
+			isa = PBXGroup;
+			children = (
+				6FA83BC92B5A6394008957BE /* Components */,
+				6FA83BCF2B5A6394008957BE /* Fonts */,
+				6FA83BCD2B5A6394008957BE /* Helpers */,
+				6FA83BAF2B5A6388008957BE /* Login */,
+				6FA83BB12B5A6388008957BE /* Main */,
+				6FA83BAC2B5A6388008957BE /* Onboarding */,
+				6FA83BB42B5A6388008957BE /* Profile */,
+				6FA83BA52B5A637C008957BE /* Signup */,
+				6FA83B912B5A6317008957BE /* AppDelegate.swift */,
+				6FA83B932B5A6317008957BE /* SceneDelegate.swift */,
+				6FA83B952B5A6317008957BE /* ViewController.swift */,
+				6FA83B9A2B5A631A008957BE /* Assets.xcassets */,
+				6FA83B9C2B5A631A008957BE /* LaunchScreen.storyboard */,
+				6FA83B9F2B5A631A008957BE /* Info.plist */,
+			);
+			path = Rebrus;
+			sourceTree = "<group>";
+		};
+		6FA83BA52B5A637C008957BE /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				6FA83BA62B5A637C008957BE /* SignupViewController.swift */,
+				6FA83BA72B5A637C008957BE /* RoleViewController.swift */,
+				6FA83BA82B5A637C008957BE /* TwoTextButton.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		6FA83BAC2B5A6388008957BE /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				6FA83BAD2B5A6388008957BE /* StartViewController.swift */,
+				6FA83BAE2B5A6388008957BE /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		6FA83BAF2B5A6388008957BE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6FA83BB02B5A6388008957BE /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6FA83BB12B5A6388008957BE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6FA83BB22B5A6388008957BE /* MainViewController.swift */,
+				6FA83BB32B5A6388008957BE /* TabbarViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		6FA83BB42B5A6388008957BE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				6FA83BB52B5A6388008957BE /* Settings */,
+				6FA83BBB2B5A6388008957BE /* ProfileTableViewCell.swift */,
+				6FA83BBC2B5A6388008957BE /* ProfileHeaderView.swift */,
+				6FA83BBD2B5A6388008957BE /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		6FA83BB52B5A6388008957BE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				6FA83BB62B5A6388008957BE /* Language */,
+				6FA83BB82B5A6388008957BE /* Conditions */,
+				6FA83BBA2B5A6388008957BE /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		6FA83BB62B5A6388008957BE /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				6FA83BB72B5A6388008957BE /* LanguageViewController.swift */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
+		6FA83BB82B5A6388008957BE /* Conditions */ = {
+			isa = PBXGroup;
+			children = (
+				6FA83BB92B5A6388008957BE /* ConditionsViewController.swift */,
+			);
+			path = Conditions;
+			sourceTree = "<group>";
+		};
+		6FA83BC92B5A6394008957BE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				6FA83BCA2B5A6394008957BE /* RoundOptionButton.swift */,
+				6FA83BCB2B5A6394008957BE /* TextField.swift */,
+				6FA83BCC2B5A6394008957BE /* Button.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		6FA83BCD2B5A6394008957BE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6FA83BCE2B5A6394008957BE /* ColorManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6FA83BCF2B5A6394008957BE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6FA83BD02B5A6394008957BE /* Montserrat-Medium.ttf */,
+				6FA83BD12B5A6394008957BE /* Roboto-Regular.ttf */,
+				6FA83BD22B5A6394008957BE /* Montserrat-Bold.ttf */,
+				6FA83BD32B5A6394008957BE /* Montserrat-Regular.ttf */,
+				6FA83BD42B5A6394008957BE /* Roboto-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6FA83B8D2B5A6317008957BE /* Rebrus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FA83BA22B5A631A008957BE /* Build configuration list for PBXNativeTarget "Rebrus" */;
+			buildPhases = (
+				6FA83B8A2B5A6317008957BE /* Sources */,
+				6FA83B8B2B5A6317008957BE /* Frameworks */,
+				6FA83B8C2B5A6317008957BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Rebrus;
+			packageProductDependencies = (
+				6FA83BDF2B5A648E008957BE /* SnapKit */,
+			);
+			productName = Rebrus;
+			productReference = 6FA83B8E2B5A6317008957BE /* Rebrus.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6FA83B862B5A6317008957BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					6FA83B8D2B5A6317008957BE = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 6FA83B892B5A6317008957BE /* Build configuration list for PBXProject "Rebrus" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6FA83B852B5A6317008957BE;
+			packageReferences = (
+				6FA83BDE2B5A648E008957BE /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
+			productRefGroup = 6FA83B8F2B5A6317008957BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6FA83B8D2B5A6317008957BE /* Rebrus */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6FA83B8C2B5A6317008957BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FA83B9E2B5A631A008957BE /* LaunchScreen.storyboard in Resources */,
+				6FA83B9B2B5A631A008957BE /* Assets.xcassets in Resources */,
+				6FA83BDC2B5A6394008957BE /* Montserrat-Regular.ttf in Resources */,
+				6FA83BDB2B5A6394008957BE /* Montserrat-Bold.ttf in Resources */,
+				6FA83BDA2B5A6394008957BE /* Roboto-Regular.ttf in Resources */,
+				6FA83BD92B5A6394008957BE /* Montserrat-Medium.ttf in Resources */,
+				6FA83BDD2B5A6394008957BE /* Roboto-Bold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6FA83B8A2B5A6317008957BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FA83BD82B5A6394008957BE /* ColorManager.swift in Sources */,
+				6FA83BC42B5A6388008957BE /* ConditionsViewController.swift in Sources */,
+				6FA83BC02B5A6388008957BE /* LoginViewController.swift in Sources */,
+				6FA83BAA2B5A637C008957BE /* RoleViewController.swift in Sources */,
+				6FA83BC62B5A6388008957BE /* ProfileTableViewCell.swift in Sources */,
+				6FA83BC32B5A6388008957BE /* LanguageViewController.swift in Sources */,
+				6FA83BC22B5A6388008957BE /* TabbarViewController.swift in Sources */,
+				6FA83BBE2B5A6388008957BE /* StartViewController.swift in Sources */,
+				6FA83BC82B5A6388008957BE /* ProfileViewController.swift in Sources */,
+				6FA83BC72B5A6388008957BE /* ProfileHeaderView.swift in Sources */,
+				6FA83BD52B5A6394008957BE /* RoundOptionButton.swift in Sources */,
+				6FA83BAB2B5A637C008957BE /* TwoTextButton.swift in Sources */,
+				6FA83BD62B5A6394008957BE /* TextField.swift in Sources */,
+				6FA83BBF2B5A6388008957BE /* OnboardingViewController.swift in Sources */,
+				6FA83B962B5A6317008957BE /* ViewController.swift in Sources */,
+				6FA83BC52B5A6388008957BE /* SettingsViewController.swift in Sources */,
+				6FA83BD72B5A6394008957BE /* Button.swift in Sources */,
+				6FA83B922B5A6317008957BE /* AppDelegate.swift in Sources */,
+				6FA83BA92B5A637C008957BE /* SignupViewController.swift in Sources */,
+				6FA83B942B5A6317008957BE /* SceneDelegate.swift in Sources */,
+				6FA83BC12B5A6388008957BE /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6FA83B9C2B5A631A008957BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FA83B9D2B5A631A008957BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6FA83BA02B5A631A008957BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6FA83BA12B5A631A008957BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6FA83BA32B5A631A008957BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Rebrus/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = demo.Rebrus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		6FA83BA42B5A631A008957BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Rebrus/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = demo.Rebrus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6FA83B892B5A6317008957BE /* Build configuration list for PBXProject "Rebrus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FA83BA02B5A631A008957BE /* Debug */,
+				6FA83BA12B5A631A008957BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FA83BA22B5A631A008957BE /* Build configuration list for PBXNativeTarget "Rebrus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FA83BA32B5A631A008957BE /* Debug */,
+				6FA83BA42B5A631A008957BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6FA83BDE2B5A648E008957BE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6FA83BDF2B5A648E008957BE /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6FA83BDE2B5A648E008957BE /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 6FA83B862B5A6317008957BE /* Project object */;
+}
