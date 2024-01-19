@@ -185,7 +185,7 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
 
 extension OnboardingViewController {
     @objc func loginButtonTapped() {
-        let vc = UINavigationController(rootViewController: LoginViewController())
+        let vc = LoginViewController()
         vc.modalPresentationStyle = .fullScreen
         show(vc, sender: self)
     }
