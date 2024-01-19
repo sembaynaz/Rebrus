@@ -83,7 +83,7 @@ extension StartViewController {
 
 extension StartViewController {
     @objc func loginButtonTapped() {
-        let vc = UINavigationController(rootViewController: LoginViewController())
+        let vc = LoginViewController()
         vc.modalPresentationStyle = .fullScreen
         show(vc, sender: self)
     }
