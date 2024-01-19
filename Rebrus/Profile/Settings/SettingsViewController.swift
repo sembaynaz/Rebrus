@@ -73,6 +73,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             let languageVC = LanguageViewController()
             navigationController?.pushViewController(languageVC, animated: true)
+        case 1:
+            let changeVC = ChangePasswordViewController()
+            changeVC.isChangePassword = true
+            navigationController?.pushViewController(changeVC, animated: true)
         case 2:
             let conditionsVC = ConditionsViewController()
             navigationController?.pushViewController(conditionsVC, animated: true)

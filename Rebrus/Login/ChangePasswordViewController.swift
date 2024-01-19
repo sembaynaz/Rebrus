@@ -8,10 +8,12 @@
 import UIKit
 
 class ChangePasswordViewController: UIViewController {
+    var isChangePassword = false
+    
     private let passwordTextField1: TextField = {
         let textfield = TextField()
         textfield.setPlaceholderText("Пароль")
-        textfield.placeholder = "Введите пароль"
+        textfield.placeholder = "Введите ноый пароль"
         textfield.setPasswordTextField(true)
         return textfield
     }()
@@ -19,10 +21,19 @@ class ChangePasswordViewController: UIViewController {
     private let passwordTextField2: TextField = {
         let textfield = TextField()
         textfield.setPlaceholderText("Пароль")
-        textfield.placeholder = "Подтвердите пароль"
+        textfield.placeholder = "Введите пароль повторно"
         textfield.setPasswordTextField(true)
         return textfield
     }()
+    
+    private let passwordTextField3: TextField = {
+        let textfield = TextField()
+        textfield.setPlaceholderText("Подтвердите пароль")
+        textfield.placeholder = "Введите пароль повторно"
+        textfield.setPasswordTextField(true)
+        return textfield
+    }()
+    
     let criterionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 12)
@@ -40,6 +51,7 @@ class ChangePasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        title = "Сбросить пароль"
         setupConstraints()
     }
 
@@ -50,6 +62,20 @@ extension ChangePasswordViewController {
         setPasswordTextField1()
         setPasswordTextField2()
         setLoginButton()
+        
+        if isChangePassword {
+            passwordTextField1.setPlaceholderText("Текущий пароль")
+            passwordTextField1.placeholder = "Введите текущий пароль"
+            passwordTextField2.setPlaceholderText("Пароль")
+            passwordTextField2.placeholder = "Введите новый пароль"
+            
+            view.addSubview(passwordTextField3)
+            passwordTextField3.snp.makeConstraints { make in
+                make.top.equalTo(passwordTextField2.snp.bottom).offset(32)
+                make.horizontalEdges.equalToSuperview().inset(33)
+                make.height.equalTo(60)
+            }
+        }
     }
     
     private func setPasswordTextField1() {

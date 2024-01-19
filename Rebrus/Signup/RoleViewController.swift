@@ -38,6 +38,7 @@ class RoleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Выбор роли"
         view.backgroundColor = .white
         setupUI()
     }

@@ -31,3 +31,18 @@ extension UIButton {
         self.titleLabel?.textAlignment = .left
     }
 }
+
+extension UINavigationController {
+    func customize(){
+        let standardAttributes: [NSAttributedString.Key: Any] = [.font: UIFont(name: "Montserrat-Medium", size: 16)!, .foregroundColor: ColorManager.blue!]
+        
+        self.navigationBar.backIndicatorImage = UIImage(named: "Icon.arrow-left")
+        self.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "Icon.arrow-left")
+        self.navigationBar.tintColor = ColorManager.blue
+        
+        self.navigationBar.titleTextAttributes = standardAttributes
+        self.navigationBar.tintColor = ColorManager.blue
+        self.navigationBar.prefersLargeTitles = false
+    }
+    
+}
