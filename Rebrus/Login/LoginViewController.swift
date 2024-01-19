@@ -1,14 +1,14 @@
-//
-//  LoginViewController.swift
-//  Rebrus
-//
-//  Created by Nazerke Sembay on 17.01.2024.
-//
+    //
+    //  LoginViewController.swift
+    //  Rebrus
+    //
+    //  Created by Nazerke Sembay on 17.01.2024.
+    //
 
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "Logo")
@@ -74,7 +74,7 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .white
         setupConstraints()
     }
-
+    
 }
 
 extension LoginViewController {
@@ -147,7 +147,7 @@ extension LoginViewController {
     private func setLoginButton() {
         view.addSubview(loginButton)
         
-//        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         
         loginButton.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(33)
@@ -158,6 +158,8 @@ extension LoginViewController {
     
     private func setForgotPasswordButton() {
         view.addSubview(forgotPasswordButton)
+        
+        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
         
         forgotPasswordButton.snp.makeConstraints { make in
             make.centerX.equalTo(view.snp.centerX)
@@ -198,5 +200,16 @@ extension LoginViewController {
         let vc = UINavigationController(rootViewController: SignupViewController())
         vc.modalPresentationStyle = .fullScreen
         show(vc, sender: self)
+    }
+    
+    @objc func loginButtonTapped() {
+        let vc = TabBarController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    @objc func forgotPasswordButtonTapped() {
+        let vc = ForgotPasswordViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
