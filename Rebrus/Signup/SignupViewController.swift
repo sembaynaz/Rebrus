@@ -94,6 +94,7 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupConstraints()
+        navigationController?.customize()
     }
 }
 

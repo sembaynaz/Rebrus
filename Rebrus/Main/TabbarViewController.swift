@@ -46,9 +46,7 @@ class TabBarController: UITabBarController {
     
     func createNavigationControllers(navigations: [UINavigationController]) {
         for nv in navigations {
-            nv.navigationBar.titleTextAttributes = standardAttributes
-            nv.navigationBar.tintColor = ColorManager.blue
-            nv.navigationBar.prefersLargeTitles = false
+            nv.customize()
         }
     }
     
