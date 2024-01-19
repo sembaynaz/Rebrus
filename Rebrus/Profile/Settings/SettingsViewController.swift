@@ -48,8 +48,8 @@ class SettingsViewController: UIViewController {
     private func setupUI() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(120)
-            make.leading.trailing.equalToSuperview().inset(32)
+            make.top.equalToSuperview().inset(100)
+            make.leading.trailing.equalToSuperview().inset(27)
             make.bottom.equalToSuperview()
         }
     }
@@ -57,7 +57,7 @@ class SettingsViewController: UIViewController {
 //MARK: - UITableViewDelegate, UITableViewDataSource
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        4
+        titles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -73,6 +73,12 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             let languageVC = LanguageViewController()
             navigationController?.pushViewController(languageVC, animated: true)
+        case 2:
+            let conditionsVC = ConditionsViewController()
+            navigationController?.pushViewController(conditionsVC, animated: true)
+        case 3:
+            let deleteAccountVC = DeleteAccountViewController()
+            navigationController?.pushViewController(deleteAccountVC, animated: true)
         default:
             print("invalid cell")
         }
