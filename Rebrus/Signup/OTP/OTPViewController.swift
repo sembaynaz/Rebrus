@@ -8,7 +8,7 @@
 import UIKit
 
 class OTPViewController: UIViewController {
-    
+    var buttonTitle = "Создать аккаунт"
     private var code: String = ""
     private var time = 10
     private var timer = Timer()
@@ -156,12 +156,12 @@ extension OTPViewController {
     
     private func setVerifyButton() {
         view.addSubview(createAccountButton)
-        
+        createAccountButton.setTitle(buttonTitle, for: .normal)
         createAccountButton.addTarget(self, action: #selector(verifyButtonTapped), for: .touchUpInside)
         
         createAccountButton.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(33)
-            make.top.equalTo(stackView.snp.bottom).offset(300)
+            make.bottom.equalTo(view.snp.bottom).offset(-150)
             make.height.equalTo(52)
         }
     }
@@ -169,10 +169,15 @@ extension OTPViewController {
 
 extension OTPViewController {
     @objc private func verifyButtonTapped() {
-//        let vc = CongratulationsViewController()
-//        vc.modalPresentationStyle = .overFullScreen
-//        navigationController!.setViewControllers([CongratulationsViewController()], animated: true)
-//        present(vc, animated: true)
+        if buttonTitle == "Создать аккаунт" {
+            let vc = UINavigationController(rootViewController: LoginViewController())
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+            
+        } else {
+            let vc = ChangePasswordViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 

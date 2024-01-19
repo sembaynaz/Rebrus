@@ -169,7 +169,7 @@ extension SignupViewController {
         loginButton.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(33)
             make.height.equalTo(52)
-            make.top.equalTo(passwordTextField2.snp.bottom).offset(80)
+            make.bottom.equalTo(view.snp.bottom).offset(-150)
         }
     }
     private func setCreateNewUser() {
@@ -200,7 +200,7 @@ extension SignupViewController {
 
 extension SignupViewController {
     @objc func signupButtonTapped() {
-        let vc = LoginViewController()
+        let vc = UINavigationController(rootViewController: LoginViewController())
         vc.modalPresentationStyle = .fullScreen
         
         self.present(vc, animated: true, completion: nil)
