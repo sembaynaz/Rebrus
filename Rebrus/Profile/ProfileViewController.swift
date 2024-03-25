@@ -7,6 +7,11 @@
 
 import UIKit
 
+struct ProfileData {
+    let title: String
+    let subtitle: String
+}
+
 class ProfileViewController: UIViewController {
     
     private let titleLabel: UILabel = {
@@ -18,8 +23,7 @@ class ProfileViewController: UIViewController {
     }()
     private let headerView = ProfileHeaderView()
     
-    private let titles = ["Об аккаунте", "Настройка", "Выйти из аккаунта"]
-    private let subtitles = ["Изменить информацию об аккаунте", "Удаление или деактивация аккаунта", ""]
+    private let dataSource = [ProfileData(title: "Профиль", subtitle: "Изменить профиль"), ProfileData(title: "Настройка", subtitle: "Удаление или деактивация аккаунта"), ProfileData(title: "Выйти из аккаунта", subtitle: "")]
     
     private let label: UILabel = {
         let label = UILabel()
@@ -79,19 +83,22 @@ class ProfileViewController: UIViewController {
 //MARK: - UITableViewDelegate, UITableViewDataSource
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        titles.count
+        dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as! ProfileTableViewCell
         cell.selectionStyle = .none
-        cell.setContent(icon: "profileIcon\(indexPath.row+1)", title: titles[indexPath.row], subtitle: subtitles[indexPath.row])
+        cell.setContent(icon: "profileIcon\(indexPath.row+1)", title: dataSource[indexPath.row].title, subtitle: dataSource[indexPath.row].subtitle)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
+        case 0:
+            let editVC = EditProfileViewController()
+            navigationController?.pushViewController(editVC, animated: true)
         case 1:
             let settingsVC = SettingsViewController()
             navigationController?.pushViewController(settingsVC, animated: true)

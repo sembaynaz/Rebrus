@@ -6,3 +6,6 @@
 //
 
 import Foundation
+protocol SomethingTappedDelegate:AnyObject {
+    func somethingTapped()
+}

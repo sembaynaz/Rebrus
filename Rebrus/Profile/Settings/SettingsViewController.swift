@@ -8,9 +8,8 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
-    private let titles = ["Язык", "Пароль", "Условие и политика", "Удалить аккаунт"]
-    private let subtitles = ["Сменить язык", "Сброс пароля", "Ознакомление с условием и политика продукта", "Выключение или деактивация аккаунта"]
+    
+    private let dataSource = [ProfileData(title: "Язык", subtitle: "Сменить язык"), ProfileData(title: "Пароль", subtitle: "Сброс пароля"), ProfileData(title: "Условие и политика", subtitle: "Ознакомление с условием и политика продукта"), ProfileData(title: "Удалить аккаунт", subtitle: "Выключение или деактивация аккаунта")]
     
     private let label: UILabel = {
         let label = UILabel()
@@ -57,13 +56,13 @@ class SettingsViewController: UIViewController {
 //MARK: - UITableViewDelegate, UITableViewDataSource
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        titles.count
+        dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as! ProfileTableViewCell
         cell.selectionStyle = .none
-        cell.setContent(icon: "settingsIcon\(indexPath.row+1)", title: titles[indexPath.row], subtitle: subtitles[indexPath.row])
+        cell.setContent(icon: "settingsIcon\(indexPath.row+1)", title: dataSource[indexPath.row].title, subtitle: dataSource[indexPath.row].subtitle)
         
         return cell
     }
