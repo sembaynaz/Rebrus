@@ -45,9 +45,15 @@
 		B15C6D0F2B5A769B00E8F895 /* DeleteAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6D0E2B5A769B00E8F895 /* DeleteAccountViewController.swift */; };
 		B15C6D112B5A826400E8F895 /* DeleteAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6D102B5A826400E8F895 /* DeleteAccountTableViewCell.swift */; };
 		B15C6D132B5A87DA00E8F895 /* ActivatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6D122B5A87DA00E8F895 /* ActivatedButton.swift */; };
+		B15D9FA82BEBB0390011BCE2 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D9FA72BEBB0390011BCE2 /* Patient.swift */; };
 		B16826AA2BB1EABB00711C7C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16826A92BB1EABB00711C7C /* EditProfileViewController.swift */; };
 		B16826AC2BB1F07100711C7C /* EditProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16826AB2BB1F07100711C7C /* EditProfileHeaderView.swift */; };
 		B16826AE2BB1F42600711C7C /* UserDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16826AD2BB1F42600711C7C /* UserDataTableViewCell.swift */; };
+		B1F28FDE2BEB7858006AFAAC /* PatientPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F28FDD2BEB7858006AFAAC /* PatientPreviewTableViewCell.swift */; };
+		B1F28FE12BEB880A006AFAAC /* PatientDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F28FE02BEB880A006AFAAC /* PatientDetailsViewController.swift */; };
+		B1F28FE32BEB88FB006AFAAC /* PatientResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F28FE22BEB88FB006AFAAC /* PatientResultCollectionViewCell.swift */; };
+		B1F28FE52BEB954D006AFAAC /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1F28FE42BEB954D006AFAAC /* Montserrat-SemiBold.ttf */; };
+		B1F28FE72BEBAB37006AFAAC /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1F28FE62BEBAB36006AFAAC /* Inter-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,9 +96,15 @@
 		B15C6D0E2B5A769B00E8F895 /* DeleteAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewController.swift; sourceTree = "<group>"; };
 		B15C6D102B5A826400E8F895 /* DeleteAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountTableViewCell.swift; sourceTree = "<group>"; };
 		B15C6D122B5A87DA00E8F895 /* ActivatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivatedButton.swift; sourceTree = "<group>"; };
+		B15D9FA72BEBB0390011BCE2 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		B16826A92BB1EABB00711C7C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		B16826AB2BB1F07100711C7C /* EditProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileHeaderView.swift; sourceTree = "<group>"; };
 		B16826AD2BB1F42600711C7C /* UserDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataTableViewCell.swift; sourceTree = "<group>"; };
+		B1F28FDD2BEB7858006AFAAC /* PatientPreviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientPreviewTableViewCell.swift; sourceTree = "<group>"; };
+		B1F28FE02BEB880A006AFAAC /* PatientDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailsViewController.swift; sourceTree = "<group>"; };
+		B1F28FE22BEB88FB006AFAAC /* PatientResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientResultCollectionViewCell.swift; sourceTree = "<group>"; };
+		B1F28FE42BEB954D006AFAAC /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		B1F28FE62BEBAB36006AFAAC /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,8 +188,10 @@
 		6FA83BB12B5A6388008957BE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B1F28FDF2BEB87ED006AFAAC /* Details */,
 				6FA83BB22B5A6388008957BE /* MainViewController.swift */,
 				6FA83BB32B5A6388008957BE /* TabbarViewController.swift */,
+				B1F28FDD2BEB7858006AFAAC /* PatientPreviewTableViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -245,6 +259,8 @@
 		6FA83BCF2B5A6394008957BE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				B1F28FE62BEBAB36006AFAAC /* Inter-Regular.ttf */,
+				B1F28FE42BEB954D006AFAAC /* Montserrat-SemiBold.ttf */,
 				6FA83BD02B5A6394008957BE /* Montserrat-Medium.ttf */,
 				6FA83BD12B5A6394008957BE /* Roboto-Regular.ttf */,
 				6FA83BD22B5A6394008957BE /* Montserrat-Bold.ttf */,
@@ -281,6 +297,16 @@
 				B16826AD2BB1F42600711C7C /* UserDataTableViewCell.swift */,
 			);
 			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		B1F28FDF2BEB87ED006AFAAC /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				B1F28FE02BEB880A006AFAAC /* PatientDetailsViewController.swift */,
+				B1F28FE22BEB88FB006AFAAC /* PatientResultCollectionViewCell.swift */,
+				B15D9FA72BEBB0390011BCE2 /* Patient.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,11 +374,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FA83B9E2B5A631A008957BE /* LaunchScreen.storyboard in Resources */,
+				B1F28FE72BEBAB37006AFAAC /* Inter-Regular.ttf in Resources */,
 				6FA83B9B2B5A631A008957BE /* Assets.xcassets in Resources */,
 				6FA83BDC2B5A6394008957BE /* Montserrat-Regular.ttf in Resources */,
 				6FA83BDB2B5A6394008957BE /* Montserrat-Bold.ttf in Resources */,
 				6FA83BDA2B5A6394008957BE /* Roboto-Regular.ttf in Resources */,
 				6FA83BD92B5A6394008957BE /* Montserrat-Medium.ttf in Resources */,
+				B1F28FE52BEB954D006AFAAC /* Montserrat-SemiBold.ttf in Resources */,
 				6FA83BDD2B5A6394008957BE /* Roboto-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +398,8 @@
 				6FA83BC42B5A6388008957BE /* ConditionsViewController.swift in Sources */,
 				B16826AA2BB1EABB00711C7C /* EditProfileViewController.swift in Sources */,
 				6FA83BC02B5A6388008957BE /* LoginViewController.swift in Sources */,
+				B1F28FDE2BEB7858006AFAAC /* PatientPreviewTableViewCell.swift in Sources */,
+				B1F28FE32BEB88FB006AFAAC /* PatientResultCollectionViewCell.swift in Sources */,
 				6FA83CAC2B5AA457008957BE /* knConstraints.swift in Sources */,
 				B15C6D132B5A87DA00E8F895 /* ActivatedButton.swift in Sources */,
 				6FA83CAB2B5AA457008957BE /* knOTPView.swift in Sources */,
@@ -385,12 +415,14 @@
 				6FA83CA42B5AA3FD008957BE /* ChangePasswordViewController.swift in Sources */,
 				B15C6D0A2B5A680200E8F895 /* Extensions.swift in Sources */,
 				6FA83BC72B5A6388008957BE /* ProfileHeaderView.swift in Sources */,
+				B15D9FA82BEBB0390011BCE2 /* Patient.swift in Sources */,
 				6FA83BD52B5A6394008957BE /* RoundOptionButton.swift in Sources */,
 				B16826AE2BB1F42600711C7C /* UserDataTableViewCell.swift in Sources */,
 				6FA83BD62B5A6394008957BE /* TextField.swift in Sources */,
 				6FA83BBF2B5A6388008957BE /* OnboardingViewController.swift in Sources */,
 				6FA83B962B5A6317008957BE /* ViewController.swift in Sources */,
 				B15C6D0F2B5A769B00E8F895 /* DeleteAccountViewController.swift in Sources */,
+				B1F28FE12BEB880A006AFAAC /* PatientDetailsViewController.swift in Sources */,
 				6FA83BC52B5A6388008957BE /* SettingsViewController.swift in Sources */,
 				6FA83BD72B5A6394008957BE /* Button.swift in Sources */,
 				6FA83B922B5A6317008957BE /* AppDelegate.swift in Sources */,
