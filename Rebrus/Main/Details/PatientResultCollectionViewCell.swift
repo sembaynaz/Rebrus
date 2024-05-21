@@ -2,7 +2,6 @@
 //  PatientResultCollectionViewCell.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 08/05/2024.
 //
 
 import UIKit
@@ -62,7 +61,7 @@ class PatientResultCollectionViewCell: UICollectionViewCell {
             return
         }
         
-        categoryLabel.text = cellData.title
+        categoryLabel.text = cellData.title.localized(from: .main)
     }
     
     func setLastCell(isLast: Bool) {

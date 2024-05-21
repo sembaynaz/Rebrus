@@ -2,33 +2,25 @@
 //  ProfileViewController.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 15/01/2024.
 //
 
 import UIKit
-
-struct ProfileData {
-    let title: String
-    let subtitle: String
-}
 
 class ProfileViewController: UIViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 28)
-        label.text = "Профиль"
         label.textColor = ColorManager.black
         return label
     }()
     private let headerView = ProfileHeaderView()
     
-    private let dataSource = [ProfileData(title: "Профиль", subtitle: "Изменить профиль"), ProfileData(title: "Настройка", subtitle: "Удаление или деактивация аккаунта"), ProfileData(title: "Выйти из аккаунта", subtitle: "")]
+    private var dataSource: [ProfileData] = []
     
     private let label: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 15)
-        label.text = "Общие"
         label.textColor = ColorManager.black
         return label
     }()
@@ -50,11 +42,21 @@ class ProfileViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        setStrings()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
+        NotificationCenter.default.addObserver(self, selector: #selector(setStrings), name: Notification.Name("localize"), object: nil)
+    }
+    
+    @objc private func setStrings() {
+        titleLabel.text = "Профиль".localized(from: .main)
+        label.text = "Общие".localized(from: .main)
+        dataSource = [ProfileData(title: "Профиль".localized(from: .main), subtitle: "Изменить профиль".localized(from: .main)), ProfileData(title: "Настройка".localized(from: .main), subtitle: "Удаление или деактивация аккаунта".localized(from: .main)), ProfileData(title: "Выйти из аккаунта".localized(from: .main), subtitle: "")]
+        tableView.reloadData()
+        headerView.setContent(fullName: nil)
     }
     
     private func setupUI() {

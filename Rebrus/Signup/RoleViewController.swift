@@ -14,7 +14,7 @@ class RoleViewController: UIViewController {
         button.layer.cornerRadius = 15
         button.layer.borderColor = ColorManager.black?.cgColor
         button.layer.borderWidth = 1
-        button.setTwoTexts(firstText: "Я специалист", secondText: "Ваша ответственность - регистрация пациентов, сбор точных данных и проведение медицинских тестов.")
+        button.setTwoTexts(firstText: "Я специалист".localized(from: .onboard), secondText: "Ваша ответственность - регистрация пациентов, сбор точных данных и проведение медицинских тестов.".localized(from: .onboard))
         button.setTitleColor(ColorManager.black, for: .normal)
         return button
     }()
@@ -24,7 +24,7 @@ class RoleViewController: UIViewController {
         button.layer.cornerRadius = 15
         button.layer.borderColor = ColorManager.black?.cgColor
         button.layer.borderWidth = 1
-        button.setTwoTexts(firstText: "Я доктор", secondText: "Ваша роль - заботиться о здоровье пациентов, анализировать истории и назначать лечение.")
+        button.setTwoTexts(firstText: "Я доктор".localized(from: .onboard), secondText: "Ваша роль - заботиться о здоровье пациентов, анализировать истории и назначать лечение.".localized(from: .onboard))
         button.setTitleColor(ColorManager.black, for: .normal)
         return button
     }()
@@ -32,13 +32,13 @@ class RoleViewController: UIViewController {
     private let nextButton: Button = {
         let button = Button()
         button.setActive(ColorManager.blue ?? .blue, .white)
-        button.setTitle("Продолжить", for: .normal)
+        button.setTitle("Продолжить".localized(from: .onboard), for: .normal)
         return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Выбор роли"
+        title = "Выбор роли".localized(from: .onboard)
         view.backgroundColor = .white
         setupUI()
     }

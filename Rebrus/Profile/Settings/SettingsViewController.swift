@@ -2,22 +2,13 @@
 //  SettingsViewController.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 18/01/2024.
 //
 
 import UIKit
 
 class SettingsViewController: UIViewController {
     
-    private let dataSource = [ProfileData(title: "Язык", subtitle: "Сменить язык"), ProfileData(title: "Пароль", subtitle: "Сброс пароля"), ProfileData(title: "Условие и политика", subtitle: "Ознакомление с условием и политика продукта"), ProfileData(title: "Удалить аккаунт", subtitle: "Выключение или деактивация аккаунта")]
-    
-    private let label: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "Montserrat-Regular", size: 15)
-        label.text = "Общие"
-        label.textColor = ColorManager.black
-        return label
-    }()
+    private var dataSource: [ProfileData] = []
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -30,18 +21,18 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Настройка"
         setupUI()
         view.backgroundColor = .white
         
         tableView.dataSource = self
         tableView.delegate = self
+        setStrings()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.prefersLargeTitles = false
-
+        NotificationCenter.default.addObserver(self, selector: #selector(setStrings), name: Notification.Name("localize"), object: nil)
     }
     
     private func setupUI() {
@@ -51,6 +42,12 @@ class SettingsViewController: UIViewController {
             make.leading.trailing.equalToSuperview().inset(27)
             make.bottom.equalToSuperview()
         }
+    }
+    
+    @objc private func setStrings() {
+        title = "Настройка".localized(from: .main)
+        dataSource = [ProfileData(title: "Язык".localized(from: .main), subtitle: "Сменить язык".localized(from: .main)), ProfileData(title: "Пароль".localized(from: .main), subtitle: "Сброс пароля".localized(from: .main)), ProfileData(title: "Условие и политика".localized(from: .main), subtitle: "Ознакомление с условием и политика продукта".localized(from: .main)), ProfileData(title: "Удалить аккаунт".localized(from: .main), subtitle: "Выключение или деактивация аккаунта".localized(from: .main))]
+        tableView.reloadData()
     }
 }
 //MARK: - UITableViewDelegate, UITableViewDataSource

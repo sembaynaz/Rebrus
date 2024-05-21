@@ -2,7 +2,6 @@
 //  UserDataTableViewCell.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 25/03/2024.
 //
 
 import UIKit
@@ -13,8 +12,6 @@ class UserDataTableViewCell: UITableViewCell {
 
     private let textField: TextField = {
         let textfield = TextField()
-        textfield.setPlaceholderText("Фамилия")
-        textfield.placeholder = "Кожабеков"
         return textfield
     }()
     
@@ -26,8 +23,8 @@ class UserDataTableViewCell: UITableViewCell {
     }
     
     func setContent(text: String?, placeHolder: String?, title: String) {
-        textField.setPlaceholderText(title)
-        textField.placeholder = placeHolder
+        textField.setPlaceholderText(title.localized(from: .main))
+        textField.placeholder = placeHolder?.localized(from: .main)
         textField.text = text
     }
     

@@ -2,7 +2,6 @@
 //  PatientPreviewTableViewCell.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 08/05/2024.
 //
 
 import UIKit
@@ -14,7 +13,6 @@ class PatientPreviewTableViewCell: UITableViewCell {
     private let userNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Medium", size: 16)
-        label.text = "Кожабеков Улан Даулетулы"
         label.textColor = ColorManager.black
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -25,7 +23,6 @@ class PatientPreviewTableViewCell: UITableViewCell {
     private let iinLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 14)
-        label.text = "ИИН: 021014501033"
         label.textColor = ColorManager.black
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -42,7 +39,7 @@ class PatientPreviewTableViewCell: UITableViewCell {
     
     func setContent(username: String, iin: String) {
         userNameLabel.text = username
-        iinLabel.text = iin
+        iinLabel.text = "ИИН".localized(from: .main) + ": " + iin
     }
     
     required init?(coder: NSCoder) {

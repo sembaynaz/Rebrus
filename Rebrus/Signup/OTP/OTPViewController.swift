@@ -2,22 +2,31 @@
 //  OTPViewController.swift
 //  Rebrus
 //
-//  Created by Nazerke Sembay on 19.01.2024.
 //
 
 import UIKit
 
 class OTPViewController: UIViewController {
-    var buttonTitle = "Создать аккаунт"
+    var buttonTitle = "Создать аккаунт".localized(from: .auth)
     private var code: String = ""
     private var time = 10
     private var timer = Timer()
     private var userEmail: String = "ulankdt@gmail.com"
     
-    private let titleOTPLabel: UILabel = {
+    private let titleOTPLabel1: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Medium", size: 24)
-        label.text = "Пожалуйста, введите\nПроверка OTP"
+        label.text = "Пожалуйста, введите ".localized(from: .onboard)
+        label.textColor = ColorManager.black
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private let titleOTPLabel2: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Montserrat-Medium", size: 24)
+        label.text = "Проверка OTP".localized(from: .onboard)
         label.textColor = ColorManager.black
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -34,14 +43,14 @@ class OTPViewController: UIViewController {
     private let timerLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 14)
-        label.text = "Срок действия этого кода истекает в "
+        label.text = "Срок действия этого кода истекает в ".localized(from: .onboard)
         label.textColor = ColorManager.black
         return label
     }()
     private let resendLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 14)
-        label.text = "Отправить заново?"
+        label.text = "Отправить заново?".localized(from: .onboard)
         label.textColor = UIColor.darkGray
         return label
     }()
@@ -53,14 +62,14 @@ class OTPViewController: UIViewController {
     }()
     private let createAccountButton: Button = {
         let button = Button()
-        button.setTitle("Создать аккаунт", for: .normal)
+        button.setTitle("Создать аккаунт".localized(from: .onboard), for: .normal)
         return button
     }()
     private let repeatButton: UIButton = {
         var button = UIButton(type: .custom)
         button.backgroundColor = .clear
         button.contentHorizontalAlignment = .left
-        button.setTitle("Отправить", for: .normal)
+        button.setTitle("Отправить".localized(from: .onboard), for: .normal)
         button.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 14)
         button.setTitleColor(ColorManager.blue, for: .normal)
         return button
@@ -76,7 +85,7 @@ class OTPViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "Проверка ОТП"
+        title = "Проверка ОТП".localized(from: .onboard)
         setupConstraints()
         setTimer()
     }
@@ -93,8 +102,12 @@ extension OTPViewController {
     }
     
     private func setTitleOTPLabel() {
-        view.addSubview(titleOTPLabel)
-        titleOTPLabel.snp.makeConstraints { make in
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.addArrangedSubview(titleOTPLabel1)
+        stack.addArrangedSubview(titleOTPLabel2)
+        view.addSubview(stack)
+        stack.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(33)
             make.top.equalTo(view.snp.top).offset(100)
         }
@@ -103,11 +116,12 @@ extension OTPViewController {
     private func setMessageLabel() {
         view.addSubview(messageSendedLabel)
         
-        messageSendedLabel.text! += hideEmail(email: userEmail)
+        messageSendedLabel.text = "code.send".localized(withAdditionalString: hideEmail(email: userEmail))
+        
         
         messageSendedLabel.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(33)
-            make.top.equalTo(titleOTPLabel.snp.bottom).offset(10)
+            make.top.equalTo(titleOTPLabel2.snp.bottom).offset(10)
         }
     }
     
@@ -170,7 +184,7 @@ extension OTPViewController {
 
 extension OTPViewController {
     @objc private func verifyButtonTapped() {
-        if buttonTitle == "Создать аккаунт" {
+        if buttonTitle == "Создать аккаунт".localized(from: .onboard) {
             let vc = UINavigationController(rootViewController: LoginViewController())
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
@@ -223,7 +237,7 @@ extension OTPViewController {
     }
     
     private func updateTimerLabel(redText: String) {
-        let blackText = "Срок действия этого кода истекает в "
+        let blackText = "Срок действия этого кода истекает в ".localized(from: .onboard)
         let blackAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: ColorManager.black!, .font: UIFont(name: "Montserrat-Regular", size: 14) as Any]
         let blackAttributedString = NSAttributedString(string: blackText, attributes: blackAttributes)
         

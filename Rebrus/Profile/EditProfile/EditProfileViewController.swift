@@ -2,12 +2,13 @@
 //  EditProfileViewController.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 25/03/2024.
 //
 
 import UIKit
 
 class EditProfileViewController: UIViewController {
+    
+    private let viewModel = UserDataViewModel()
     
     private let headerView = EditProfileHeaderView()
     
@@ -22,7 +23,7 @@ class EditProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Профиль"
+        title = "Профиль".localized(from: .main)
         setupUI()
         view.backgroundColor = .white
         
@@ -45,6 +46,7 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UserDataTableViewCell.identifier, for: indexPath) as! UserDataTableViewCell
         cell.selectionStyle = .none
+        cell.setContent(text: nil, placeHolder: viewModel.cellData[indexPath.row].placeholder, title: viewModel.cellData[indexPath.row].title)
         //cell.setContent()
         
         return cell

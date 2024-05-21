@@ -2,7 +2,6 @@
 //  EditProfileHeaderView.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 25/03/2024.
 //
 
 import UIKit
@@ -13,7 +12,7 @@ class EditProfileHeaderView: UIView {
     
     private let userImageView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "avatar")
+        view.image = UIImage(named: "avatarReversed")
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
         view.layer.cornerRadius = 60
@@ -24,7 +23,7 @@ class EditProfileHeaderView: UIView {
     private let titleButton: UIButton = {
         let button = UIButton()
         button.setTitleColor(ColorManager.black, for: .normal)
-        button.setTitle("Выбрать фотографию", for: .normal)
+        button.setTitle("Выбрать фотографию".localized(from: .main), for: .normal)
         button.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 16)
         return button
     }()

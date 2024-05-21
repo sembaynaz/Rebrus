@@ -2,7 +2,6 @@
 //  Patient.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 08/05/2024.
 //
 
 import Foundation

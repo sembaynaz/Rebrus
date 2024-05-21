@@ -1,0 +1,1332 @@
+{
+  "sourceLanguage" : "ru",
+  "strings" : {
+    "1. Введение" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Introduction"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Кіріспе"
+          }
+        }
+      }
+    },
+    "2. Права пользователя" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2. User Rights"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2. Пайдаланушы құқықтары"
+          }
+        }
+      }
+    },
+    "3. Политика конфиденциальности" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3. Privacy Policy"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3. Құпиялылық саясаты"
+          }
+        }
+      }
+    },
+    "4. Обязанности пользователя" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4. User Responsibilities"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4. Пайдаланушының міндеттері"
+          }
+        }
+      }
+    },
+    "5. Телемедицинские услуги" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5. Telemedicine services"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5. Телемедициналық қызметтер"
+          }
+        }
+      }
+    },
+    "6. Сборы и оплата" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6. Fees and payment"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6. Алымдар мен төлемдер"
+          }
+        }
+      }
+    },
+    "7. Отказ от ответственности и ограничения ответственности" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7. Disclaimer and Limitations of Liability"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7. Жауапкершіліктен бас тарту және жауапкершілікті шектеу"
+          }
+        }
+      }
+    },
+    "8. Интеллектуальная собственность" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "8. Intellectual Property"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "8. Зияткерлік меншік"
+          }
+        }
+      }
+    },
+    "9. Прекращение использования" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "9. Termination of use"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "9. Пайдалануды тоқтату"
+          }
+        }
+      }
+    },
+    "10. Применимое законодательство и разрешение споров" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10. Applicable law and Dispute resolution"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10. Қолданыстағы заңнама және дауларды шешу"
+          }
+        }
+      }
+    },
+    "11. Поправки к Условиям" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "11. Amendments to the Terms"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "11. Шарттарға түзетулер"
+          }
+        }
+      }
+    },
+    "12. Контактная информация" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "12. Contact information"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "12. Байланыс ақпараты"
+          }
+        }
+      }
+    },
+    "Rebrus может обновлять настоящие условия. Продолжение использования после внесения изменений означает принятие новых условий." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rebrus may update these terms and conditions. Continued use after the changes are made means acceptance of the new terms."
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rebrus осы шарттарды жаңарта алады. Өзгерістер енгізілгеннен кейін пайдалануды жалғастыру жаңа шарттарды қабылдауды білдіреді."
+          }
+        }
+      }
+    },
+    "Rebrus не несет ответственности за перебои в обслуживании или неточности в медицинских рекомендациях. Результаты лечения, основанного на наших консультациях, не гарантируются." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rebrus is not responsible for service interruptions or inaccuracies in medical recommendations. The results of treatment based on our consultations are not guaranteed."
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rebrus медициналық нұсқаулықтағы үзілістер немесе дәлсіздіктер үшін жауап бермейді. Біздің консультацияларға негізделген емдеу нәтижелеріне кепілдік берілмейді."
+          }
+        }
+      }
+    },
+    "Rebrus оставляет за собой право прекратить ваш доступ за нарушение настоящих условий. Вы можете деактивировать свою учетную запись через настройки приложения." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rebrus reserves the right to terminate your access for violation of these terms. You can deactivate your account through the application settings."
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rebrus осы шарттарды бұзғаны үшін қол жеткізуді тоқтату құқығын өзіне қалдырады. Есептік жазбаны қолданба параметрлері арқылы өшіруге болады."
+          }
+        }
+      }
+    },
+    "Rebrus предлагает онлайн-консультации и услуги по выписыванию рецептов. Однако телемедицина имеет ограничения и не подходит для экстренных случаев. В экстренных случаях немедленно обратитесь в местные службы экстренной помощи." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rebrus offers online consultations and prescription services. However, telemedicine has limitations and is not suitable for emergencies. In case of emergency, contact your local emergency services immediately."
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rebrus онлайн кеңес беру және рецепт бойынша қызметтерді ұсынады. Алайда, телемедицинаның шектеулері бар және төтенше жағдайларға жарамсыз. Төтенше жағдайда дереу жергілікті төтенше жағдайлар қызметіне хабарласыңыз."
+          }
+        }
+      }
+    },
+    "Адрес" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Address"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мекенжай"
+          }
+        }
+      }
+    },
+    "Ваша конфиденциальность является приоритетом в Rebrus. Мы собираем личные и медицинские данные, необходимые для оказания медицинских услуг, которые защищены и не передаются третьим лицам без вашего явного согласия, за исключением случаев, предусмотренных законом. Вы можете получить доступ, изменить или запросить удаление ваших данных." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your privacy is a priority at Rebrus. We collect personal and medical data necessary to provide medical services that are protected and not shared with third parties without your explicit consent, except as required by law. You can access, modify, or request the deletion of your data."
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сіздің құпиялылығыңыз Rebrus-те басымдық болып табылады. Біз заңда көзделген жағдайларды қоспағанда, сіздің нақты келісіміңізсіз қорғалған және үшінші тұлғаларға берілмейтін медициналық қызметтерді көрсету үшін қажетті жеке және медициналық деректерді жинаймыз. Сіз деректерге қол жеткізе аласыз, өзгерте аласыз немесе жоюды сұрай аласыз."
+          }
+        }
+      }
+    },
+    "Введите новый пароль" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter the new password"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Құпиясөзді енгізіңіз"
+          }
+        }
+      }
+    },
+    "Введите текущий пароль" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter the current password"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қазіргі кұпиясөзді енгізіңіз"
+          }
+        }
+      }
+    },
+    "Все ваши данные, включая сохраненные настройки и историю активности, будут безвозвратно удалены. " : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All your data, including saved settings and activity history, will be permanently deleted."
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сіздің барлық деректеріңіз, соның ішінде сақталған параметрлер мен әрекет тарихы біржола жойылады."
+          }
+        }
+      }
+    },
+    "Вы должны предоставить точную и полную медицинскую информацию. Любое неправомерное использование Rebrus, например мошеннические действия, строго запрещено. Вы несете ответственность за сохранение конфиденциальности ваших учетных данных для входа." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You must provide accurate and complete medical information. Any misuse of Rebrus, such as fraudulent activities, is strictly prohibited. You are responsible for maintaining the confidentiality of your login credentials."
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сіз нақты және толық медициналық ақпарат беруіңіз керек. Rebrus-ті кез-келген заңсыз пайдалануға, мысалы, алаяқтық әрекеттерге қатаң тыйым салынады. Сіз кіру тіркелгі деректерінің құпиялылығын сақтауға жауаптысыз."
+          }
+        }
+      }
+    },
+    "Вы уверены, что хотите удалить свой аккаунт?" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to delete your account?"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сіз аккаунтыңызды жойғыңыз келетініне сенімдісіз бе?"
+          }
+        }
+      }
+    },
+    "Выберите предпочитаемый язык." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select your preferred language."
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қалаған тілді таңдаңыз."
+          }
+        }
+      }
+    },
+    "Выбрать фотографию" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select the photo"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фото таңдау"
+          }
+        }
+      }
+    },
+    "Выйти из аккаунта" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log out"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аккаунттан шығу"
+          }
+        }
+      }
+    },
+    "Выключение или деактивация аккаунта" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disabling or deactivating an account"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аккаунтты өшіру немесе кетіру"
+          }
+        }
+      }
+    },
+    "Главная" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Main"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Негізгі"
+          }
+        }
+      }
+    },
+    "Дата приёма" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date of admission"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қабылдау уақыты"
+          }
+        }
+      }
+    },
+    "День рождения" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Birthdate"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Туған күні"
+          }
+        }
+      }
+    },
+    "Для получения поддержки или вопросов обращайтесь к нам по адресу rebrus@rebrus.kz." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For support or questions, please contact us at rebrus@rebrus.kz ."
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қолдау немесе сұрақтар үшін бізге хабарласыңыз rebrus@rebrus.kz."
+          }
+        }
+      }
+    },
+    "Добро пожаловать на Rebrus, телемедицинскую платформу, предназначенную для облегчения удаленных медицинских консультаций. Получая доступ к Rebrus и используя его, вы соглашаетесь соблюдать настоящие Правила и условия." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to Rebrus, a telemedicine platform designed to facilitate remote medical consultations. By accessing and using Rebrus, you agree to comply with these Terms and Conditions."
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қашықтықтан медициналық кеңес беруді жеңілдетуге арналған rebrus телемедициналық платформасына қош келдіңіз. Rebrus-қа кіру және оны пайдалану арқылы сіз осы Ережелер мен шарттарды орындауға келісесіз."
+          }
+        }
+      }
+    },
+    "Другое" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Other"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Басқа"
+          }
+        }
+      }
+    },
+    "Изменено: 01 / 01 / 2024" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Changed: 01 / 01 / 2024"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Өзгертілді: 01 / 01 / 2024"
+          }
+        }
+      }
+    },
+    "Изменить профиль" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change the profile"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Профильді өзгерту"
+          }
+        }
+      }
+    },
+    "ИИН" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IIN"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ЖСН"
+          }
+        }
+      }
+    },
+    "Имя" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аты"
+          }
+        }
+      }
+    },
+    "Имя Фамилия" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Full Name"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аты-жөні"
+          }
+        }
+      }
+    },
+    "Контент и услуги, предоставляемые Rebrus, защищены законами об интеллектуальной собственности. Несанкционированное использование содержимого приложения запрещено." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The content and services provided by Rebrus are protected by intellectual property laws. Unauthorized use of the application content is prohibited."
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rebrus ұсынатын мазмұн мен қызметтер зияткерлік меншік туралы заңдармен қорғалған. Қолданба мазмұнын рұқсатсыз пайдалануға тыйым салынады."
+          }
+        }
+      }
+    },
+    "Мало возможностей" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Few opportunities"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мүмкіндіктер аз"
+          }
+        }
+      }
+    },
+    "Настоящие условия регулируются законами Республики Казахстан. Споры будут разрешаться в арбитражном порядке." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "These terms are governed by the laws of the Republic of Kazakhstan. Disputes will be settled by arbitration."
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Осы шарттар Қазақстан Республикасының заңдарымен реттеледі. Даулар төрелік тәртіппен шешілетін болады."
+          }
+        }
+      }
+    },
+    "Настройка" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Баптаулар"
+          }
+        }
+      }
+    },
+    "Недавние пациенты" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recent patients"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Соңғы пациенттер"
+          }
+        }
+      }
+    },
+    "Неизвестная" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Белгісіз"
+          }
+        }
+      }
+    },
+    "Нет деменции" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No dementia"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Деменция жоқ"
+          }
+        }
+      }
+    },
+    "Неудобно" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inconvenient"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ыңғайсыз"
+          }
+        }
+      }
+    },
+    "Нехватка времени" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lack of time"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Уақыт тапшылығы"
+          }
+        }
+      }
+    },
+    "Номер телефона" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Phone number"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Телефон номері"
+          }
+        }
+      }
+    },
+    "Ознакомление с условием и политика продукта" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condition and product policy"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шарттар және саясат"
+          }
+        }
+      }
+    },
+    "Остальные" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Other"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Басқа"
+          }
+        }
+      }
+    },
+    "Ответственный" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Responsible"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жауапты"
+          }
+        }
+      }
+    },
+    "Отменить" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бас тарту"
+          }
+        }
+      }
+    },
+    "Отчество" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lastname"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жөні"
+          }
+        }
+      }
+    },
+    "Пароль" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Құпиясөз"
+          }
+        }
+      }
+    },
+    "Пациент" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patient"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пациент"
+          }
+        }
+      }
+    },
+    "Подтвердите пароль" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm the password"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Құпиясөзді растаңыз"
+          }
+        }
+      }
+    },
+    "Поздняя" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Late"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Соңғы"
+          }
+        }
+      }
+    },
+    "Пол" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sex"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жынысы"
+          }
+        }
+      }
+    },
+    "Правила и условия услуг Rebrus" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rebrus Terms and Conditions of Service"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rebrus қызметтерінің талаптары"
+          }
+        }
+      }
+    },
+    "Предлагаемые" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prefered"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ұсынулы"
+          }
+        }
+      }
+    },
+    "Причина удаления" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deleting reason"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кетіру себебі"
+          }
+        }
+      }
+    },
+    "Профиль" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profile"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Профиль"
+          }
+        }
+      }
+    },
+    "Раняя" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wounding"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ерте"
+          }
+        }
+      }
+    },
+    "Регион" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Region"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аймақ"
+          }
+        }
+      }
+    },
+    "Сброс пароля" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset the password"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Құпиясөзді қалып келтіру"
+          }
+        }
+      }
+    },
+    "Сбросить пароль" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset the password"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Құпиясөзді қалыпқа келтіру"
+          }
+        }
+      }
+    },
+    "Сложности при использовании" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Difficulties in using"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пайдалану кезіндегі қиындықтар"
+          }
+        }
+      }
+    },
+    "Сменить язык" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change languages"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тілді өзгерту"
+          }
+        }
+      }
+    },
+    "Средняя" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mid"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Орта"
+          }
+        }
+      }
+    },
+    "Стадия деменции" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stage of dementia"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Деменция сатысы"
+          }
+        }
+      }
+    },
+    "Стоимость услуг указана в Rebrus и может быть изменена. Способы оплаты и информация о страховом покрытии доступны в приложении." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The cost of services is indicated in Rebrus and is subject to change. Payment methods and information about insurance coverage are available in the app."
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қызметтердің құны Rebrus - та көрсетілген және оны өзгертуге болады. Төлем әдістері мен сақтандыру туралы ақпарат қосымшада қол жетімді."
+          }
+        }
+      }
+    },
+    "Текущий пароль" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Current password"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Қазіргі құпиясөз"
+          }
+        }
+      }
+    },
+    "Удаление или деактивация аккаунта" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deleting or deactivating an account"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аккаунтты өшіру немесе кетіру"
+          }
+        }
+      }
+    },
+    "Удалить аккаунт" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete account"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аккаунтты кетіру"
+          }
+        }
+      }
+    },
+    "Условие и политика" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Policies"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Құқық және заңнама"
+          }
+        }
+      }
+    },
+    "Услуги Rebrus доступны лицам старше 18 лет. Пользователи в юрисдикциях, где телемедицина ограничена, могут не иметь права пользоваться Rebrus." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rebrus services are available to persons over the age of 18. Users in jurisdictions where telemedicine is restricted may not be eligible to use Rebrus."
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rebrus қызметтері 18 жастан асқан адамдарға қол жетімді. Телемедицина шектеулі юрисдикциялардағы пайдаланушылар Rebrus-ты пайдалануға құқылы болмауы мүмкін."
+          }
+        }
+      }
+    },
+    "Фамилия" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surname"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тегі"
+          }
+        }
+      }
+    },
+    "Язык" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Languages"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тіл"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

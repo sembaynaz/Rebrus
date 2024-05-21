@@ -40,12 +40,23 @@
 		6FA83CAA2B5AA457008957BE /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83CA72B5AA457008957BE /* OTPViewController.swift */; };
 		6FA83CAB2B5AA457008957BE /* knOTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83CA82B5AA457008957BE /* knOTPView.swift */; };
 		6FA83CAC2B5AA457008957BE /* knConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83CA92B5AA457008957BE /* knConstraints.swift */; };
+		B1083A5D2BF8A8DD004B1B67 /* Onboarding.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B1083A5C2BF8A8DD004B1B67 /* Onboarding.xcstrings */; };
+		B1083A622BF8ADE5004B1B67 /* SignIn.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B1083A612BF8ADE5004B1B67 /* SignIn.xcstrings */; };
+		B1083A642BF8AF54004B1B67 /* Main.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B1083A632BF8AF54004B1B67 /* Main.xcstrings */; };
+		B1083A662BFA422E004B1B67 /* localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1083A652BFA422E004B1B67 /* localized.swift */; };
+		B1083A682BFA4275004B1B67 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1083A672BFA4275004B1B67 /* Defaults.swift */; };
+		B1083A6A2BFB8944004B1B67 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1083A692BFB8944004B1B67 /* OnboardingCollectionViewCell.swift */; };
+		B1083A712BFCD4C6004B1B67 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1083A702BFCD4C6004B1B67 /* User.swift */; };
 		B15C6D0A2B5A680200E8F895 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6D092B5A680200E8F895 /* Extensions.swift */; };
 		B15C6D0C2B5A681D00E8F895 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6D0B2B5A681D00E8F895 /* Delegates.swift */; };
 		B15C6D0F2B5A769B00E8F895 /* DeleteAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6D0E2B5A769B00E8F895 /* DeleteAccountViewController.swift */; };
 		B15C6D112B5A826400E8F895 /* DeleteAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6D102B5A826400E8F895 /* DeleteAccountTableViewCell.swift */; };
 		B15C6D132B5A87DA00E8F895 /* ActivatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6D122B5A87DA00E8F895 /* ActivatedButton.swift */; };
 		B15D9FA82BEBB0390011BCE2 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D9FA72BEBB0390011BCE2 /* Patient.swift */; };
+		B15D9FAB2BEBC8620011BCE2 /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D9FAA2BEBC8620011BCE2 /* Configurations.swift */; };
+		B15D9FAE2BEBC9590011BCE2 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = B15D9FAD2BEBC9590011BCE2 /* SwiftyJSON */; };
+		B15D9FB12BEBCA730011BCE2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B15D9FB02BEBCA730011BCE2 /* Alamofire */; };
+		B15D9FB52BEBFECB0011BCE2 /* DeleteHalfScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D9FB42BEBFECB0011BCE2 /* DeleteHalfScreenViewController.swift */; };
 		B16826AA2BB1EABB00711C7C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16826A92BB1EABB00711C7C /* EditProfileViewController.swift */; };
 		B16826AC2BB1F07100711C7C /* EditProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16826AB2BB1F07100711C7C /* EditProfileHeaderView.swift */; };
 		B16826AE2BB1F42600711C7C /* UserDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16826AD2BB1F42600711C7C /* UserDataTableViewCell.swift */; };
@@ -91,12 +102,23 @@
 		6FA83CA72B5AA457008957BE /* OTPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		6FA83CA82B5AA457008957BE /* knOTPView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knOTPView.swift; sourceTree = "<group>"; };
 		6FA83CA92B5AA457008957BE /* knConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knConstraints.swift; sourceTree = "<group>"; };
+		B1083A5C2BF8A8DD004B1B67 /* Onboarding.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Onboarding.xcstrings; sourceTree = "<group>"; };
+		B1083A5E2BF8A9DA004B1B67 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B1083A5F2BF8AA03004B1B67 /* kk-KZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "kk-KZ"; path = "kk-KZ.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		B1083A612BF8ADE5004B1B67 /* SignIn.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = SignIn.xcstrings; sourceTree = "<group>"; };
+		B1083A632BF8AF54004B1B67 /* Main.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Main.xcstrings; sourceTree = "<group>"; };
+		B1083A652BFA422E004B1B67 /* localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = localized.swift; sourceTree = "<group>"; };
+		B1083A672BFA4275004B1B67 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		B1083A692BFB8944004B1B67 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		B1083A702BFCD4C6004B1B67 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B15C6D092B5A680200E8F895 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B15C6D0B2B5A681D00E8F895 /* Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 		B15C6D0E2B5A769B00E8F895 /* DeleteAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewController.swift; sourceTree = "<group>"; };
 		B15C6D102B5A826400E8F895 /* DeleteAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountTableViewCell.swift; sourceTree = "<group>"; };
 		B15C6D122B5A87DA00E8F895 /* ActivatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivatedButton.swift; sourceTree = "<group>"; };
 		B15D9FA72BEBB0390011BCE2 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		B15D9FAA2BEBC8620011BCE2 /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
+		B15D9FB42BEBFECB0011BCE2 /* DeleteHalfScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteHalfScreenViewController.swift; sourceTree = "<group>"; };
 		B16826A92BB1EABB00711C7C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		B16826AB2BB1F07100711C7C /* EditProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileHeaderView.swift; sourceTree = "<group>"; };
 		B16826AD2BB1F42600711C7C /* UserDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataTableViewCell.swift; sourceTree = "<group>"; };
@@ -112,6 +134,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B15D9FB12BEBCA730011BCE2 /* Alamofire in Frameworks */,
+				B15D9FAE2BEBC9590011BCE2 /* SwiftyJSON in Frameworks */,
 				6FA83BE02B5A648E008957BE /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +162,8 @@
 		6FA83B902B5A6317008957BE /* Rebrus */ = {
 			isa = PBXGroup;
 			children = (
+				B1083A602BF8ADC6004B1B67 /* Localizable */,
+				B15D9FA92BEBC8460011BCE2 /* Server */,
 				6FA83BC92B5A6394008957BE /* Components */,
 				6FA83BCF2B5A6394008957BE /* Fonts */,
 				6FA83BCD2B5A6394008957BE /* Helpers */,
@@ -171,6 +197,7 @@
 			children = (
 				6FA83BAD2B5A6388008957BE /* StartViewController.swift */,
 				6FA83BAE2B5A6388008957BE /* OnboardingViewController.swift */,
+				B1083A692BFB8944004B1B67 /* OnboardingCollectionViewCell.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -204,6 +231,7 @@
 				6FA83BBB2B5A6388008957BE /* ProfileTableViewCell.swift */,
 				6FA83BBC2B5A6388008957BE /* ProfileHeaderView.swift */,
 				6FA83BBD2B5A6388008957BE /* ProfileViewController.swift */,
+				B1083A702BFCD4C6004B1B67 /* User.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -280,13 +308,34 @@
 			path = OTP;
 			sourceTree = "<group>";
 		};
+		B1083A602BF8ADC6004B1B67 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				B1083A5C2BF8A8DD004B1B67 /* Onboarding.xcstrings */,
+				B1083A612BF8ADE5004B1B67 /* SignIn.xcstrings */,
+				B1083A632BF8AF54004B1B67 /* Main.xcstrings */,
+				B1083A652BFA422E004B1B67 /* localized.swift */,
+				B1083A672BFA4275004B1B67 /* Defaults.swift */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
 		B15C6D0D2B5A767600E8F895 /* DeleteteAccount */ = {
 			isa = PBXGroup;
 			children = (
 				B15C6D0E2B5A769B00E8F895 /* DeleteAccountViewController.swift */,
 				B15C6D102B5A826400E8F895 /* DeleteAccountTableViewCell.swift */,
+				B15D9FB42BEBFECB0011BCE2 /* DeleteHalfScreenViewController.swift */,
 			);
 			path = DeleteteAccount;
+			sourceTree = "<group>";
+		};
+		B15D9FA92BEBC8460011BCE2 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				B15D9FAA2BEBC8620011BCE2 /* Configurations.swift */,
+			);
+			path = Server;
 			sourceTree = "<group>";
 		};
 		B16826A82BB1EAA000711C7C /* EditProfile */ = {
@@ -327,6 +376,8 @@
 			name = Rebrus;
 			packageProductDependencies = (
 				6FA83BDF2B5A648E008957BE /* SnapKit */,
+				B15D9FAD2BEBC9590011BCE2 /* SwiftyJSON */,
+				B15D9FB02BEBCA730011BCE2 /* Alamofire */,
 			);
 			productName = Rebrus;
 			productReference = 6FA83B8E2B5A6317008957BE /* Rebrus.app */;
@@ -349,15 +400,19 @@
 			};
 			buildConfigurationList = 6FA83B892B5A6317008957BE /* Build configuration list for PBXProject "Rebrus" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				"kk-KZ",
 			);
 			mainGroup = 6FA83B852B5A6317008957BE;
 			packageReferences = (
 				6FA83BDE2B5A648E008957BE /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B15D9FAC2BEBC9590011BCE2 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				B15D9FAF2BEBCA730011BCE2 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 6FA83B8F2B5A6317008957BE /* Products */;
 			projectDirPath = "";
@@ -379,9 +434,12 @@
 				6FA83BDC2B5A6394008957BE /* Montserrat-Regular.ttf in Resources */,
 				6FA83BDB2B5A6394008957BE /* Montserrat-Bold.ttf in Resources */,
 				6FA83BDA2B5A6394008957BE /* Roboto-Regular.ttf in Resources */,
+				B1083A5D2BF8A8DD004B1B67 /* Onboarding.xcstrings in Resources */,
 				6FA83BD92B5A6394008957BE /* Montserrat-Medium.ttf in Resources */,
 				B1F28FE52BEB954D006AFAAC /* Montserrat-SemiBold.ttf in Resources */,
 				6FA83BDD2B5A6394008957BE /* Roboto-Bold.ttf in Resources */,
+				B1083A642BF8AF54004B1B67 /* Main.xcstrings in Resources */,
+				B1083A622BF8ADE5004B1B67 /* SignIn.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,17 +452,22 @@
 			files = (
 				B15C6D112B5A826400E8F895 /* DeleteAccountTableViewCell.swift in Sources */,
 				6FA83BD82B5A6394008957BE /* ColorManager.swift in Sources */,
+				B15D9FAB2BEBC8620011BCE2 /* Configurations.swift in Sources */,
 				B15C6D0C2B5A681D00E8F895 /* Delegates.swift in Sources */,
 				6FA83BC42B5A6388008957BE /* ConditionsViewController.swift in Sources */,
+				B1083A6A2BFB8944004B1B67 /* OnboardingCollectionViewCell.swift in Sources */,
 				B16826AA2BB1EABB00711C7C /* EditProfileViewController.swift in Sources */,
+				B15D9FB52BEBFECB0011BCE2 /* DeleteHalfScreenViewController.swift in Sources */,
 				6FA83BC02B5A6388008957BE /* LoginViewController.swift in Sources */,
 				B1F28FDE2BEB7858006AFAAC /* PatientPreviewTableViewCell.swift in Sources */,
+				B1083A662BFA422E004B1B67 /* localized.swift in Sources */,
 				B1F28FE32BEB88FB006AFAAC /* PatientResultCollectionViewCell.swift in Sources */,
 				6FA83CAC2B5AA457008957BE /* knConstraints.swift in Sources */,
 				B15C6D132B5A87DA00E8F895 /* ActivatedButton.swift in Sources */,
 				6FA83CAB2B5AA457008957BE /* knOTPView.swift in Sources */,
 				6FA83BAA2B5A637C008957BE /* RoleViewController.swift in Sources */,
 				6FA83BC62B5A6388008957BE /* ProfileTableViewCell.swift in Sources */,
+				B1083A682BFA4275004B1B67 /* Defaults.swift in Sources */,
 				6FA83CA52B5AA3FD008957BE /* ForgotPasswordViewController.swift in Sources */,
 				6FA83BC32B5A6388008957BE /* LanguageViewController.swift in Sources */,
 				6FA83BC22B5A6388008957BE /* TabbarViewController.swift in Sources */,
@@ -429,6 +492,7 @@
 				6FA83BA92B5A637C008957BE /* SignupViewController.swift in Sources */,
 				6FA83B942B5A6317008957BE /* SceneDelegate.swift in Sources */,
 				6FA83BC12B5A6388008957BE /* MainViewController.swift in Sources */,
+				B1083A712BFCD4C6004B1B67 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +503,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6FA83B9D2B5A631A008957BE /* Base */,
+				B1083A5E2BF8A9DA004B1B67 /* ru */,
+				B1083A5F2BF8AA03004B1B67 /* kk-KZ */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -450,6 +516,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -510,6 +577,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -650,6 +718,22 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		B15D9FAC2BEBC9590011BCE2 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+		B15D9FAF2BEBCA730011BCE2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -657,6 +741,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6FA83BDE2B5A648E008957BE /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		B15D9FAD2BEBC9590011BCE2 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B15D9FAC2BEBC9590011BCE2 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		B15D9FB02BEBCA730011BCE2 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B15D9FAF2BEBCA730011BCE2 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

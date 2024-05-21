@@ -2,7 +2,6 @@
 //  MainViewController.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 18/01/2024.
 //
 
 import UIKit
@@ -12,7 +11,7 @@ class MainViewController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 28)
-        label.text = "Недавние пациенты"
+        label.text = "Недавние пациенты".localized(from: .main)
         label.textColor = ColorManager.black
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -58,6 +57,12 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
+        NotificationCenter.default.addObserver(self, selector: #selector(setStrings), name: Notification.Name("localize"), object: nil)
+    }
+    
+    @objc private func setStrings() {
+        titleLabel.text = "Недавние пациенты".localized(from: .main)
+        tableView.reloadData()
     }
 }
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
@@ -68,7 +73,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PatientPreviewTableViewCell.identifier, for: indexPath) as! PatientPreviewTableViewCell
         cell.selectionStyle = .none
-        //cell.setContent()
+        cell.setContent(username: "Кожабеков Улан Даулетулы", iin: "021014501033")
         
         return cell
     }

@@ -2,7 +2,6 @@
 //  PatientDetailsViewController.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 08/05/2024.
 //
 
 import UIKit
@@ -50,7 +49,7 @@ class PatientDetailsViewController: UIViewController {
         
         view.backgroundColor = .white
         // Do any additional setup after loading the view.
-        title = "Пациент"
+        title = "Пациент".localized(from: .main)
         setupUI()
         generateBlockOfInfo()
         userNameLabel.text = patient.fullName
@@ -72,7 +71,7 @@ class PatientDetailsViewController: UIViewController {
         }
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(userNameLabel.snp.bottom).offset(40)
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.leading.trailing.equalToSuperview().inset(25)
             make.height.equalTo(50)
         }
         let infoBlock = generateBlockOfInfo()
@@ -109,7 +108,7 @@ class PatientDetailsViewController: UIViewController {
         for i in stride(from: 0, to: totalItems - 5, by: 3) {
             let groupStack = UIStackView()
             groupStack.axis = .horizontal
-            groupStack.spacing = 10 
+            groupStack.distribution = .equalSpacing
             
             for j in i..<min(i + 3, totalItems) {
                 let stack = makeStack(data: viewModel.item(at: j))
@@ -130,12 +129,12 @@ class PatientDetailsViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 15)
         label.textColor = .white
-        label.text = "Стадия деменции"
+        label.text = "Стадия деменции".localized(from: .main)
         
         let levelLabel = UILabel()
         levelLabel.font = UIFont(name: "Montserrat-Regular", size: 15)
         levelLabel.textColor = .white
-        levelLabel.text = level?.title
+        levelLabel.text = level?.title.localized(from: .main)
         
         let stack = UIStackView()
         stack.spacing = 11
@@ -189,11 +188,11 @@ class PatientDetailsViewController: UIViewController {
         let cellTypeLabel = UILabel()
         cellTypeLabel.textColor = ColorManager.greyTextColor
         cellTypeLabel.font = UIFont(name: "Montserrat-SemiBold", size: 12)
-        cellTypeLabel.text = data.title
+        cellTypeLabel.text = data.title.localized(from: .main)
         
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.distribution = .equalSpacing
+        stack.spacing = 5
         stack.addArrangedSubview(cellTypeLabel)
         stack.addArrangedSubview(infoLabel)
         return stack
