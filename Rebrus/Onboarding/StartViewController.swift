@@ -2,7 +2,6 @@
     //  StartViewController.swift
     //  Rebrus
     //
-    //  Created by Nazerke Sembay on 17.01.2024.
     //
 
 import UIKit
@@ -18,14 +17,14 @@ class StartViewController: UIViewController {
     private let loginButton: Button = {
         let button = Button()
         button.setActive(ColorManager.blue ?? .blue, .white)
-        button.setTitle("Войти в систему", for: .normal)
+        button.setTitle("Войти в систему".localized(from: .onboard), for: .normal)
         return button
     }()
     
     private let signupButton: Button = {
         let button = Button()
         button.setActive(.white, ColorManager.blue ?? .blue)
-        button.setTitle("Зарегистрироваться", for: .normal)
+        button.setTitle("Зарегистрироваться".localized(from: .onboard), for: .normal)
         return button
     }()
     

@@ -2,7 +2,6 @@
 //  ForgotPasswordViewController.swift
 //  Rebrus
 //
-//  Created by Nazerke Sembay on 19.01.2024.
 //
 
 import UIKit
@@ -12,7 +11,7 @@ class ForgotPasswordViewController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Medium", size: 24)
-        label.text = "Забыли пароль"
+        label.text = "Забыли пароль".localized(from: .auth)
         label.textColor = ColorManager.black
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -21,28 +20,28 @@ class ForgotPasswordViewController: UIViewController {
     private let messageLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 14)
-        label.text = "Не беспокойтесь! Введите свой адрес электронной почты, и мы вышлем вам код для сброса пароля."
+        label.text = "Не беспокойтесь! Введите свой адрес электронной почты, и мы вышлем вам код для сброса пароля.".localized(from: .auth)
         label.numberOfLines = 0
         label.textColor = ColorManager.black
         return label
     }()
     private let emailTextField: TextField = {
         let textfield = TextField()
-        textfield.setPlaceholderText("Адрес электронной почты")
-        textfield.placeholder = "Введите email"
+        textfield.setPlaceholderText("Адрес электронной почты".localized(from: .auth))
+        textfield.placeholder = "Введите email".localized(from: .auth)
         return textfield
     }()
     private let codeButton: Button = {
         let button = Button()
         button.setActive(ColorManager.blue ?? .blue, .white)
-        button.setTitle("Войти в систему", for: .normal)
+        button.setTitle("Войти в систему".localized(from: .auth), for: .normal)
         return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "Забыли пароль"
+        title = "Забыли пароль".localized(from: .auth)
         setupConstraints()
     }
     
@@ -101,7 +100,7 @@ extension ForgotPasswordViewController {
 extension ForgotPasswordViewController {
     @objc func codeButtonTapped() {
         let vc = OTPViewController()
-        vc.buttonTitle = "Изменить пароль"
+        vc.buttonTitle = "Изменить пароль".localized(from: .auth)
         navigationController?.pushViewController(vc, animated: true)
     }
 }

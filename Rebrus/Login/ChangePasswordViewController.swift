@@ -2,7 +2,6 @@
 //  ChangePasswordViewController.swift
 //  Rebrus
 //
-//  Created by Nazerke Sembay on 19.01.2024.
 //
 
 import UIKit
@@ -12,24 +11,24 @@ class ChangePasswordViewController: UIViewController {
     
     private let passwordTextField1: TextField = {
         let textfield = TextField()
-        textfield.setPlaceholderText("Пароль")
-        textfield.placeholder = "Введите ноый пароль"
+        textfield.setPlaceholderText("Пароль".localized(from: .auth))
+        textfield.placeholder = "Введите новый пароль".localized(from: .auth)
         textfield.setPasswordTextField(true)
         return textfield
     }()
     
     private let passwordTextField2: TextField = {
         let textfield = TextField()
-        textfield.setPlaceholderText("Пароль")
-        textfield.placeholder = "Введите пароль повторно"
+        textfield.setPlaceholderText("Пароль".localized(from: .auth))
+        textfield.placeholder = "Введите пароль повторно".localized(from: .onboard)
         textfield.setPasswordTextField(true)
         return textfield
     }()
     
     private let passwordTextField3: TextField = {
         let textfield = TextField()
-        textfield.setPlaceholderText("Подтвердите пароль")
-        textfield.placeholder = "Введите пароль повторно"
+        textfield.setPlaceholderText("Подтвердите пароль".localized(from: .onboard))
+        textfield.placeholder = "Введите пароль повторно".localized(from: .onboard)
         textfield.setPasswordTextField(true)
         return textfield
     }()
@@ -37,21 +36,21 @@ class ChangePasswordViewController: UIViewController {
     let criterionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 12)
-        label.text = "должно содержать 8 символов."
+        label.text = "должно содержать 8 символов.".localized(from: .auth)
         label.textColor = UIColor(red: 154/255, green: 154/255, blue: 154/255, alpha: 1)
         return label
     }()
     private let changeButton: Button = {
         let button = Button()
         button.setActive(ColorManager.blue ?? .blue, .white)
-        button.setTitle("Сбросить папроль", for: .normal)
+        button.setTitle("Сбросить пароль".localized(from: .auth), for: .normal)
         return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "Сбросить пароль"
+        title = "Сбросить пароль".localized(from: .auth)
         setupConstraints()
     }
 
@@ -64,10 +63,10 @@ extension ChangePasswordViewController {
         setLoginButton()
         
         if isChangePassword {
-            passwordTextField1.setPlaceholderText("Текущий пароль")
-            passwordTextField1.placeholder = "Введите текущий пароль"
-            passwordTextField2.setPlaceholderText("Пароль")
-            passwordTextField2.placeholder = "Введите новый пароль"
+            passwordTextField1.setPlaceholderText("Текущий пароль".localized(from: .main))
+            passwordTextField1.placeholder = "Введите текущий пароль".localized(from: .main)
+            passwordTextField2.setPlaceholderText("Пароль".localized(from: .main))
+            passwordTextField2.placeholder = "Введите новый пароль".localized(from: .main)
             
             view.addSubview(passwordTextField3)
             passwordTextField3.snp.makeConstraints { make in

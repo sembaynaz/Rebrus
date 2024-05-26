@@ -2,7 +2,6 @@
 //  TextField.swift
 //  Rebrus
 //
-//  Created by Nazerke Sembay on 17.01.2024.
 //
 
 import Foundation
@@ -20,7 +19,7 @@ class TextField: UITextField {
     private var placeholderLabel: UILabel = {
         let placeholderLabel = UILabel()
         placeholderLabel.numberOfLines = 0
-        placeholderLabel.text = "Адрес электронной почты             "
+        placeholderLabel.text = "Адрес электронной почты".localized(from: .auth)
         placeholderLabel.textColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 0.5)
         placeholderLabel.font = UIFont(name: "Montserrat-Regular", size: 14)
         return placeholderLabel

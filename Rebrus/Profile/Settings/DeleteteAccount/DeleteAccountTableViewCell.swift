@@ -2,7 +2,6 @@
 //  DeleteAccountTableViewCell.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 19/01/2024.
 //
 
 import UIKit
@@ -14,31 +13,30 @@ class DeleteAccountTableViewCell: UITableViewCell {
     private let label: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Medium", size: 15)
-        label.textColor = ColorManager.blue
+        label.textColor = ColorManager.black
         return label
     }()
     
-    private let lineView: UIView = {
-        let view = UIView()
-        view.backgroundColor = ColorManager.grey
+    private let checkboxView: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "checkNonactive")
+        view.contentMode = .scaleAspectFill
         return view
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        backgroundColor = ColorManager.lightGrey
+        backgroundColor = .white
         setupUI()
     }
     
-    func setContent(with text: String, isLast: Bool) {
+    func setContent(with text: String) {
         label.text = text
-        lineView.isHidden = isLast
     }
     
     func setSelected(isSelected: Bool) {
-        backgroundColor = isSelected ? ColorManager.blue : ColorManager.lightGrey
-        label.textColor = isSelected ? .white : ColorManager.blue
+        checkboxView.image = UIImage(named: isSelected ? "checkActive" : "checkNonactive")
     }
     
     required init?(coder: NSCoder) {
@@ -50,14 +48,15 @@ extension DeleteAccountTableViewCell {
     private func setupUI() {
         contentView.addSubview(label)
         label.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(17)
-            make.top.bottom.equalToSuperview().inset(16)
+            make.leading.equalToSuperview()
+            make.top.bottom.equalToSuperview().inset(13)
         }
         
-        contentView.addSubview(lineView)
-        lineView.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalToSuperview()
-            make.height.equalTo(2)
+        contentView.addSubview(checkboxView)
+        checkboxView.snp.makeConstraints { make in
+            make.trailing.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.size.equalTo(24)
         }
     }
 }

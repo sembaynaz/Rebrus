@@ -2,7 +2,6 @@
     //  LoginViewController.swift
     //  Rebrus
     //
-    //  Created by Nazerke Sembay on 17.01.2024.
     //
 
 import UIKit
@@ -17,15 +16,15 @@ class LoginViewController: UIViewController {
     
     private let emailTextField: TextField = {
         let textfield = TextField()
-        textfield.setPlaceholderText("Адрес электронной почты")
-        textfield.placeholder = "Введите email"
+        textfield.setPlaceholderText("Адрес электронной почты".localized(from: .onboard))
+        textfield.placeholder = "Введите e-mail".localized(from: .auth)
         return textfield
     }()
     
     private let passwordTextField: TextField = {
         let textfield = TextField()
-        textfield.setPlaceholderText("Пароль")
-        textfield.placeholder = "Введите пароль"
+        textfield.setPlaceholderText("Пароль".localized(from: .onboard))
+        textfield.placeholder = "Введите пароль".localized(from: .onboard)
         textfield.setPasswordTextField(true)
         return textfield
     }()
@@ -33,7 +32,7 @@ class LoginViewController: UIViewController {
     private let loginButton: Button = {
         let button = Button()
         button.setActive(ColorManager.blue ?? .blue, .white)
-        button.setTitle("Войти в систему", for: .normal)
+        button.setTitle("Войти в систему".localized(from: .onboard), for: .normal)
         return button
     }()
     
@@ -48,7 +47,7 @@ class LoginViewController: UIViewController {
     private let forgotPasswordButton: UIButton = {
         let button = UIButton()
         button.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 14)
-        button.setTitle("Забыли пароль?", for: .normal)
+        button.setTitle("Забыли пароль?".localized(from: .auth), for: .normal)
         button.setTitleColor(ColorManager.black, for: .normal)
         return button
     }()
@@ -56,7 +55,7 @@ class LoginViewController: UIViewController {
     private let newUserLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 14)
-        label.text = "Новый пользователь?"
+        label.text = "Новый пользователь?".localized(from: .auth)
         label.textColor = ColorManager.black
         return label
     }()
@@ -64,7 +63,7 @@ class LoginViewController: UIViewController {
     private let signupButton: UIButton = {
         let button = UIButton()
         button.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 14)
-        button.setTitle("Создать аккаунт", for: .normal)
+        button.setTitle("Создать аккаунт".localized(from: .auth), for: .normal)
         button.setTitleColor(ColorManager.blue, for: .normal)
         return button
     }()
@@ -132,7 +131,7 @@ extension LoginViewController {
         let errorLabel: UILabel = {
             let label = UILabel()
             label.font = UIFont(name: "Montserrat-Regular", size: 10)
-            label.text = "Неверный пароль. Пожалуйста, проверьте пароль."
+            label.text = "Неверный пароль. Пожалуйста, проверьте пароль.".localized(from: .auth)
             label.textColor = ColorManager.red
             return label
         }()
@@ -166,7 +165,7 @@ extension LoginViewController {
             make.centerX.equalTo(view.snp.centerX)
             make.top.equalTo(loginButton.snp.bottom).offset(27)
             make.height.equalTo(14)
-            make.width.equalTo(124)
+            make.width.equalTo(200)
         }
     }
     

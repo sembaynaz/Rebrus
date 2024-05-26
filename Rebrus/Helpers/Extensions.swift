@@ -2,7 +2,6 @@
 //  Extensions.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 19/01/2024.
 //
 
 import Foundation
@@ -43,6 +42,17 @@ extension UINavigationController {
         self.navigationBar.titleTextAttributes = standardAttributes
         self.navigationBar.tintColor = ColorManager.blue
         self.navigationBar.prefersLargeTitles = false
+    }
+    
+}
+
+extension UIImage {
+    func resize(to size: CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        draw(in: CGRect(origin: .zero, size: size))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return resizedImage ?? self
     }
     
 }

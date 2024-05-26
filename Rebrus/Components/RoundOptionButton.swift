@@ -2,7 +2,6 @@
 //  RoundOptionButton.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 18/01/2024.
 //
 
 import UIKit

@@ -2,7 +2,6 @@
 //  ProfileViewController.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 15/01/2024.
 //
 
 import UIKit
@@ -12,19 +11,16 @@ class ProfileViewController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 28)
-        label.text = "Профиль"
         label.textColor = ColorManager.black
         return label
     }()
     private let headerView = ProfileHeaderView()
     
-    private let titles = ["Об аккаунте", "Настройка", "Выйти из аккаунта"]
-    private let subtitles = ["Изменить информацию об аккаунте", "Удаление или деактивация аккаунта", ""]
+    private var dataSource: [ProfileData] = []
     
     private let label: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 15)
-        label.text = "Общие"
         label.textColor = ColorManager.black
         return label
     }()
@@ -46,11 +42,21 @@ class ProfileViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        setStrings()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
+        NotificationCenter.default.addObserver(self, selector: #selector(setStrings), name: Notification.Name("localize"), object: nil)
+    }
+    
+    @objc private func setStrings() {
+        titleLabel.text = "Профиль".localized(from: .main)
+        label.text = "Общие".localized(from: .main)
+        dataSource = [ProfileData(title: "Профиль".localized(from: .main), subtitle: "Изменить профиль".localized(from: .main)), ProfileData(title: "Настройка".localized(from: .main), subtitle: "Удаление или деактивация аккаунта".localized(from: .main)), ProfileData(title: "Выйти из аккаунта".localized(from: .main), subtitle: "")]
+        tableView.reloadData()
+        headerView.setContent(fullName: nil)
     }
     
     private func setupUI() {
@@ -79,19 +85,22 @@ class ProfileViewController: UIViewController {
 //MARK: - UITableViewDelegate, UITableViewDataSource
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        titles.count
+        dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as! ProfileTableViewCell
         cell.selectionStyle = .none
-        cell.setContent(icon: "profileIcon\(indexPath.row+1)", title: titles[indexPath.row], subtitle: subtitles[indexPath.row])
+        cell.setContent(icon: "profileIcon\(indexPath.row+1)", title: dataSource[indexPath.row].title, subtitle: dataSource[indexPath.row].subtitle)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
+        case 0:
+            let editVC = EditProfileViewController()
+            navigationController?.pushViewController(editVC, animated: true)
         case 1:
             let settingsVC = SettingsViewController()
             navigationController?.pushViewController(settingsVC, animated: true)

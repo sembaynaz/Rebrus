@@ -2,7 +2,6 @@
 //  ProfileTableViewCell.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 16/01/2024.
 //
 
 import UIKit
