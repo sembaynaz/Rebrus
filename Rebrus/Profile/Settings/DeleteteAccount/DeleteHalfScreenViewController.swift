@@ -50,8 +50,11 @@ class DeleteHalfScreenViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         view.backgroundColor = .white
+        cancelButton.addTarget(self, action: #selector(cancelBtnTapped), for: .touchUpInside)
+        deleteButton.addTarget(self, action: #selector(deleteBtnTapped), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -96,5 +99,31 @@ class DeleteHalfScreenViewController: UIViewController {
 extension DeleteHalfScreenViewController {
     private func setDefaultFrame() {
         self.view.frame = CGRect(x: 0, y: UIScreen.main.bounds.height / 5 * 2.8, width: self.view.bounds.width, height: UIScreen.main.bounds.height / 5 * 2.7)
+    }
+    
+    @objc private func cancelBtnTapped() {
+        dismiss(animated: true)
+    }
+    
+    @objc private func deleteBtnTapped() {
+        UserDefaults.standard.removeObject(forKey: "accessToken")
+        
+        guard let window = UIApplication.shared.keyWindow else {
+            return
+        }
+        
+        let launchController = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
+        launchController?.modalPresentationStyle = .fullScreen
+        self.present(launchController!, animated: false)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            launchController!.dismiss(animated: false) {
+                let rootViewController = UINavigationController(rootViewController: OnboardingViewController())
+                window.rootViewController?.dismiss(animated: false, completion: nil)
+                window.rootViewController = nil
+                window.rootViewController = rootViewController
+                window.makeKeyAndVisible()
+            }
+        }
     }
 }

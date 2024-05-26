@@ -105,7 +105,42 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             let settingsVC = SettingsViewController()
             navigationController?.pushViewController(settingsVC, animated: true)
         default:
-            print("invalid cell")
+            let vc = AlertViewController()
+            vc.modalPresentationStyle = .overFullScreen
+            vc.activeButtonTitle = "Да".localized(from: .auth)
+            vc.imageName = "logout"
+            vc.cancelButtonTitle = "Нет".localized(from: .auth)
+            vc.messageText = "Хотите выйти из аккаунта?".localized(from: .auth)
+            vc.isSecondDelegate = true
+            present(vc, animated: false)
+            vc.secondDelegate = self
+        }
+    }
+}
+
+
+extension ProfileViewController: AlertSecondDelegate {
+    func didAgreeButtonTappedSecond() {
+        view.unblurContainView()
+        
+        UserDefaults.standard.removeObject(forKey: "accessToken")
+        
+        guard let window = UIApplication.shared.keyWindow else {
+            return
+        }
+        
+        let launchController = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
+        launchController?.modalPresentationStyle = .fullScreen
+        self.present(launchController!, animated: false)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            launchController!.dismiss(animated: false) {
+                let rootViewController = UINavigationController(rootViewController: OnboardingViewController())
+                window.rootViewController?.dismiss(animated: false, completion: nil)
+                window.rootViewController = nil
+                window.rootViewController = rootViewController
+                window.makeKeyAndVisible()
+            }
         }
     }
 }
