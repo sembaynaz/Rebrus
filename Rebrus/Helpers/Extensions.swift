@@ -56,3 +56,12 @@ extension UIImage {
     }
     
 }
+
+extension UIView {
+    func unblurContainView() {
+        var blurEffectView: CALayer?
+        
+        blurEffectView?.removeFromSuperlayer()
+        blurEffectView = nil
+    }
+}

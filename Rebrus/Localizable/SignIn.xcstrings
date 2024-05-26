@@ -69,6 +69,23 @@
         }
       }
     },
+    "Да" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yes"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Иә"
+          }
+        }
+      }
+    },
     "должно содержать 8 символов." : {
       "extractionState" : "manual",
       "localizations" : {
@@ -154,6 +171,23 @@
         }
       }
     },
+    "Нет" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жоқ"
+          }
+        }
+      }
+    },
     "Новый пользователь?" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -235,6 +269,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Аккаунт құру"
+          }
+        }
+      }
+    },
+    "Хотите выйти из аккаунта?" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you want to log out of your account?"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Расымен аккаунттан шыққыңыз келеді ме?"
           }
         }
       }
