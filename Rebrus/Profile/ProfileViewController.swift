@@ -5,9 +5,10 @@
 //
 
 import UIKit
+import Alamofire
 
 class ProfileViewController: UIViewController {
-    
+    private var user = User()
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 28)
@@ -33,7 +34,7 @@ class ProfileViewController: UIViewController {
         tableView.separatorStyle = .none
         return tableView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,12 +44,52 @@ class ProfileViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         setStrings()
+        getUserData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        getUserData()
         tabBarController?.tabBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
         NotificationCenter.default.addObserver(self, selector: #selector(setStrings), name: Notification.Name("localize"), object: nil)
+    }
+    
+    private func getUserData() {
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(Storage.sharedInstance.accessToken)"
+        ]
+        
+        AF.request(Configuration.USER_INFO, method: .get,  encoding: URLEncoding.default, headers: headers)
+                    .responseData { response in
+                    var resultString = ""
+                        
+                    if let data = response.data {
+                        resultString = String(data: data, encoding: .utf8)!
+                    }
+                        print(response.data)
+                    switch response.result {
+                    case .success:
+                        if response.response?.statusCode == 200 || response.response?.statusCode == 201 || response.response?.statusCode == 202 {
+                            print("success")
+                        }
+                    case .failure(let error):
+                        print("Error: \(error)")
+                    }
+                }
+            
+        
+
+        
+//        AF.request(Configuration.USER_INFO, method: .get, headers: headers).responseDecodable(of: User.self) { [weak self] response in
+//            guard let self = self else { return }
+//            switch response.result {
+//            case .success(let value):
+//                self.user = value
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+        
     }
     
     @objc private func setStrings() {

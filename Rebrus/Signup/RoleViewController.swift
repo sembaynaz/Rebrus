@@ -6,9 +6,19 @@
     //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+
+enum SpecialistRole: String {
+    case specialist = "SPECIALIST"
+    case doctor = "DOCTOR"
+}
 
 class RoleViewController: UIViewController {
-    
+    private var email: String
+    private var password: String
+    private var phoneNumber: String
+    private var role: SpecialistRole = .specialist
     private var specialistButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 15
@@ -35,6 +45,17 @@ class RoleViewController: UIViewController {
         button.setTitle("Продолжить".localized(from: .onboard), for: .normal)
         return button
     }()
+    
+    init(email: String, password: String, phoneNumber: String) {
+        self.email = email
+        self.password = password
+        self.phoneNumber = phoneNumber
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,18 +111,71 @@ extension RoleViewController {
 
 extension RoleViewController {
     @objc private func nextButtonTapped() {
-        let vc = OTPViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        
+        let parameters: [String: Any] = [
+            "email": email,
+            "password": password,
+            "phone": phoneNumber,
+            "role": role.rawValue,
+            "profile": [
+                    "firstName": "string",
+                    "lastName": "string",
+                    "middleName": "string",
+                    "birthDate": "2024-06-01",
+                    "gender": "M",
+                    "region": "string"
+                ]
+        ]
+        
+        AF.request(Configuration.SIGN_UP_URL, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseData { response in
+            var resultString = ""
+            
+            if let data = response.data{
+                resultString = String(data: data, encoding: .utf8)!
+            }
+            
+            print(response.response?.statusCode)
+            
+            if response.response?.statusCode == 200 || response.response?.statusCode == 201 || response.response?.statusCode == 202 {
+                let json = JSON(response.data!)
+                
+                if let token = json["request_number"].string {
+                    Storage.sharedInstance.accessToken = token
+                    UserDefaults.standard.set(token, forKey: "accessToken")
+                    let vc = OTPViewController(userEmail: self.email)
+                    self.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                        //                    SVProgressHUD.showError(withStatus: "CONNECTION_ERROR")
+                }
+            } else {
+                var ErrorString = "CONNECTION_ERROR"
+                if let sCode = response.response?.statusCode {
+                    switch sCode {
+                    case 401:
+                        ErrorString += "Unauthorized"
+                    case 403:
+                        ErrorString += "Forbidden"
+                    case 404:
+                        ErrorString += "Not found"
+                    default:
+                        ErrorString += "Қате формат"
+                    }
+                }
+                ErrorString += " \(resultString)"
+            }
+        }
     }
     
     @objc private func specialistButtonTapped() {
         deselect(button: drButton)
         select(button: specialistButton)
+        role = .specialist
     }
     
     @objc private func drButtonTapped() {
         deselect(button: specialistButton)
         select(button: drButton)
+        role = .doctor
     }
 }
 

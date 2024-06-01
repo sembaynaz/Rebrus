@@ -12,10 +12,14 @@ struct ProfileData {
     let subtitle: String
 }
 
-struct User {
-    let name: String
-    let surname: String
-    let fatherName: String
+struct User: Codable {
+    var email: String = ""
+    var firstName: String = ""
+    var lastName: String = ""
+    var middleName: String = ""
+    var birthDate: String = ""
+    var gender: String = ""
+    var region: String = ""
 }
 
 

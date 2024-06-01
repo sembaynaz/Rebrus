@@ -202,55 +202,15 @@ extension SignupViewController {
 
 extension SignupViewController {
     @objc private func signupButtonTapped() {
-        let vc = RoleViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-//        if passwordTextField1.text == passwordTextField2.text, let text = passwordTextField1.text {
-//            let email = emailTextField.text!
-//            let password = text
-//    let phoneNumber = numberTextField.text!
-//            let parameters = ["email": email, "password": password, "phone": phoneNumber]
-//            
-//            AF.request(Configuration.SIGN_UP_URL, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseData { response in
-//                var resultString = ""
-//                
-//                if let data = response.data{
-//                    resultString = String(data: data, encoding: .utf8)!
-//                }
-//                
-//                print(response.response?.statusCode)
-//                
-//                if response.response?.statusCode == 200 || response.response?.statusCode == 201 || response.response?.statusCode == 202 {
-//                    let json = JSON(response.data!)
-//                    
-//                    if let token = json["request_number"].string {
-//                        Storage.sharedInstance.accessToken = token
-//                        UserDefaults.standard.set(token, forKey: "accessToken")
-//                        let vc = RoleViewController()
-//                        self.navigationController?.pushViewController(vc, animated: true)
-//                        self.present(vc, animated: true)
-//                    } else {
-//                            //                    SVProgressHUD.showError(withStatus: "CONNECTION_ERROR")
-//                    }
-//                } else {
-//                    var ErrorString = "CONNECTION_ERROR"
-//                    if let sCode = response.response?.statusCode {
-//                        switch sCode {
-//                        case 401:
-//                            ErrorString += "Unauthorized"
-//                        case 403:
-//                            ErrorString += "Forbidden"
-//                        case 404:
-//                            ErrorString += "Not found"
-//                        default:
-//                            ErrorString += "Қате формат"
-//                        }
-//                    }
-//                    ErrorString += " \(resultString)"
-//                }
-//            }
-//        } else {
-//            return
-//        }
+        if passwordTextField1.text == passwordTextField2.text, let text = passwordTextField1.text {
+            let email = emailTextField.text!
+            let password = text
+            let phoneNumber = numberTextField.text!
+            let vc = RoleViewController(email: email, password: password, phoneNumber: phoneNumber)
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            return
+        }
                 
     }
     
