@@ -99,7 +99,7 @@ extension ForgotPasswordViewController {
 
 extension ForgotPasswordViewController {
     @objc func codeButtonTapped() {
-        let vc = OTPViewController(userEmail: emailTextField.text!)
+        let vc = OTPViewController(userEmail: emailTextField.text!, requestNumber: "")
         vc.buttonTitle = "Изменить пароль".localized(from: .auth)
         navigationController?.pushViewController(vc, animated: true)
     }

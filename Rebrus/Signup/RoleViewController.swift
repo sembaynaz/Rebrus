@@ -116,15 +116,7 @@ extension RoleViewController {
             "email": email,
             "password": password,
             "phone": phoneNumber,
-            "role": role.rawValue,
-            "profile": [
-                    "firstName": "string",
-                    "lastName": "string",
-                    "middleName": "string",
-                    "birthDate": "2024-06-01",
-                    "gender": "M",
-                    "region": "string"
-                ]
+            "role": role.rawValue
         ]
         
         AF.request(Configuration.SIGN_UP_URL, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseData { response in
@@ -139,13 +131,9 @@ extension RoleViewController {
             if response.response?.statusCode == 200 || response.response?.statusCode == 201 || response.response?.statusCode == 202 {
                 let json = JSON(response.data!)
                 
-                if let token = json["request_number"].string {
-                    Storage.sharedInstance.accessToken = token
-                    UserDefaults.standard.set(token, forKey: "accessToken")
-                    let vc = OTPViewController(userEmail: self.email)
+                if let number = json["request_number"].string {
+                    let vc = OTPViewController(userEmail: self.email, requestNumber: number)
                     self.navigationController?.pushViewController(vc, animated: true)
-                } else {
-                        //                    SVProgressHUD.showError(withStatus: "CONNECTION_ERROR")
                 }
             } else {
                 var ErrorString = "CONNECTION_ERROR"

@@ -9,7 +9,8 @@ import Alamofire
 import SwiftyJSON
 
 class OTPViewController: UIViewController {
-    private var requestNumber = ""
+    private var userEmail: String
+    private var requestNumber: String
     private var createdDate = ""
     private var expirationDate = ""
 
@@ -18,7 +19,6 @@ class OTPViewController: UIViewController {
     private var code: String = ""
     private var time = 240
     private var timer = Timer()
-    private var userEmail: String
     
     private let titleOTPLabel1: UILabel = {
         let label = UILabel()
@@ -87,8 +87,9 @@ class OTPViewController: UIViewController {
         return imageView
     }()
     
-    init(userEmail: String) {
+    init(userEmail: String, requestNumber: String) {
         self.userEmail = userEmail
+        self.requestNumber = requestNumber
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -269,10 +270,14 @@ extension OTPViewController {
                 
                 if response.response?.statusCode == 200 || response.response?.statusCode == 201 || response.response?.statusCode == 202 {
                     let json = JSON(response.data!)
+                    if let token = json["access_token"].string {
+                        Storage.sharedInstance.accessToken = token
+                        UserDefaults.standard.set(token, forKey: "accessToken")
+                        let vc = TabBarController()
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: true)
+                    }
                     
-                    let vc = TabBarController()
-                    vc.modalPresentationStyle = .fullScreen
-                    self.present(vc, animated: true)
                 } else {
                     var ErrorString = "CONNECTION_ERROR"
                     if let sCode = response.response?.statusCode {

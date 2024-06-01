@@ -6,6 +6,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class ProfileViewController: UIViewController {
     private var user = User()
@@ -67,9 +68,13 @@ class ProfileViewController: UIViewController {
                         resultString = String(data: data, encoding: .utf8)!
                     }
                         print(response.data)
+                        let json = JSON(response.data!)
+                        print(json)
                     switch response.result {
                     case .success:
                         if response.response?.statusCode == 200 || response.response?.statusCode == 201 || response.response?.statusCode == 202 {
+                            let json = JSON(response.data!)
+                            print(json)
                             print("success")
                         }
                     case .failure(let error):

@@ -20,14 +20,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
         if let windowScene = scene as? UIWindowScene {
-            window.rootViewController = UINavigationController(rootViewController: OnboardingViewController())
-//            if let accessToken = UserDefaults.standard.string(forKey: "accessToken") {
-//                Storage.sharedInstance.accessToken = accessToken
-//                window.rootViewController = TabBarController()
-//            } else {
-//                window.rootViewController = UINavigationController(rootViewController: OnboardingViewController())
-//            }
-//            
+            if let accessToken = UserDefaults.standard.string(forKey: "accessToken") {
+                Storage.sharedInstance.accessToken = accessToken
+                window.rootViewController = TabBarController()
+            } else {
+                window.rootViewController = UINavigationController(rootViewController: OnboardingViewController())
+            }
+           
             self.window = window
             self.window?.makeKeyAndVisible()
         }
