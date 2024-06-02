@@ -42,8 +42,18 @@ class ProfileHeaderView: UIView {
         setupUI()
     }
     
-    func setContent(fullName: String?) {
-        userFullName.text = fullName ?? "Имя Фамилия".localized(from: .main)
+    func setContent(user: User) {
+        if user.firstName == nil, user.lastName == nil {
+            userFullName.text = "Имя Фамилия".localized(from: .main)
+        } else {
+            userFullName.text = user.firstName! + " " + user.lastName!
+        }
+        
+        userEmail.text = user.email
+    }
+    
+    func setUserPhoto(image: UIImage) {
+        userImageView.image = image
     }
     
     required init?(coder: NSCoder) {
