@@ -6,7 +6,7 @@
 
 import Foundation
 struct Configuration {
-    static let BASE_URL = "http://167.71.48.186:8080/"
+    static let BASE_URL = "http://167.71.48.186:8000/api/auth-service/"
     
     static let SIGN_IN_URL = BASE_URL + "auth/login"
     static let SIGN_UP_URL = BASE_URL + "auth/register"
@@ -16,6 +16,10 @@ struct Configuration {
     static let FORGOT_PASSWORD = BASE_URL + "auth/forgot-password"
     static let RESET_PASSWORD = BASE_URL + "auth/reset-password"
     static let USER_INFO = BASE_URL + "auth/user-info"
+    static let UPDATE_USER_INFO = BASE_URL + "auth/update-profile"
+    
+    static let UPLOAD_PHOTO = "http://167.71.48.186:8084/image"
+    
 }
 
 class Storage {
