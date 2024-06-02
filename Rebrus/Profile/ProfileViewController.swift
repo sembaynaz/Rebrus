@@ -2,29 +2,27 @@
 //  ProfileViewController.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 15/01/2024.
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ProfileViewController: UIViewController {
-    
+    private var user = User()
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 28)
-        label.text = "Профиль"
         label.textColor = ColorManager.black
         return label
     }()
     private let headerView = ProfileHeaderView()
     
-    private let titles = ["Об аккаунте", "Настройка", "Выйти из аккаунта"]
-    private let subtitles = ["Изменить информацию об аккаунте", "Удаление или деактивация аккаунта", ""]
+    private var dataSource: [ProfileData] = []
     
     private let label: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 15)
-        label.text = "Общие"
         label.textColor = ColorManager.black
         return label
     }()
@@ -37,7 +35,7 @@ class ProfileViewController: UIViewController {
         tableView.separatorStyle = .none
         return tableView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,11 +44,49 @@ class ProfileViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        setStrings()
+        getUserData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        getUserData()
         tabBarController?.tabBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
+        NotificationCenter.default.addObserver(self, selector: #selector(setStrings), name: Notification.Name("localize"), object: nil)
+    }
+    
+    private func getUserData() {
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(Storage.sharedInstance.accessToken)"
+        ]
+        
+        AF.request(Configuration.USER_INFO, method: .get,  encoding: URLEncoding.default, headers: headers)
+                    .responseData { response in
+            var resultString = ""
+                
+            if let data = response.data {
+                resultString = String(data: data, encoding: .utf8)!
+            }
+
+            switch response.result {
+            case .success:
+                if response.response?.statusCode == 200 || response.response?.statusCode == 201 || response.response?.statusCode == 202 {
+                    let json = JSON(response.data!)
+                    print(json)
+                    print("success")
+                }
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
+    }
+    
+    @objc private func setStrings() {
+        titleLabel.text = "Профиль".localized(from: .main)
+        label.text = "Общие".localized(from: .main)
+        dataSource = [ProfileData(title: "Профиль".localized(from: .main), subtitle: "Изменить профиль".localized(from: .main)), ProfileData(title: "Настройка".localized(from: .main), subtitle: "Удаление или деактивация аккаунта".localized(from: .main)), ProfileData(title: "Выйти из аккаунта".localized(from: .main), subtitle: "")]
+        tableView.reloadData()
+        headerView.setContent(fullName: nil)
     }
     
     private func setupUI() {
@@ -79,24 +115,62 @@ class ProfileViewController: UIViewController {
 //MARK: - UITableViewDelegate, UITableViewDataSource
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        titles.count
+        dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as! ProfileTableViewCell
         cell.selectionStyle = .none
-        cell.setContent(icon: "profileIcon\(indexPath.row+1)", title: titles[indexPath.row], subtitle: subtitles[indexPath.row])
+        cell.setContent(icon: "profileIcon\(indexPath.row+1)", title: dataSource[indexPath.row].title, subtitle: dataSource[indexPath.row].subtitle)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
+        case 0:
+            let editVC = EditProfileViewController()
+            navigationController?.pushViewController(editVC, animated: true)
         case 1:
             let settingsVC = SettingsViewController()
             navigationController?.pushViewController(settingsVC, animated: true)
         default:
-            print("invalid cell")
+            let vc = AlertViewController()
+            vc.modalPresentationStyle = .overFullScreen
+            vc.activeButtonTitle = "Да".localized(from: .auth)
+            vc.imageName = "logout"
+            vc.cancelButtonTitle = "Нет".localized(from: .auth)
+            vc.messageText = "Хотите выйти из аккаунта?".localized(from: .auth)
+            vc.isSecondDelegate = true
+            present(vc, animated: false)
+            vc.secondDelegate = self
+        }
+    }
+}
+
+
+extension ProfileViewController: AlertSecondDelegate {
+    func didAgreeButtonTappedSecond() {
+        view.unblurContainView()
+        
+        UserDefaults.standard.removeObject(forKey: "accessToken")
+        
+        guard let window = UIApplication.shared.keyWindow else {
+            return
+        }
+        
+        let launchController = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
+        launchController?.modalPresentationStyle = .fullScreen
+        self.present(launchController!, animated: false)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            launchController!.dismiss(animated: false) {
+                let rootViewController = UINavigationController(rootViewController: OnboardingViewController())
+                window.rootViewController?.dismiss(animated: false, completion: nil)
+                window.rootViewController = nil
+                window.rootViewController = rootViewController
+                window.makeKeyAndVisible()
+            }
         }
     }
 }

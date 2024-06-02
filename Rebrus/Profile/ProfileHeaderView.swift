@@ -2,7 +2,6 @@
 //  ProfileHeaderView.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 17/01/2024.
 //
 
 import UIKit
@@ -16,13 +15,14 @@ class ProfileHeaderView: UIView {
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
         view.layer.cornerRadius = 31
+    
         return view
     }()
     
     private let userFullName: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.text = "Имя Фамилия"
+        label.text = "Имя Фамилия".localized(from: .main)
         label.font = UIFont(name: "Montserrat-Medium", size: 20)
         return label
     }()
@@ -40,6 +40,10 @@ class ProfileHeaderView: UIView {
         backgroundColor = .clear
         
         setupUI()
+    }
+    
+    func setContent(fullName: String?) {
+        userFullName.text = fullName ?? "Имя Фамилия".localized(from: .main)
     }
     
     required init?(coder: NSCoder) {

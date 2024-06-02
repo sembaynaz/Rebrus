@@ -2,20 +2,19 @@
 //  DeleteAccountViewController.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 19/01/2024.
 //
 
 import UIKit
 
 class DeleteAccountViewController: UIViewController {
     
-    private let reasons = ["Нехватка времени", "Неудобно", "Сложности при использовании", "Мало возможностей", "Другое"]
+    private let reasons = ["Нехватка времени".localized(from: .main), "Неудобно".localized(from: .main), "Сложности при использовании".localized(from: .main), "Мало возможностей".localized(from: .main), "Другое".localized(from: .main)]
     
     private var selectedIndex: Int?
     
     private let label: UILabel = {
         let label = UILabel()
-        label.text = "Причина удаления"
+        label.text = "Причина удаления".localized(from: .main)
         label.font = UIFont(name: "Montserrat-Medium", size: 24)
         label.textColor = ColorManager.black
         return label
@@ -34,13 +33,13 @@ class DeleteAccountViewController: UIViewController {
     
     private let deleteButton: ActivatedButton = {
         let button = ActivatedButton()
-        button.setTitle("Удалить аккаунт", for: .normal)
+        button.setTitle("Удалить аккаунт".localized(from: .main), for: .normal)
         return button
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Удалить аккаунт"
+        title = "Удалить аккаунт".localized(from: .main)
         view.backgroundColor = .white
         
         tableView.delegate = self
@@ -53,22 +52,28 @@ class DeleteAccountViewController: UIViewController {
         view.addSubview(label)
         label.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(100)
-            make.leading.trailing.equalToSuperview().inset(30)
+            make.leading.equalToSuperview().inset(33)
         }
         
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.top.equalTo(label.snp.bottom).offset(30)
-            make.leading.trailing.equalToSuperview().inset(30)
+            make.leading.trailing.equalToSuperview().inset(33)
             make.height.equalTo(250)
         }
         
         view.addSubview(deleteButton)
         deleteButton.snp.makeConstraints { make in
             make.height.equalTo(50)
-            make.leading.trailing.equalToSuperview().inset(30)
+            make.leading.trailing.equalToSuperview().inset(33)
             make.bottom.equalToSuperview().inset(150)
         }
+        deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func deleteButtonTapped() {
+        let vc = DeleteHalfScreenViewController()
+        present(vc, animated: true)
     }
 }
 //MARK: - UITableViewDelegate, UITableViewDataSource
@@ -80,7 +85,7 @@ extension DeleteAccountViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DeleteAccountTableViewCell.identifier, for: indexPath) as! DeleteAccountTableViewCell
         cell.selectionStyle = .none
-        cell.setContent(with: reasons[indexPath.row], isLast: indexPath.row == reasons.count-1)
+        cell.setContent(with: reasons[indexPath.row])
         cell.setSelected(isSelected: selectedIndex == indexPath.row)
         return cell
     }

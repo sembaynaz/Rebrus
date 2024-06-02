@@ -1,14 +1,15 @@
-//
-//  LoginViewController.swift
-//  Rebrus
-//
-//  Created by Nazerke Sembay on 17.01.2024.
-//
+    //
+    //  LoginViewController.swift
+    //  Rebrus
+    //
+    //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class LoginViewController: UIViewController {
-
+    
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "Logo")
@@ -17,15 +18,15 @@ class LoginViewController: UIViewController {
     
     private let emailTextField: TextField = {
         let textfield = TextField()
-        textfield.setPlaceholderText("Адрес электронной почты")
-        textfield.placeholder = "Введите email"
+        textfield.setPlaceholderText("Адрес электронной почты".localized(from: .onboard))
+        textfield.placeholder = "Введите e-mail".localized(from: .auth)
         return textfield
     }()
     
     private let passwordTextField: TextField = {
         let textfield = TextField()
-        textfield.setPlaceholderText("Пароль")
-        textfield.placeholder = "Введите пароль"
+        textfield.setPlaceholderText("Пароль".localized(from: .onboard))
+        textfield.placeholder = "Введите пароль".localized(from: .onboard)
         textfield.setPasswordTextField(true)
         return textfield
     }()
@@ -33,7 +34,7 @@ class LoginViewController: UIViewController {
     private let loginButton: Button = {
         let button = Button()
         button.setActive(ColorManager.blue ?? .blue, .white)
-        button.setTitle("Войти в систему", for: .normal)
+        button.setTitle("Войти в систему".localized(from: .onboard), for: .normal)
         return button
     }()
     
@@ -48,7 +49,7 @@ class LoginViewController: UIViewController {
     private let forgotPasswordButton: UIButton = {
         let button = UIButton()
         button.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 14)
-        button.setTitle("Забыли пароль?", for: .normal)
+        button.setTitle("Забыли пароль?".localized(from: .auth), for: .normal)
         button.setTitleColor(ColorManager.black, for: .normal)
         return button
     }()
@@ -56,7 +57,7 @@ class LoginViewController: UIViewController {
     private let newUserLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 14)
-        label.text = "Новый пользователь?"
+        label.text = "Новый пользователь?".localized(from: .auth)
         label.textColor = ColorManager.black
         return label
     }()
@@ -64,7 +65,7 @@ class LoginViewController: UIViewController {
     private let signupButton: UIButton = {
         let button = UIButton()
         button.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 14)
-        button.setTitle("Создать аккаунт", for: .normal)
+        button.setTitle("Создать аккаунт".localized(from: .auth), for: .normal)
         button.setTitleColor(ColorManager.blue, for: .normal)
         return button
     }()
@@ -73,8 +74,15 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupConstraints()
+        navigationController?.customize()
+        hideKeyboardWhenTappedAround()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.hidesBackButton = true
+    }
+    
 }
 
 extension LoginViewController {
@@ -131,7 +139,7 @@ extension LoginViewController {
         let errorLabel: UILabel = {
             let label = UILabel()
             label.font = UIFont(name: "Montserrat-Regular", size: 10)
-            label.text = "Неверный пароль. Пожалуйста, проверьте пароль."
+            label.text = "Неверный пароль. Пожалуйста, проверьте пароль.".localized(from: .auth)
             label.textColor = ColorManager.red
             return label
         }()
@@ -147,7 +155,7 @@ extension LoginViewController {
     private func setLoginButton() {
         view.addSubview(loginButton)
         
-//        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         
         loginButton.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(33)
@@ -159,12 +167,24 @@ extension LoginViewController {
     private func setForgotPasswordButton() {
         view.addSubview(forgotPasswordButton)
         
+        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
+        
         forgotPasswordButton.snp.makeConstraints { make in
             make.centerX.equalTo(view.snp.centerX)
             make.top.equalTo(loginButton.snp.bottom).offset(27)
             make.height.equalTo(14)
-            make.width.equalTo(124)
+            make.width.equalTo(200)
         }
+    }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     private func setCreateNewUser() {
@@ -198,5 +218,58 @@ extension LoginViewController {
         let vc = UINavigationController(rootViewController: SignupViewController())
         vc.modalPresentationStyle = .fullScreen
         show(vc, sender: self)
+    }
+    
+    @objc func loginButtonTapped() {
+        let email = emailTextField.text!
+        let password = passwordTextField.text!
+        
+        let parameters: [String: Any] = [
+            "email": email,
+            "password": password
+        ]
+        
+        AF.request(Configuration.SIGN_IN_URL, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseData { [weak self] response in
+            guard let self = self else {return}
+            
+            var resultString = ""
+            
+            if let data = response.data{
+                resultString = String(data: data, encoding: .utf8)!
+            }
+            
+            print(response.response?.statusCode)
+            
+            if response.response?.statusCode == 200 || response.response?.statusCode == 201 || response.response?.statusCode == 202 {
+                let json = JSON(response.data!)
+                
+                if let number = json["access_token"].string {
+                    UserDefaults.standard.setValue(number, forKey: "accessToken")
+                    let vc = TabBarController()
+                    vc.modalPresentationStyle = .fullScreen
+                    present(vc, animated: true)
+                }
+            } else {
+                var ErrorString = "CONNECTION_ERROR"
+                if let sCode = response.response?.statusCode {
+                    switch sCode {
+                    case 401:
+                        ErrorString += "Unauthorized"
+                    case 403:
+                        ErrorString += "Forbidden"
+                    case 404:
+                        ErrorString += "Not found"
+                    default:
+                        ErrorString += "Қате формат"
+                    }
+                }
+                ErrorString += " \(resultString)"
+            }
+        }
+    }
+    
+    @objc func forgotPasswordButtonTapped() {
+        let vc = ForgotPasswordViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

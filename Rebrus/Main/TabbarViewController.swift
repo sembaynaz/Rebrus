@@ -2,7 +2,6 @@
 //  TabbarViewController.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 18/01/2024.
 //
 
 import UIKit
@@ -20,14 +19,14 @@ class TabBarController: UITabBarController {
         let mainNavigationController = UINavigationController(rootViewController: createViewController(
             vc: MainViewController(),
             title: "",
-            tabBarTitle: "Главная",
+            tabBarTitle: "Главная".localized(from: .main),
             image: UIImage(named: "homeIcon"),
             tag: 0))
         
         let profileNavigationController = UINavigationController(rootViewController: createViewController(
             vc: ProfileViewController(),
             title: "",
-            tabBarTitle: "Профиль",
+            tabBarTitle: "Профиль".localized(from: .main),
             image: UIImage(named: "profileIcon"), tag: 1)
         )
         
@@ -44,11 +43,20 @@ class TabBarController: UITabBarController {
         return vc
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setStrings()
+        NotificationCenter.default.addObserver(self, selector: #selector(setStrings), name: Notification.Name("localize"), object: nil)
+    }
+    
+    @objc func setStrings() {
+        tabBar.items?[0].title = "Главная".localized(from: .main)
+        tabBar.items?[1].title = "Профиль".localized(from: .main)
+    }
+    
     func createNavigationControllers(navigations: [UINavigationController]) {
         for nv in navigations {
-            nv.navigationBar.titleTextAttributes = standardAttributes
-            nv.navigationBar.tintColor = ColorManager.blue
-            nv.navigationBar.prefersLargeTitles = false
+            nv.customize()
         }
     }
     

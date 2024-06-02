@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F4C4AF72C034B77002356B6 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4C4AF62C034B77002356B6 /* AlertView.swift */; };
+		6F4C4AF92C034B9C002356B6 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4C4AF82C034B9C002356B6 /* AlertViewController.swift */; };
 		6FA83B922B5A6317008957BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83B912B5A6317008957BE /* AppDelegate.swift */; };
 		6FA83B942B5A6317008957BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83B932B5A6317008957BE /* SceneDelegate.swift */; };
 		6FA83B962B5A6317008957BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83B952B5A6317008957BE /* ViewController.swift */; };
@@ -14,7 +16,6 @@
 		6FA83B9E2B5A631A008957BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FA83B9C2B5A631A008957BE /* LaunchScreen.storyboard */; };
 		6FA83BA92B5A637C008957BE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BA62B5A637C008957BE /* SignupViewController.swift */; };
 		6FA83BAA2B5A637C008957BE /* RoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BA72B5A637C008957BE /* RoleViewController.swift */; };
-		6FA83BAB2B5A637C008957BE /* TwoTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BA82B5A637C008957BE /* TwoTextButton.swift */; };
 		6FA83BBE2B5A6388008957BE /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BAD2B5A6388008957BE /* StartViewController.swift */; };
 		6FA83BBF2B5A6388008957BE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BAE2B5A6388008957BE /* OnboardingViewController.swift */; };
 		6FA83BC02B5A6388008957BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83BB02B5A6388008957BE /* LoginViewController.swift */; };
@@ -36,14 +37,41 @@
 		6FA83BDC2B5A6394008957BE /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FA83BD32B5A6394008957BE /* Montserrat-Regular.ttf */; };
 		6FA83BDD2B5A6394008957BE /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FA83BD42B5A6394008957BE /* Roboto-Bold.ttf */; };
 		6FA83BE02B5A648E008957BE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA83BDF2B5A648E008957BE /* SnapKit */; };
+		6FA83CA42B5AA3FD008957BE /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83CA22B5AA3FD008957BE /* ChangePasswordViewController.swift */; };
+		6FA83CA52B5AA3FD008957BE /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83CA32B5AA3FD008957BE /* ForgotPasswordViewController.swift */; };
+		6FA83CAA2B5AA457008957BE /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83CA72B5AA457008957BE /* OTPViewController.swift */; };
+		6FA83CAB2B5AA457008957BE /* knOTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83CA82B5AA457008957BE /* knOTPView.swift */; };
+		6FA83CAC2B5AA457008957BE /* knConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA83CA92B5AA457008957BE /* knConstraints.swift */; };
+		B1083A5D2BF8A8DD004B1B67 /* Onboarding.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B1083A5C2BF8A8DD004B1B67 /* Onboarding.xcstrings */; };
+		B1083A622BF8ADE5004B1B67 /* SignIn.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B1083A612BF8ADE5004B1B67 /* SignIn.xcstrings */; };
+		B1083A642BF8AF54004B1B67 /* Main.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B1083A632BF8AF54004B1B67 /* Main.xcstrings */; };
+		B1083A662BFA422E004B1B67 /* localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1083A652BFA422E004B1B67 /* localized.swift */; };
+		B1083A682BFA4275004B1B67 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1083A672BFA4275004B1B67 /* Defaults.swift */; };
+		B1083A6A2BFB8944004B1B67 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1083A692BFB8944004B1B67 /* OnboardingCollectionViewCell.swift */; };
+		B1083A712BFCD4C6004B1B67 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1083A702BFCD4C6004B1B67 /* User.swift */; };
 		B15C6D0A2B5A680200E8F895 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6D092B5A680200E8F895 /* Extensions.swift */; };
 		B15C6D0C2B5A681D00E8F895 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6D0B2B5A681D00E8F895 /* Delegates.swift */; };
 		B15C6D0F2B5A769B00E8F895 /* DeleteAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6D0E2B5A769B00E8F895 /* DeleteAccountViewController.swift */; };
 		B15C6D112B5A826400E8F895 /* DeleteAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6D102B5A826400E8F895 /* DeleteAccountTableViewCell.swift */; };
 		B15C6D132B5A87DA00E8F895 /* ActivatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C6D122B5A87DA00E8F895 /* ActivatedButton.swift */; };
+		B15D9FA82BEBB0390011BCE2 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D9FA72BEBB0390011BCE2 /* Patient.swift */; };
+		B15D9FAB2BEBC8620011BCE2 /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D9FAA2BEBC8620011BCE2 /* Configurations.swift */; };
+		B15D9FAE2BEBC9590011BCE2 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = B15D9FAD2BEBC9590011BCE2 /* SwiftyJSON */; };
+		B15D9FB12BEBCA730011BCE2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B15D9FB02BEBCA730011BCE2 /* Alamofire */; };
+		B15D9FB52BEBFECB0011BCE2 /* DeleteHalfScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15D9FB42BEBFECB0011BCE2 /* DeleteHalfScreenViewController.swift */; };
+		B16826AA2BB1EABB00711C7C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16826A92BB1EABB00711C7C /* EditProfileViewController.swift */; };
+		B16826AC2BB1F07100711C7C /* EditProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16826AB2BB1F07100711C7C /* EditProfileHeaderView.swift */; };
+		B16826AE2BB1F42600711C7C /* UserDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16826AD2BB1F42600711C7C /* UserDataTableViewCell.swift */; };
+		B1F28FDE2BEB7858006AFAAC /* PatientPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F28FDD2BEB7858006AFAAC /* PatientPreviewTableViewCell.swift */; };
+		B1F28FE12BEB880A006AFAAC /* PatientDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F28FE02BEB880A006AFAAC /* PatientDetailsViewController.swift */; };
+		B1F28FE32BEB88FB006AFAAC /* PatientResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F28FE22BEB88FB006AFAAC /* PatientResultCollectionViewCell.swift */; };
+		B1F28FE52BEB954D006AFAAC /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1F28FE42BEB954D006AFAAC /* Montserrat-SemiBold.ttf */; };
+		B1F28FE72BEBAB37006AFAAC /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1F28FE62BEBAB36006AFAAC /* Inter-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F4C4AF62C034B77002356B6 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		6F4C4AF82C034B9C002356B6 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		6FA83B8E2B5A6317008957BE /* Rebrus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rebrus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA83B912B5A6317008957BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FA83B932B5A6317008957BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +81,6 @@
 		6FA83B9F2B5A631A008957BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FA83BA62B5A637C008957BE /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		6FA83BA72B5A637C008957BE /* RoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleViewController.swift; sourceTree = "<group>"; };
-		6FA83BA82B5A637C008957BE /* TwoTextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoTextButton.swift; sourceTree = "<group>"; };
 		6FA83BAD2B5A6388008957BE /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		6FA83BAE2B5A6388008957BE /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		6FA83BB02B5A6388008957BE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -74,11 +101,36 @@
 		6FA83BD22B5A6394008957BE /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		6FA83BD32B5A6394008957BE /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		6FA83BD42B5A6394008957BE /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		6FA83CA22B5AA3FD008957BE /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		6FA83CA32B5AA3FD008957BE /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		6FA83CA72B5AA457008957BE /* OTPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		6FA83CA82B5AA457008957BE /* knOTPView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knOTPView.swift; sourceTree = "<group>"; };
+		6FA83CA92B5AA457008957BE /* knConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = knConstraints.swift; sourceTree = "<group>"; };
+		B1083A5C2BF8A8DD004B1B67 /* Onboarding.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Onboarding.xcstrings; sourceTree = "<group>"; };
+		B1083A5E2BF8A9DA004B1B67 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B1083A5F2BF8AA03004B1B67 /* kk-KZ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "kk-KZ"; path = "kk-KZ.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		B1083A612BF8ADE5004B1B67 /* SignIn.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = SignIn.xcstrings; sourceTree = "<group>"; };
+		B1083A632BF8AF54004B1B67 /* Main.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Main.xcstrings; sourceTree = "<group>"; };
+		B1083A652BFA422E004B1B67 /* localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = localized.swift; sourceTree = "<group>"; };
+		B1083A672BFA4275004B1B67 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		B1083A692BFB8944004B1B67 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		B1083A702BFCD4C6004B1B67 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B15C6D092B5A680200E8F895 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B15C6D0B2B5A681D00E8F895 /* Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 		B15C6D0E2B5A769B00E8F895 /* DeleteAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountViewController.swift; sourceTree = "<group>"; };
 		B15C6D102B5A826400E8F895 /* DeleteAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountTableViewCell.swift; sourceTree = "<group>"; };
 		B15C6D122B5A87DA00E8F895 /* ActivatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivatedButton.swift; sourceTree = "<group>"; };
+		B15D9FA72BEBB0390011BCE2 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		B15D9FAA2BEBC8620011BCE2 /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
+		B15D9FB42BEBFECB0011BCE2 /* DeleteHalfScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteHalfScreenViewController.swift; sourceTree = "<group>"; };
+		B16826A92BB1EABB00711C7C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		B16826AB2BB1F07100711C7C /* EditProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileHeaderView.swift; sourceTree = "<group>"; };
+		B16826AD2BB1F42600711C7C /* UserDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataTableViewCell.swift; sourceTree = "<group>"; };
+		B1F28FDD2BEB7858006AFAAC /* PatientPreviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientPreviewTableViewCell.swift; sourceTree = "<group>"; };
+		B1F28FE02BEB880A006AFAAC /* PatientDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailsViewController.swift; sourceTree = "<group>"; };
+		B1F28FE22BEB88FB006AFAAC /* PatientResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientResultCollectionViewCell.swift; sourceTree = "<group>"; };
+		B1F28FE42BEB954D006AFAAC /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		B1F28FE62BEBAB36006AFAAC /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +138,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B15D9FB12BEBCA730011BCE2 /* Alamofire in Frameworks */,
+				B15D9FAE2BEBC9590011BCE2 /* SwiftyJSON in Frameworks */,
 				6FA83BE02B5A648E008957BE /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +147,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F4C4AF52C034B6B002356B6 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				6F4C4AF62C034B77002356B6 /* AlertView.swift */,
+				6F4C4AF82C034B9C002356B6 /* AlertViewController.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		6FA83B852B5A6317008957BE = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +175,9 @@
 		6FA83B902B5A6317008957BE /* Rebrus */ = {
 			isa = PBXGroup;
 			children = (
+				6F4C4AF52C034B6B002356B6 /* Alert */,
+				B1083A602BF8ADC6004B1B67 /* Localizable */,
+				B15D9FA92BEBC8460011BCE2 /* Server */,
 				6FA83BC92B5A6394008957BE /* Components */,
 				6FA83BCF2B5A6394008957BE /* Fonts */,
 				6FA83BCD2B5A6394008957BE /* Helpers */,
@@ -133,9 +199,9 @@
 		6FA83BA52B5A637C008957BE /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				6FA83CA62B5AA457008957BE /* OTP */,
 				6FA83BA62B5A637C008957BE /* SignupViewController.swift */,
 				6FA83BA72B5A637C008957BE /* RoleViewController.swift */,
-				6FA83BA82B5A637C008957BE /* TwoTextButton.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -145,6 +211,7 @@
 			children = (
 				6FA83BAD2B5A6388008957BE /* StartViewController.swift */,
 				6FA83BAE2B5A6388008957BE /* OnboardingViewController.swift */,
+				B1083A692BFB8944004B1B67 /* OnboardingCollectionViewCell.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -152,6 +219,8 @@
 		6FA83BAF2B5A6388008957BE /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				6FA83CA22B5AA3FD008957BE /* ChangePasswordViewController.swift */,
+				6FA83CA32B5AA3FD008957BE /* ForgotPasswordViewController.swift */,
 				6FA83BB02B5A6388008957BE /* LoginViewController.swift */,
 			);
 			path = Login;
@@ -160,8 +229,10 @@
 		6FA83BB12B5A6388008957BE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B1F28FDF2BEB87ED006AFAAC /* Details */,
 				6FA83BB22B5A6388008957BE /* MainViewController.swift */,
 				6FA83BB32B5A6388008957BE /* TabbarViewController.swift */,
+				B1F28FDD2BEB7858006AFAAC /* PatientPreviewTableViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -169,10 +240,12 @@
 		6FA83BB42B5A6388008957BE /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				B16826A82BB1EAA000711C7C /* EditProfile */,
 				6FA83BB52B5A6388008957BE /* Settings */,
 				6FA83BBB2B5A6388008957BE /* ProfileTableViewCell.swift */,
 				6FA83BBC2B5A6388008957BE /* ProfileHeaderView.swift */,
 				6FA83BBD2B5A6388008957BE /* ProfileViewController.swift */,
+				B1083A702BFCD4C6004B1B67 /* User.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -228,6 +301,8 @@
 		6FA83BCF2B5A6394008957BE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				B1F28FE62BEBAB36006AFAAC /* Inter-Regular.ttf */,
+				B1F28FE42BEB954D006AFAAC /* Montserrat-SemiBold.ttf */,
 				6FA83BD02B5A6394008957BE /* Montserrat-Medium.ttf */,
 				6FA83BD12B5A6394008957BE /* Roboto-Regular.ttf */,
 				6FA83BD22B5A6394008957BE /* Montserrat-Bold.ttf */,
@@ -237,13 +312,64 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		6FA83CA62B5AA457008957BE /* OTP */ = {
+			isa = PBXGroup;
+			children = (
+				6FA83CA72B5AA457008957BE /* OTPViewController.swift */,
+				6FA83CA82B5AA457008957BE /* knOTPView.swift */,
+				6FA83CA92B5AA457008957BE /* knConstraints.swift */,
+			);
+			path = OTP;
+			sourceTree = "<group>";
+		};
+		B1083A602BF8ADC6004B1B67 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				B1083A5C2BF8A8DD004B1B67 /* Onboarding.xcstrings */,
+				B1083A612BF8ADE5004B1B67 /* SignIn.xcstrings */,
+				B1083A632BF8AF54004B1B67 /* Main.xcstrings */,
+				B1083A652BFA422E004B1B67 /* localized.swift */,
+				B1083A672BFA4275004B1B67 /* Defaults.swift */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
 		B15C6D0D2B5A767600E8F895 /* DeleteteAccount */ = {
 			isa = PBXGroup;
 			children = (
 				B15C6D0E2B5A769B00E8F895 /* DeleteAccountViewController.swift */,
 				B15C6D102B5A826400E8F895 /* DeleteAccountTableViewCell.swift */,
+				B15D9FB42BEBFECB0011BCE2 /* DeleteHalfScreenViewController.swift */,
 			);
 			path = DeleteteAccount;
+			sourceTree = "<group>";
+		};
+		B15D9FA92BEBC8460011BCE2 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				B15D9FAA2BEBC8620011BCE2 /* Configurations.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		B16826A82BB1EAA000711C7C /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				B16826A92BB1EABB00711C7C /* EditProfileViewController.swift */,
+				B16826AB2BB1F07100711C7C /* EditProfileHeaderView.swift */,
+				B16826AD2BB1F42600711C7C /* UserDataTableViewCell.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		B1F28FDF2BEB87ED006AFAAC /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				B1F28FE02BEB880A006AFAAC /* PatientDetailsViewController.swift */,
+				B1F28FE22BEB88FB006AFAAC /* PatientResultCollectionViewCell.swift */,
+				B15D9FA72BEBB0390011BCE2 /* Patient.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +390,8 @@
 			name = Rebrus;
 			packageProductDependencies = (
 				6FA83BDF2B5A648E008957BE /* SnapKit */,
+				B15D9FAD2BEBC9590011BCE2 /* SwiftyJSON */,
+				B15D9FB02BEBCA730011BCE2 /* Alamofire */,
 			);
 			productName = Rebrus;
 			productReference = 6FA83B8E2B5A6317008957BE /* Rebrus.app */;
@@ -286,15 +414,19 @@
 			};
 			buildConfigurationList = 6FA83B892B5A6317008957BE /* Build configuration list for PBXProject "Rebrus" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				"kk-KZ",
 			);
 			mainGroup = 6FA83B852B5A6317008957BE;
 			packageReferences = (
 				6FA83BDE2B5A648E008957BE /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B15D9FAC2BEBC9590011BCE2 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				B15D9FAF2BEBCA730011BCE2 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 6FA83B8F2B5A6317008957BE /* Products */;
 			projectDirPath = "";
@@ -311,12 +443,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FA83B9E2B5A631A008957BE /* LaunchScreen.storyboard in Resources */,
+				B1F28FE72BEBAB37006AFAAC /* Inter-Regular.ttf in Resources */,
 				6FA83B9B2B5A631A008957BE /* Assets.xcassets in Resources */,
 				6FA83BDC2B5A6394008957BE /* Montserrat-Regular.ttf in Resources */,
 				6FA83BDB2B5A6394008957BE /* Montserrat-Bold.ttf in Resources */,
 				6FA83BDA2B5A6394008957BE /* Roboto-Regular.ttf in Resources */,
+				B1083A5D2BF8A8DD004B1B67 /* Onboarding.xcstrings in Resources */,
 				6FA83BD92B5A6394008957BE /* Montserrat-Medium.ttf in Resources */,
+				B1F28FE52BEB954D006AFAAC /* Montserrat-SemiBold.ttf in Resources */,
 				6FA83BDD2B5A6394008957BE /* Roboto-Bold.ttf in Resources */,
+				B1083A642BF8AF54004B1B67 /* Main.xcstrings in Resources */,
+				B1083A622BF8ADE5004B1B67 /* SignIn.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,30 +466,49 @@
 			files = (
 				B15C6D112B5A826400E8F895 /* DeleteAccountTableViewCell.swift in Sources */,
 				6FA83BD82B5A6394008957BE /* ColorManager.swift in Sources */,
+				B15D9FAB2BEBC8620011BCE2 /* Configurations.swift in Sources */,
 				B15C6D0C2B5A681D00E8F895 /* Delegates.swift in Sources */,
 				6FA83BC42B5A6388008957BE /* ConditionsViewController.swift in Sources */,
+				B1083A6A2BFB8944004B1B67 /* OnboardingCollectionViewCell.swift in Sources */,
+				B16826AA2BB1EABB00711C7C /* EditProfileViewController.swift in Sources */,
+				B15D9FB52BEBFECB0011BCE2 /* DeleteHalfScreenViewController.swift in Sources */,
 				6FA83BC02B5A6388008957BE /* LoginViewController.swift in Sources */,
+				B1F28FDE2BEB7858006AFAAC /* PatientPreviewTableViewCell.swift in Sources */,
+				B1083A662BFA422E004B1B67 /* localized.swift in Sources */,
+				B1F28FE32BEB88FB006AFAAC /* PatientResultCollectionViewCell.swift in Sources */,
+				6FA83CAC2B5AA457008957BE /* knConstraints.swift in Sources */,
+				6F4C4AF92C034B9C002356B6 /* AlertViewController.swift in Sources */,
 				B15C6D132B5A87DA00E8F895 /* ActivatedButton.swift in Sources */,
+				6FA83CAB2B5AA457008957BE /* knOTPView.swift in Sources */,
 				6FA83BAA2B5A637C008957BE /* RoleViewController.swift in Sources */,
 				6FA83BC62B5A6388008957BE /* ProfileTableViewCell.swift in Sources */,
+				B1083A682BFA4275004B1B67 /* Defaults.swift in Sources */,
+				6FA83CA52B5AA3FD008957BE /* ForgotPasswordViewController.swift in Sources */,
 				6FA83BC32B5A6388008957BE /* LanguageViewController.swift in Sources */,
 				6FA83BC22B5A6388008957BE /* TabbarViewController.swift in Sources */,
 				6FA83BBE2B5A6388008957BE /* StartViewController.swift in Sources */,
+				6FA83CAA2B5AA457008957BE /* OTPViewController.swift in Sources */,
 				6FA83BC82B5A6388008957BE /* ProfileViewController.swift in Sources */,
+				B16826AC2BB1F07100711C7C /* EditProfileHeaderView.swift in Sources */,
+				6F4C4AF72C034B77002356B6 /* AlertView.swift in Sources */,
+				6FA83CA42B5AA3FD008957BE /* ChangePasswordViewController.swift in Sources */,
 				B15C6D0A2B5A680200E8F895 /* Extensions.swift in Sources */,
 				6FA83BC72B5A6388008957BE /* ProfileHeaderView.swift in Sources */,
+				B15D9FA82BEBB0390011BCE2 /* Patient.swift in Sources */,
 				6FA83BD52B5A6394008957BE /* RoundOptionButton.swift in Sources */,
-				6FA83BAB2B5A637C008957BE /* TwoTextButton.swift in Sources */,
+				B16826AE2BB1F42600711C7C /* UserDataTableViewCell.swift in Sources */,
 				6FA83BD62B5A6394008957BE /* TextField.swift in Sources */,
 				6FA83BBF2B5A6388008957BE /* OnboardingViewController.swift in Sources */,
 				6FA83B962B5A6317008957BE /* ViewController.swift in Sources */,
 				B15C6D0F2B5A769B00E8F895 /* DeleteAccountViewController.swift in Sources */,
+				B1F28FE12BEB880A006AFAAC /* PatientDetailsViewController.swift in Sources */,
 				6FA83BC52B5A6388008957BE /* SettingsViewController.swift in Sources */,
 				6FA83BD72B5A6394008957BE /* Button.swift in Sources */,
 				6FA83B922B5A6317008957BE /* AppDelegate.swift in Sources */,
 				6FA83BA92B5A637C008957BE /* SignupViewController.swift in Sources */,
 				6FA83B942B5A6317008957BE /* SceneDelegate.swift in Sources */,
 				6FA83BC12B5A6388008957BE /* MainViewController.swift in Sources */,
+				B1083A712BFCD4C6004B1B67 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +519,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6FA83B9D2B5A631A008957BE /* Base */,
+				B1083A5E2BF8A9DA004B1B67 /* ru */,
+				B1083A5F2BF8AA03004B1B67 /* kk-KZ */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -374,6 +532,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -434,6 +593,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -574,6 +734,22 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		B15D9FAC2BEBC9590011BCE2 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+		B15D9FAF2BEBCA730011BCE2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -581,6 +757,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6FA83BDE2B5A648E008957BE /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		B15D9FAD2BEBC9590011BCE2 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B15D9FAC2BEBC9590011BCE2 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		B15D9FB02BEBCA730011BCE2 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B15D9FAF2BEBCA730011BCE2 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

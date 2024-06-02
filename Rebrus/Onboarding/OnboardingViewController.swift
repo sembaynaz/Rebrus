@@ -2,17 +2,16 @@
 //  OnboardingViewController.swift
 //  Rebrus
 //
-//  Created by Nazerke Sembay on 17.01.2024.
 //
 
 import UIKit
 import SnapKit
 
 class OnboardingViewController: UIViewController {
-    private var slides: [String] = [
-        "Попрощайтесь 👋 с бумажной работой",
-        "Система сама проанализирует ",
-        "Удобный доступ к заметкам в любом месте"
+    private let dataSource: [Onboarding] = [
+        Onboarding(text: "Попрощайтесь 👋 с бумажной работой".localized(from: .onboard), imageName: "onboard1"),
+        Onboarding(text: "Система сама проанализирует ".localized(from: .onboard), imageName: "onboard2"),
+        Onboarding(text: "Удобный доступ к заметкам в любом месте".localized(from: .onboard), imageName: "onboard3")
     ]
     
     private lazy var currentPage = 0 {
@@ -32,8 +31,8 @@ class OnboardingViewController: UIViewController {
             collectionViewLayout: layout
         )
         collectionView.register(
-            UICollectionViewCell.self,
-            forCellWithReuseIdentifier: "Cell"
+            OnboardingCollectionViewCell.self,
+            forCellWithReuseIdentifier: OnboardingCollectionViewCell.identifier
         )
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.contentInset.left = 0
@@ -57,14 +56,14 @@ class OnboardingViewController: UIViewController {
     private let startButton: Button = {
         let button = Button()
         button.setActive(.white, ColorManager.blue ?? .blue)
-        button.setTitle("Приступить", for: .normal)
+        button.setTitle("Приступить".localized(from: .onboard), for: .normal)
         return button
     }()
     
     private let loginButton: Button = {
         let button = Button()
         button.setActive(ColorManager.blue ?? .blue, .white)
-        button.setTitle("Войти в систему", for: .normal)
+        button.setTitle("Войти в систему".localized(from: .onboard), for: .normal)
         return button
     }()
     
@@ -93,7 +92,7 @@ extension OnboardingViewController {
         collectionView.snp.makeConstraints { make in
             make.bottom.equalTo(pageControll.snp.top).offset(-30)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(150)
+            make.height.equalTo(453)
             make.width.equalTo(UIScreen.main.bounds.width)
             make.centerX.equalTo(view.snp.centerX)
         }
@@ -137,33 +136,13 @@ extension OnboardingViewController {
 extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return slides.count
+        return dataSource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnboardingCollectionViewCell.identifier, for: indexPath) as! OnboardingCollectionViewCell
         
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: "Cell",
-            for: indexPath)
-        
-        let label: UILabel = {
-            let label = UILabel()
-            label.font = UIFont(name: "Montserrat-Bold", size: 35)
-            label.textColor = .white
-            label.numberOfLines = 0
-            label.textAlignment = .center
-            return label
-        }()
-        
-        cell.addSubview(label)
-        
-        label.text = slides[indexPath.row]
-        
-        label.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(10)
-            make.top.equalToSuperview()
-        }
-        
+        cell.setCell(with: dataSource[indexPath.row])
         return cell
     }
     
@@ -191,8 +170,14 @@ extension OnboardingViewController {
     }
 
     @objc func startButtonTapped() {
-        let vc = StartViewController()
-        vc.modalPresentationStyle = .fullScreen
-        show(vc, sender: self)
+        if pageControll.currentPage < dataSource.count - 1 {
+            pageControll.currentPage += 1
+            let indexPath = IndexPath(item: pageControll.currentPage, section: 0)
+            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        } else {
+            let vc = StartViewController()
+            vc.modalPresentationStyle = .fullScreen
+            show(vc, sender: self)
+        }
     }
 }

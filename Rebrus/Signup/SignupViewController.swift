@@ -1,12 +1,13 @@
-//
-//  SignupViewController.swift
-//  Rebrus
-//
-//  Created by Nazerke Sembay on 19.01.2024.
-//
+    //
+    //  SignupViewController.swift
+    //  Rebrus
+    //
+    //  Created by Nazerke Sembay on 19.01.2024.
+    //
 
 import UIKit
-
+import Alamofire
+import SwiftyJSON
 class SignupViewController: UIViewController {
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -16,14 +17,14 @@ class SignupViewController: UIViewController {
     
     private let emailTextField: TextField = {
         let textfield = TextField()
-        textfield.setPlaceholderText("Адрес электронной почты")
-        textfield.placeholder = "Введите email"
+        textfield.setPlaceholderText("Адрес электронной почты".localized(from: .onboard))
+        textfield.placeholder = "Введите e-mail".localized(from: .auth)
         return textfield
     }()
     
     private let codeTextField: TextField = {
         let textfield = TextField()
-        textfield.setPlaceholderText("Номер телефона")
+        textfield.setPlaceholderText("Номер телефона".localized(from: .onboard))
         textfield.setTextToTextField("KZ +7")
         textfield.allowsEditingTextAttributes = false
         return textfield
@@ -31,31 +32,31 @@ class SignupViewController: UIViewController {
     
     private let numberTextField: TextField = {
         let textfield = TextField()
-        textfield.placeholder = "Введите номер телефона"
+        textfield.placeholder = "Введите номер телефона".localized(from: .onboard)
         textfield.setPlaceholderText("")
         return textfield
     }()
     
     private let passwordTextField1: TextField = {
         let textfield = TextField()
-        textfield.setPlaceholderText("Пароль")
-        textfield.placeholder = "Введите пароль"
+        textfield.setPlaceholderText("Пароль".localized(from: .onboard))
+        textfield.placeholder = "Введите новый пароль".localized(from: .onboard)
         textfield.setPasswordTextField(true)
         return textfield
     }()
     
     private let passwordTextField2: TextField = {
         let textfield = TextField()
-        textfield.setPlaceholderText("Пароль")
-        textfield.placeholder = "Подтвердите пароль"
+        textfield.setPlaceholderText("Подтвердите пароль".localized(from: .onboard))
+        textfield.placeholder = "Введите пароль повторно".localized(from: .onboard)
         textfield.setPasswordTextField(true)
         return textfield
     }()
     
-    private let loginButton: Button = {
+    private let signupButton: Button = {
         let button = Button()
         button.setActive(ColorManager.blue ?? .blue, .white)
-        button.setTitle("Продолжить", for: .normal)
+        button.setTitle("Продолжить".localized(from: .onboard), for: .normal)
         return button
     }()
     
@@ -69,15 +70,15 @@ class SignupViewController: UIViewController {
     private let newUserLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 14)
-        label.text = "Уже есть аккаунт?"
+        label.text = "Уже зарегистрировались?".localized(from: .onboard)
         label.textColor = ColorManager.black
         return label
     }()
     
-    private let signupButton: UIButton = {
+    private let loginButton: UIButton = {
         let button = UIButton()
         button.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 14)
-        button.setTitle("Войти в аккаунт", for: .normal)
+        button.setTitle("Войти в аккаунт".localized(from: .onboard), for: .normal)
         button.setTitleColor(ColorManager.blue, for: .normal)
         return button
     }()
@@ -85,7 +86,7 @@ class SignupViewController: UIViewController {
     let criterionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 12)
-        label.text = "должно содержать 8 символов."
+        label.text = "должно содержать 8 символов.".localized(from: .auth)
         label.textColor = UIColor(red: 154/255, green: 154/255, blue: 154/255, alpha: 1)
         return label
     }()
@@ -94,6 +95,18 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupConstraints()
+        navigationController?.customize()
+        hideKeyboardWhenTappedAround()
+    }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 
@@ -162,14 +175,14 @@ extension SignupViewController {
         }
     }
     private func setLoginButton() {
-        view.addSubview(loginButton)
+        view.addSubview(signupButton)
         
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
         
-        loginButton.snp.makeConstraints { make in
+        signupButton.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(33)
             make.height.equalTo(52)
-            make.top.equalTo(passwordTextField2.snp.bottom).offset(80)
+            make.bottom.equalTo(view.snp.bottom).offset(-150)
         }
     }
     private func setCreateNewUser() {
@@ -183,32 +196,40 @@ extension SignupViewController {
         
         view.addSubview(stackVLabel)
         stackVLabel.snp.makeConstraints { make in
-            make.top.equalTo(loginButton.snp.bottom).offset(23)
+            make.top.equalTo(signupButton.snp.bottom).offset(23)
             make.centerX.equalTo(view.snp.centerX)
         }
         
         stackVLabel.addArrangedSubview(newUserLabel)
-        stackVLabel.addArrangedSubview(signupButton)
+        stackVLabel.addArrangedSubview(loginButton)
         
-        signupButton.snp.makeConstraints { make in
+        loginButton.snp.makeConstraints { make in
             make.height.equalTo(14)
         }
         
-        signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
 }
 
 extension SignupViewController {
-    @objc func signupButtonTapped() {
-        let vc = LoginViewController()
+    @objc private func signupButtonTapped() {
+        if passwordTextField1.text == passwordTextField2.text, let text = passwordTextField1.text {
+            let email = emailTextField.text!
+            let password = text
+            let phoneNumber = numberTextField.text!
+            let vc = RoleViewController(email: email, password: password, phoneNumber: phoneNumber)
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            return
+        }
+                
+    }
+    
+    @objc func loginButtonTapped() {
+        let vc = UINavigationController(rootViewController: LoginViewController())
         vc.modalPresentationStyle = .fullScreen
         
         self.present(vc, animated: true, completion: nil)
     }
     
-    @objc func loginButtonTapped() {
-        let vc = RoleViewController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
-
 }

@@ -2,7 +2,6 @@
 //  ColorManager.swift
 //  Rebrus
 //
-//  Created by Alua Sayabayeva on 16/01/2024.
 //
 
 import UIKit
@@ -15,4 +14,7 @@ struct ColorManager {
     static let darkGrey = UIColor(named: "darkGrey")
     static let borderColor = UIColor(named: "borderColor")
     static let blueTextColor = UIColor(named: "blueTextColor")
+    static let collectionSeparatorColor = UIColor(named: "collectionSeparatorColor")
+    static let greyTextColor = UIColor(named: "greyTextColor")
+    static let subtitleTextColor = UIColor(named: "subtitleTextColor")
 }
