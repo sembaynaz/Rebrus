@@ -62,39 +62,23 @@ class ProfileViewController: UIViewController {
         
         AF.request(Configuration.USER_INFO, method: .get,  encoding: URLEncoding.default, headers: headers)
                     .responseData { response in
-                    var resultString = ""
-                        
-                    if let data = response.data {
-                        resultString = String(data: data, encoding: .utf8)!
-                    }
-                        print(response.data)
-                        let json = JSON(response.data!)
-                        print(json)
-                    switch response.result {
-                    case .success:
-                        if response.response?.statusCode == 200 || response.response?.statusCode == 201 || response.response?.statusCode == 202 {
-                            let json = JSON(response.data!)
-                            print(json)
-                            print("success")
-                        }
-                    case .failure(let error):
-                        print("Error: \(error)")
-                    }
-                }
-            
-        
+            var resultString = ""
+                
+            if let data = response.data {
+                resultString = String(data: data, encoding: .utf8)!
+            }
 
-        
-//        AF.request(Configuration.USER_INFO, method: .get, headers: headers).responseDecodable(of: User.self) { [weak self] response in
-//            guard let self = self else { return }
-//            switch response.result {
-//            case .success(let value):
-//                self.user = value
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-        
+            switch response.result {
+            case .success:
+                if response.response?.statusCode == 200 || response.response?.statusCode == 201 || response.response?.statusCode == 202 {
+                    let json = JSON(response.data!)
+                    print(json)
+                    print("success")
+                }
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
     }
     
     @objc private func setStrings() {

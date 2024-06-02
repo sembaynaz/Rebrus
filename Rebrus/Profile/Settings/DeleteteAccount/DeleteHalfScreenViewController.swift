@@ -5,6 +5,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class DeleteHalfScreenViewController: UIViewController {
     
@@ -106,23 +108,48 @@ extension DeleteHalfScreenViewController {
     }
     
     @objc private func deleteBtnTapped() {
-        UserDefaults.standard.removeObject(forKey: "accessToken")
         
-        guard let window = UIApplication.shared.keyWindow else {
-            return
-        }
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(Storage.sharedInstance.accessToken)"
+        ]
         
-        let launchController = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
-        launchController?.modalPresentationStyle = .fullScreen
-        self.present(launchController!, animated: false)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            launchController!.dismiss(animated: false) {
-                let rootViewController = UINavigationController(rootViewController: OnboardingViewController())
-                window.rootViewController?.dismiss(animated: false, completion: nil)
-                window.rootViewController = nil
-                window.rootViewController = rootViewController
-                window.makeKeyAndVisible()
+        AF.request(Configuration.DELETE_ACCOUNT, method: .post,  encoding: JSONEncoding.default, headers: headers)
+            .responseData { response in
+            var resultString = ""
+            
+            if let data = response.data {
+                resultString = String(data: data, encoding: .utf8)!
+            }
+            print(response.data)
+            let json = JSON(response.data!)
+            print(json)
+            switch response.result {
+            case .success:
+                if response.response?.statusCode == 200 || response.response?.statusCode == 201 || response.response?.statusCode == 202 {
+                    let json = JSON(response.data!)
+                    UserDefaults.standard.removeObject(forKey: "accessToken")
+                    
+                    guard let window = UIApplication.shared.keyWindow else {
+                        return
+                    }
+                    
+                    let launchController = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
+                    launchController?.modalPresentationStyle = .fullScreen
+                    self.present(launchController!, animated: false)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        launchController!.dismiss(animated: false) {
+                            let rootViewController = UINavigationController(rootViewController: OnboardingViewController())
+                            window.rootViewController?.dismiss(animated: false, completion: nil)
+                            window.rootViewController = nil
+                            window.rootViewController = rootViewController
+                            window.makeKeyAndVisible()
+                        }
+                    }
+                    print("success")
+                }
+            case .failure(let error):
+                print("Error: \(error)")
             }
         }
     }

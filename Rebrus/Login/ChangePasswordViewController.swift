@@ -5,9 +5,12 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class ChangePasswordViewController: UIViewController {
     var isChangePassword = false
+    var token: String
     
     private let passwordTextField1: TextField = {
         let textfield = TextField()
@@ -47,11 +50,32 @@ class ChangePasswordViewController: UIViewController {
         return button
     }()
     
+    init(token: String) {
+        self.token = token
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         title = "Сбросить пароль".localized(from: .auth)
         setupConstraints()
+        hideKeyboardWhenTappedAround()
+    }
+    
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 
 }
@@ -114,9 +138,45 @@ extension ChangePasswordViewController {
 
 extension ChangePasswordViewController {
     @objc func changeButtonTapped() {
-        if let navigationController = self.navigationController {
-            navigationController.popToRootViewController(animated: true)
-        }
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(token)"
+        ]
+        
+        print(token, "token")
+        
+            //        var password = ""
+        
+            //        if passwordTextField1.text! == passwordTextField2.text! {
+            //            password = passwordTextField1.text!
+            //        } else {
+            //            print("not match")
+            //            return
+            //        }
+        
+        
+        let parameters = ["password": passwordTextField1.text!]
+        
+        AF.request(Configuration.RESET_PASSWORD, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+            .responseData { response in
+                var resultString = ""
+                
+                if let data = response.data {
+                    resultString = String(data: data, encoding: .utf8)!
+                }
+
+                
+                print(response.response?.statusCode)
+                
+                if response.response?.statusCode == 200 || response.response?.statusCode == 201 || response.response?.statusCode == 202 {
+                    if let navigationController = self.navigationController {
+                        navigationController.popToRootViewController(animated: true)
+                    }
+                    print("success")
+                }
+            }
+
+        
     }
 
 }

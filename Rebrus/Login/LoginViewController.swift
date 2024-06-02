@@ -5,6 +5,8 @@
     //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class LoginViewController: UIViewController {
     
@@ -73,6 +75,12 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .white
         setupConstraints()
         navigationController?.customize()
+        hideKeyboardWhenTappedAround()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.hidesBackButton = true
     }
     
 }
@@ -169,6 +177,16 @@ extension LoginViewController {
         }
     }
     
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     private func setCreateNewUser() {
         let stackVLabel: UIStackView = {
             let stack = UIStackView()
@@ -203,9 +221,51 @@ extension LoginViewController {
     }
     
     @objc func loginButtonTapped() {
-        let vc = TabBarController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        let email = emailTextField.text!
+        let password = passwordTextField.text!
+        
+        let parameters: [String: Any] = [
+            "email": email,
+            "password": password
+        ]
+        
+        AF.request(Configuration.SIGN_IN_URL, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseData { [weak self] response in
+            guard let self = self else {return}
+            
+            var resultString = ""
+            
+            if let data = response.data{
+                resultString = String(data: data, encoding: .utf8)!
+            }
+            
+            print(response.response?.statusCode)
+            
+            if response.response?.statusCode == 200 || response.response?.statusCode == 201 || response.response?.statusCode == 202 {
+                let json = JSON(response.data!)
+                
+                if let number = json["access_token"].string {
+                    UserDefaults.standard.setValue(number, forKey: "accessToken")
+                    let vc = TabBarController()
+                    vc.modalPresentationStyle = .fullScreen
+                    present(vc, animated: true)
+                }
+            } else {
+                var ErrorString = "CONNECTION_ERROR"
+                if let sCode = response.response?.statusCode {
+                    switch sCode {
+                    case 401:
+                        ErrorString += "Unauthorized"
+                    case 403:
+                        ErrorString += "Forbidden"
+                    case 404:
+                        ErrorString += "Not found"
+                    default:
+                        ErrorString += "Қате формат"
+                    }
+                }
+                ErrorString += " \(resultString)"
+            }
+        }
     }
     
     @objc func forgotPasswordButtonTapped() {

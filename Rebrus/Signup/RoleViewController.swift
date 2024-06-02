@@ -59,6 +59,7 @@ class RoleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        specialistButtonTapped()
         title = "Выбор роли".localized(from: .onboard)
         view.backgroundColor = .white
         setupUI()
@@ -67,6 +68,7 @@ class RoleViewController: UIViewController {
 
 extension RoleViewController {
     private func setupUI() {
+        
         setSpecialistButton()
         setDrButton()
         setNextButton()
@@ -132,6 +134,7 @@ extension RoleViewController {
                 let json = JSON(response.data!)
                 
                 if let number = json["request_number"].string {
+                    UserDefaults.standard.setValue(number, forKey: "accessToken")
                     let vc = OTPViewController(userEmail: self.email, requestNumber: number)
                     self.navigationController?.pushViewController(vc, animated: true)
                 }

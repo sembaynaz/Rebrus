@@ -96,6 +96,17 @@ class SignupViewController: UIViewController {
         view.backgroundColor = .white
         setupConstraints()
         navigationController?.customize()
+        hideKeyboardWhenTappedAround()
+    }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 

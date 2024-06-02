@@ -13,7 +13,7 @@ class OTPViewController: UIViewController {
     private var requestNumber: String
     private var createdDate = ""
     private var expirationDate = ""
-
+    private var token = ""
     
     var buttonTitle = "Создать аккаунт".localized(from: .auth)
     private var code: String = ""
@@ -104,8 +104,20 @@ class OTPViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         title = "Проверка ОТП".localized(from: .onboard)
+        otpView.becomeFirstResponder()
         setupConstraints()
         sendCode()
+        hideKeyboardWhenTappedAround()
+    }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     private func sendCode() {
@@ -256,7 +268,7 @@ extension OTPViewController {
 extension OTPViewController {
     @objc private func verifyButtonTapped() {
         if buttonTitle == "Создать аккаунт".localized(from: .onboard) {
-            let parameters = ["request_number": requestNumber, "code": 1234, "expiration_date": expirationDate, "created_date": createdDate] as [String : Any]
+            let parameters = ["request_number": requestNumber, "code": code, "expiration_date": expirationDate, "created_date": createdDate] as [String : Any]
             
             
             AF.request(Configuration.CHECK_CODE, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseData { response in
@@ -276,7 +288,9 @@ extension OTPViewController {
                         let vc = TabBarController()
                         vc.modalPresentationStyle = .fullScreen
                         self.present(vc, animated: true)
+                        self.token = token
                     }
+                    
                     
                 } else {
                     var ErrorString = "CONNECTION_ERROR"
@@ -297,8 +311,45 @@ extension OTPViewController {
             }
             
         } else {
-            let vc = ChangePasswordViewController()
-            navigationController?.pushViewController(vc, animated: true)
+            let parameters = ["request_number": requestNumber, "code": code, "expiration_date": expirationDate, "created_date": createdDate] as [String : Any]
+            
+            
+            AF.request(Configuration.CHECK_CODE, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseData { response in
+                var resultString = ""
+                
+                if let data = response.data{
+                    resultString = String(data: data, encoding: .utf8)!
+                }
+                
+                print(response.response?.statusCode)
+                
+                if response.response?.statusCode == 200 || response.response?.statusCode == 201 || response.response?.statusCode == 202 {
+                    let json = JSON(response.data!)
+                    if let token = json["access_token"].string {
+//                        Storage.sharedInstance.accessToken = token
+//                        UserDefaults.standard.set(token, forKey: "accessToken")
+                        let vc = ChangePasswordViewController(token: token)
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                    
+                    
+                } else {
+                    var ErrorString = "CONNECTION_ERROR"
+                    if let sCode = response.response?.statusCode {
+                        switch sCode {
+                        case 401:
+                            ErrorString += "Unauthorized"
+                        case 403:
+                            ErrorString += "Forbidden"
+                        case 404:
+                            ErrorString += "Not found"
+                        default:
+                            ErrorString += "Қате формат"
+                        }
+                    }
+                    ErrorString += " \(resultString)"
+                }
+            }
         }
     }
 }
@@ -311,7 +362,9 @@ extension OTPViewController {
     @objc private func timerCount() {
         time -= 1
         if time >= 0 {
-            updateTimerLabel(redText: String(format: "00:%0.2d", time))
+            let minutes = time / 60
+            let seconds = time % 60
+            updateTimerLabel(redText: String(format: "%0.1d:%0.2d", minutes, seconds))
         }
         
         if time == 0 {
@@ -322,7 +375,7 @@ extension OTPViewController {
     }
     
     @objc private func repeatButtonTapped() {
-        time = 10
+        time = 240
         setTimer()
         repeatImageView.isHidden = true
         repeatButton.isHidden = true
@@ -361,6 +414,7 @@ extension OTPViewController {
 
 extension OTPViewController {
     private func validateOtp(_ code: String) {
+        self.code = code
         print("Your code is \(code)")
     }
 }

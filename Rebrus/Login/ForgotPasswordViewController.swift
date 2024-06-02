@@ -5,6 +5,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ForgotPasswordViewController: UIViewController {
 
@@ -43,10 +45,21 @@ class ForgotPasswordViewController: UIViewController {
         view.backgroundColor = .white
         title = "Забыли пароль".localized(from: .auth)
         setupConstraints()
+        hideKeyboardWhenTappedAround()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 
@@ -99,8 +112,41 @@ extension ForgotPasswordViewController {
 
 extension ForgotPasswordViewController {
     @objc func codeButtonTapped() {
-        let vc = OTPViewController(userEmail: emailTextField.text!, requestNumber: "")
-        vc.buttonTitle = "Изменить пароль".localized(from: .auth)
-        navigationController?.pushViewController(vc, animated: true)
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(Storage.sharedInstance.accessToken)"
+        ]
+        let email = emailTextField.text!
+        
+        let parameters = ["email": email]
+        
+        AF.request(Configuration.FORGOT_PASSWORD, method: .post, parameters: parameters , encoding: URLEncoding.default, headers: headers)
+            .responseData { response in
+                var resultString = ""
+                
+                if let data = response.data {
+                    resultString = String(data: data, encoding: .utf8)!
+                }
+                
+                switch response.result {
+                case .success:
+                    if response.response?.statusCode == 200 || response.response?.statusCode == 201 || response.response?.statusCode == 202 {
+                        let json = JSON(response.data!)
+                        print(json)
+                        
+                        if let requestNumber = json["request_number"].string {
+                            let vc = OTPViewController(userEmail: email, requestNumber: requestNumber)
+                            vc.buttonTitle = "Изменить пароль".localized(from: .auth)
+                            self.navigationController?.pushViewController(vc, animated: true)
+                            
+                            print("success")
+                        } else {
+                            print("request_number не найден в JSON ответе")
+                        }
+                    }
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
+            }
     }
 }
