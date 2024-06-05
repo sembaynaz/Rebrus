@@ -7,18 +7,16 @@
 import UIKit
 
 class UserDataTableViewCell: UITableViewCell {
-
+    
     static let identifier = "UserDataTableViewCell"
-
-    private let textField: TextField = {
-        let textfield = TextField()
-        return textfield
-    }()
+    weak var delegate: SendValueDelegate?
+    private let textField = TextField()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         backgroundColor = .clear
+        textField.delegate = self
         setupUI()
     }
     
@@ -40,5 +38,20 @@ extension UserDataTableViewCell {
             make.top.bottom.equalToSuperview().inset(15)
             make.leading.trailing.equalToSuperview()
         }
+    }
+}
+//MARK: - UITextFieldDelegate
+extension UserDataTableViewCell: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+            
+            if let stringRange = Range(range, in: currentText) {
+                let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+                
+                delegate?.valueChanged(in: self, value: updatedText)
+            }
+            
+            return true
+    
     }
 }

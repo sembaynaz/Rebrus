@@ -817,6 +817,23 @@
         }
       }
     },
+    "Общие" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "General"
+          }
+        },
+        "kk-KZ" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ортақ"
+          }
+        }
+      }
+    },
     "Ознакомление с условием и политика продукта" : {
       "extractionState" : "manual",
       "localizations" : {

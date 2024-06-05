@@ -70,7 +70,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             let languageVC = LanguageViewController()
             navigationController?.pushViewController(languageVC, animated: true)
         case 1:
-            let changeVC = ChangePasswordViewController()
+            let changeVC = ChangePasswordViewController(token: UserDefaults.standard.string(forKey: "accessToken") ?? "")
             changeVC.isChangePassword = true
             navigationController?.pushViewController(changeVC, animated: true)
         case 2:

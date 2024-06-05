@@ -20,12 +20,15 @@ class EditProfileHeaderView: UIView {
         return view
     }()
     
-    private let titleButton: UIButton = {
-        let button = UIButton()
-        button.setTitleColor(ColorManager.black, for: .normal)
-        button.setTitle("Выбрать фотографию".localized(from: .main), for: .normal)
-        button.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 16)
-        return button
+    private let changePhoto = UIButton()
+    
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = ColorManager.black
+        label.text = "Выбрать фотографию".localized(from: .main)
+        label.font = UIFont(name: "Montserrat-Regular", size: 16)
+        return label
     }()
 
     init() {
@@ -33,7 +36,7 @@ class EditProfileHeaderView: UIView {
         backgroundColor = .clear
         
         setupUI()
-        titleButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        changePhoto.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
     
     func setContent(image: UIImage) {
@@ -59,10 +62,16 @@ extension EditProfileHeaderView {
             make.size.equalTo(120)
         }
         
-        addSubview(titleButton)
-        titleButton.snp.makeConstraints { make in
+        addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
             make.top.equalTo(userImageView.snp.bottom).offset(20)
             make.trailing.leading.bottom.equalToSuperview().inset(16)
+        }
+        
+        addSubview(changePhoto)
+        changePhoto.snp.makeConstraints { make in
+            make.top.equalTo(userImageView)
+            make.leading.trailing.bottom.equalTo(titleLabel)
         }
     }
 }

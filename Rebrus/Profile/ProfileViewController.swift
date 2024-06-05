@@ -5,9 +5,12 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ProfileViewController: UIViewController {
-    
+    private var user = User()
+    private var userPhoto: UIImage?
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 28)
@@ -33,7 +36,7 @@ class ProfileViewController: UIViewController {
         tableView.separatorStyle = .none
         return tableView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,12 +46,57 @@ class ProfileViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         setStrings()
+        getUserData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        getUserData()
         tabBarController?.tabBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
         NotificationCenter.default.addObserver(self, selector: #selector(setStrings), name: Notification.Name("localize"), object: nil)
+    }
+    
+    private func getUserData() {
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(Storage.sharedInstance.accessToken)"
+        ]
+ 
+        
+        AF.request(Configuration.USER_INFO, method: .get,  encoding: JSONEncoding.default, headers: headers)
+            .responseDecodable(of: User.self) { [weak self] response in
+                guard let self = self else { return }
+                switch response.result {
+                case .success(let data):
+                    self.user = data
+                    self.headerView.setContent(user: data)
+                    getUserPhoto()
+                    print(user)
+
+                case .failure(let error):
+                    print("Error: \(error.localizedDescription)")
+                }
+            }
+    }
+    
+    private func getUserPhoto() {
+        guard let urlString = user.avatarUrl else {
+            return
+        }
+
+        AF.request(urlString).responseData { [weak self] response in
+            guard let self = self else { return }
+                switch response.result {
+                case .success(let data):
+                    print(data)
+                    if let image = UIImage(data: data) {
+                        self.headerView.setUserPhoto(image: image)
+                        userPhoto = image
+                    }
+                case .failure(let error):
+                    print("Error downloading image: \(error)")
+                    
+                }
+            }
     }
     
     @objc private func setStrings() {
@@ -56,7 +104,7 @@ class ProfileViewController: UIViewController {
         label.text = "Общие".localized(from: .main)
         dataSource = [ProfileData(title: "Профиль".localized(from: .main), subtitle: "Изменить профиль".localized(from: .main)), ProfileData(title: "Настройка".localized(from: .main), subtitle: "Удаление или деактивация аккаунта".localized(from: .main)), ProfileData(title: "Выйти из аккаунта".localized(from: .main), subtitle: "")]
         tableView.reloadData()
-        headerView.setContent(fullName: nil)
+        headerView.setContent(user: user)
     }
     
     private func setupUI() {
@@ -99,7 +147,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            let editVC = EditProfileViewController()
+            let editVC = EditProfileViewController(user: user)
+            editVC.userImage = userPhoto
             navigationController?.pushViewController(editVC, animated: true)
         case 1:
             let settingsVC = SettingsViewController()
