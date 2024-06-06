@@ -6,20 +6,26 @@
 
 import Foundation
 struct Configuration {
-    static let BASE_URL = "http://167.71.48.186:8000/api/auth-service/"
+    static let AUTH_SERVICE = "http://167.71.48.186:8000/api/auth-service/"
     
-    static let SIGN_IN_URL = BASE_URL + "auth/login"
-    static let SIGN_UP_URL = BASE_URL + "auth/register"
-    static let DELETE_ACCOUNT = BASE_URL + "auth/delete-account"
-    static let CHECK_CODE = BASE_URL + "auth/check-verification-code"
-    static let RESEND_CODE = BASE_URL + "auth/resend-verification-code"
-    static let FORGOT_PASSWORD = BASE_URL + "auth/forgot-password"
-    static let RESET_PASSWORD = BASE_URL + "auth/reset-password"
-    static let USER_INFO = BASE_URL + "auth/user-info"
-    static let UPDATE_USER_INFO = BASE_URL + "auth/update-profile"
+    static let SIGN_IN_URL = AUTH_SERVICE + "auth/login"
+    static let SIGN_UP_URL = AUTH_SERVICE + "auth/register"
+    static let DELETE_ACCOUNT = AUTH_SERVICE + "auth/delete-account"
+    static let CHECK_CODE = AUTH_SERVICE + "auth/check-verification-code"
+    static let RESEND_CODE = AUTH_SERVICE + "auth/resend-verification-code"
+    static let FORGOT_PASSWORD = AUTH_SERVICE + "auth/forgot-password"
+    static let RESET_PASSWORD = AUTH_SERVICE + "auth/reset-password"
+    static let USER_INFO = AUTH_SERVICE + "auth/user-info"
+    static let UPDATE_USER_INFO = AUTH_SERVICE + "auth/update-profile"
+    
     
     static let UPLOAD_PHOTO = "http://167.71.48.186:8084/image"
     
+    
+    static let PATIENT_SERVICE = "http://167.71.48.186:8000/api/patient-service/"
+    
+    static let GET_PATIENTS = PATIENT_SERVICE + "patient-management/patients"
+    static let PATIENT_DETAILS = PATIENT_SERVICE + "patient-management/patient/"
 }
 
 class Storage {

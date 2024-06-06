@@ -106,7 +106,6 @@ class OTPViewController: UIViewController {
         title = "Проверка ОТП".localized(from: .onboard)
         otpView.becomeFirstResponder()
         setupConstraints()
-        sendCode()
         hideKeyboardWhenTappedAround()
     }
     
@@ -379,6 +378,7 @@ extension OTPViewController {
         setTimer()
         repeatImageView.isHidden = true
         repeatButton.isHidden = true
+        sendCode()
     }
 }
 

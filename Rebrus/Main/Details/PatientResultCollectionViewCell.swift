@@ -45,24 +45,25 @@ class PatientResultCollectionViewCell: UICollectionViewCell {
         fatalError("error")
     }
     
-    func setText(for cellData: PatientCellData, with data: Patient) {
-        switch cellData.cellType {
-        case .moca:
-            resultLabel.text = "\(data.moca)"
-        case .mmse:
-            resultLabel.text = "\(data.mmse)"
-        case .hads:
-            resultLabel.text = "\(data.hads)"
-        case .hars:
-            resultLabel.text = "\(data.hars)"
-        case .miniCog:
-            resultLabel.text = "\(data.miniCog)"
-        default:
-            return
+    func setText(for cellData: Assessments) {
+    //        switch cellData.cellType {
+    //        case .moca:
+    //            resultLabel.text = "\(data.moca)"
+    //        case .mmse:
+    //            resultLabel.text = "\(data.mmse)"
+    //        case .hads:
+    //            resultLabel.text = "\(data.hads)"
+    //        case .hars:
+    //            resultLabel.text = "\(data.hars)"
+    //        case .miniCog:
+    //            resultLabel.text = "\(data.miniCog)"
+    //        default:
+    //            return
+    //        }
+            categoryLabel.text = cellData.type
+            resultLabel.text = String("\(cellData.points)")
+    //        categoryLabel.text = cellData.title.localized(from: .main)
         }
-        
-        categoryLabel.text = cellData.title.localized(from: .main)
-    }
     
     func setLastCell(isLast: Bool) {
         lineView.isHidden = isLast
