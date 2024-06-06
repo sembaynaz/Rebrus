@@ -37,9 +37,9 @@ class PatientPreviewTableViewCell: UITableViewCell {
         setupUI()
     }
     
-    func setContent(username: String, iin: String) {
-        userNameLabel.text = username
-        iinLabel.text = "ИИН".localized(from: .main) + ": " + iin
+    func setContent(patient: Patient) {
+        userNameLabel.text = [patient.lastName, patient.firstName, patient.middleName].compactMap { $0 }.joined(separator: " ")
+        iinLabel.text = "ИИН".localized(from: .main) + ": " + patient.iin
     }
     
     required init?(coder: NSCoder) {

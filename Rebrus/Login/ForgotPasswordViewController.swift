@@ -112,24 +112,33 @@ extension ForgotPasswordViewController {
 
 extension ForgotPasswordViewController {
     @objc func codeButtonTapped() {
-        
-        let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(Storage.sharedInstance.accessToken)"
-        ]
-        let email = emailTextField.text!
-        
-        let parameters = ["email": email]
-        
-        AF.request(Configuration.FORGOT_PASSWORD, method: .post, parameters: parameters , encoding: URLEncoding.default, headers: headers)
-            .responseData { response in
-                var resultString = ""
-                
-                if let data = response.data {
-                    resultString = String(data: data, encoding: .utf8)!
-                }
-                
-                switch response.result {
-                case .success:
+            guard let email = emailTextField.text, !email.isEmpty else {
+                print("Email is empty")
+                return
+            }
+            
+            let headers: HTTPHeaders = [
+                "Authorization": "Bearer \(Storage.sharedInstance.accessToken)"
+            ]
+            
+            print(Storage.sharedInstance.accessToken)
+            
+            let parameters = ["email": email]
+            
+            AF.request(Configuration.FORGOT_PASSWORD, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+                .responseData { response in
+                    var resultString = ""
+                    
+                    if let data = response.data {
+                        resultString = String(data: data, encoding: .utf8) ?? "No response data"
+                    }
+                    
+                    print(response.response?.statusCode ?? "No status code")
+                    print(resultString)
+                    
+                    let json = JSON(response.data ?? Data())
+                    print(json)
+                    
                     if response.response?.statusCode == 200 || response.response?.statusCode == 201 || response.response?.statusCode == 202 {
                         let json = JSON(response.data!)
                         print(json)
@@ -143,10 +152,10 @@ extension ForgotPasswordViewController {
                         } else {
                             print("request_number не найден в JSON ответе")
                         }
+                    } else {
+                        print("Request failed with status: \(response.response?.statusCode ?? 0)")
+                        print("Response data: \(resultString)")
                     }
-                case .failure(let error):
-                    print("Error: \(error)")
                 }
-            }
-    }
+        }
 }

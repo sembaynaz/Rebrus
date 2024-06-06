@@ -5,6 +5,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class PatientDetailsViewController: UIViewController {
     
@@ -33,6 +34,30 @@ class PatientDetailsViewController: UIViewController {
         return collection
     }()
     
+    private let noteTextView: UITextView = {
+        let textView = UITextView()
+        textView.textContainerInset = UIEdgeInsets(top: 30, left: 30, bottom: 15, right: 30)
+        textView.layer.cornerRadius = 5
+        textView.textColor = ColorManager.subtitleTextColor
+        textView.font = UIFont(name: "Montserrat-Regular", size: 16)
+        textView.layer.borderWidth = 1
+        textView.layer.borderColor = UIColor.clear.cgColor
+        textView.isScrollEnabled = true
+        textView.backgroundColor = ColorManager.lightGrey
+        
+        return textView
+    }()
+    
+    private let saveNoteButton: UIButton = {
+        let button = UIButton()
+        button.tintColor = ColorManager.blue
+        if let originalImage = UIImage(systemName: "square.and.pencil") {
+            let resizedImage = originalImage.resize(to: CGSize(width: 27, height: 27))
+            button.setImage(resizedImage.withRenderingMode(.alwaysTemplate), for: .normal)
+        }
+        return button
+    }()
+    
     required init(with patient: Patient) {
         self.patient = patient
         super.init(nibName: nil, bundle: nil)
@@ -52,13 +77,18 @@ class PatientDetailsViewController: UIViewController {
         title = "Пациент".localized(from: .main)
         setupUI()
         generateBlockOfInfo()
-        userNameLabel.text = patient.fullName
+        
+        //noteTextView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.prefersLargeTitles = false
-
+        
+        userNameLabel.text = [patient.lastName, patient.firstName, patient.middleName].compactMap { $0 }.joined(separator: " ")
+        
+        textViewEnable(isEnabled: patient.note.value == nil)
+        noteTextView.text = patient.note.value
     }
     
     private func setupUI() {
@@ -72,12 +102,12 @@ class PatientDetailsViewController: UIViewController {
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(userNameLabel.snp.bottom).offset(40)
             make.leading.trailing.equalToSuperview().inset(25)
-            make.height.equalTo(50)
+            make.height.equalTo(patient.assessments.count == 0 ? 0 : 50)
         }
         let infoBlock = generateBlockOfInfo()
         view.addSubview(infoBlock)
         infoBlock.snp.makeConstraints { make in
-            make.top.equalTo(collectionView.snp.bottom).offset(35)
+            make.top.equalTo(collectionView.snp.bottom).offset(patient.assessments.count == 0 ? 0 : 35)
             make.leading.trailing.equalToSuperview().inset(33)
         }
         
@@ -96,16 +126,29 @@ class PatientDetailsViewController: UIViewController {
             make.top.equalTo(line.snp.bottom).offset(25)
             make.leading.trailing.equalToSuperview().inset(33)
         }
+        
+        view.addSubview(noteTextView)
+        noteTextView.snp.makeConstraints { make in
+            make.top.equalTo(levelBlock.snp.bottom).offset(25)
+            make.leading.trailing.equalToSuperview().inset(33)
+            make.height.equalTo(200)
+        }
+        view.addSubview(saveNoteButton)
+        saveNoteButton.snp.makeConstraints { make in
+            make.size.equalTo(30)
+            make.top.trailing.equalTo(noteTextView).inset(5)
+        }
+        saveNoteButton.addTarget(self, action: #selector(saveNoteTapped), for: .touchUpInside)
     }
     
     private func generateBlockOfInfo() -> UIStackView{
         let totalItems = viewModel.numberOfItems()
-
+        
         let parentStack = UIStackView()
         parentStack.axis = .vertical
-        parentStack.spacing = 35 
+        parentStack.spacing = 35
         
-        for i in stride(from: 0, to: totalItems - 5, by: 3) {
+        for i in stride(from: 0, to: totalItems, by: 3) {
             let groupStack = UIStackView()
             groupStack.axis = .horizontal
             groupStack.distribution = .equalSpacing
@@ -121,7 +164,7 @@ class PatientDetailsViewController: UIViewController {
     }
     
     private func generateLevelBlock() -> UIView {
-        let level = viewModel.getDementiaLevel(by: patient.level)
+        let level = viewModel.getDementiaLevel(by: patient.stageOfDementia)
         let blockView = UIView()
         blockView.backgroundColor = ColorManager.blue
         blockView.layer.cornerRadius = 5
@@ -170,17 +213,17 @@ class PatientDetailsViewController: UIViewController {
         case .gender:
             infoLabel.text = patient.gender
         case .dob:
-            infoLabel.text = patient.dob
+            infoLabel.text = patient.birthDate
         case .address:
             infoLabel.text = patient.address
         case .region:
             infoLabel.text = patient.region
         case .phoneNumber:
-            infoLabel.text = patient.phoneNumber
-        case .date:
-            infoLabel.text = patient.date
+            infoLabel.text = patient.phone
         case .doctor:
-            infoLabel.text = patient.doctorName
+            infoLabel.text = patient.responsible
+        case .date:
+            infoLabel.text = patient.appointments[0].date
         default:
             return UIStackView()
         }
@@ -201,13 +244,13 @@ class PatientDetailsViewController: UIViewController {
 //MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension PatientDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        return patient.assessments.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PatientResultCollectionViewCell.identifier, for: indexPath) as! PatientResultCollectionViewCell
         
-        cell.setText(for: viewModel.item(at: indexPath.row + 7), with: patient)
+        cell.setText(for: patient.assessments[indexPath.row])
         cell.setLastCell(isLast: indexPath.row == 4)
         return cell
     }
@@ -220,3 +263,39 @@ extension PatientDetailsViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension PatientDetailsViewController {
+    @objc private func saveNoteTapped() {
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(Storage.sharedInstance.accessToken)",
+            "Content-Type": "application/json"
+        ]
+        
+        print(noteTextView.text)
+        
+        let parameters: [String: Any] = ["value": noteTextView.text ?? ""]
+        
+        let url = Configuration.PATIENT_DETAILS + "/\(patient.id)/note"
+        AF.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+            .responseData { response in
+                print(response.response?.statusCode ?? "No status code")
+                
+                switch response.result {
+                case .success(_):
+                    print("success")
+                case .failure(let error):
+                    print("Upload Error: \(error)")
+                }
+            }
+    }
+}
+extension PatientDetailsViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        let textIsEmpty = textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        textViewEnable(isEnabled: textIsEmpty)
+    }
+    
+    private func textViewEnable(isEnabled: Bool) {
+//        saveNoteButton.tintColor = isEnabled ? .gray : ColorManager.blue
+//        saveNoteButton.isEnabled = !isEnabled
+    }
+}

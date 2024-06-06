@@ -5,28 +5,96 @@
 //
 
 import Foundation
-struct Patient {
-    let fullName: String
-    let moca: Double
-    let mmse: Double
-    let hads: Double
-    let hars: Double
-    let miniCog: Double
-    let gender: String
-    let dob: String         // date of birth
-    let phoneNumber: String
-    let address: String
-    let region: String
-    let date: String
-    let doctorName: String
-    
-    let level: Int // level of illness
+
+struct Assessments: Codable {
+    var type: String
+    var points: Int
+}
+
+struct Note: Codable {
+    var modifiedDate: String?
+    var value: String?
+    var modifiedBy: String?
+}
+
+struct Appointment: Codable {
+    var date: String
+}
+
+struct File: Codable {
+    var name: String
+    var type: String
+    var url: String
+    var size: String
+}
+
+struct Patient: Codable {
+    var iin: String
+    var gender: String
+    var id: Int
+    var middleName: String
+    var phone: String
+    var firstName: String
+    var appointments: [Appointment]
+    var passedQuizzes: [String]
+    var createdBy: Int
+    var note: Note
+    var responsible: String
+    var address: String
+    var createdDate: String
+    var stageOfDementia: Level
+    var region: String
+    var lastName: String
+//    var files: [File]
+    var birthDate: String
+    var assessments: [Assessments]
+}
+
+struct PatientsResponse: Codable {
+    var empty: Bool
+    var content: [Patient]
+    var totalPages: Int
+    var size: Int
+    var first: Bool
+    var pageable: Pageable
+    var last: Bool
+    var number: Int
+    var sort: [Sort]
+    var totalElements: Int
+    var numberOfElements: Int
+}
+
+struct Pageable: Codable {
+    var sort: [Sort]
+    var pageNumber: Int
+    var pageSize: Int
+    var offset: Int
+    var paged: Bool
+    var unpaged: Bool
+}
+
+struct Sort: Codable {
+    var property: String
+    var nullHandling: String
+    var ignoreCase: Bool
+    var direction: String
+    var ascending: Bool
+    var descending: Bool
 }
 
 struct DementiaLevel {
-    let level: Int
+    let level: Level
     let title: String
     let emoji: String
+}
+
+enum Level: String, Codable {
+    case unknown = "UNKNOWN"
+    case noDementia = "NO_DEMENTIA"
+    case suspected = "SUSPECTED"
+    case early = "EARLY"
+    case middle = "MIDDLE"
+    case late = "LATE"
 }
 
 struct PatientCellData {
@@ -54,11 +122,11 @@ enum PatientDataCellType {
 class PatientDataViewModel {
     private var items: [PatientCellData] = []
     private var levels = [
-        DementiaLevel(level: 0, title: "Неизвестная", emoji: "🤥"),
-        DementiaLevel(level: 1, title: "Нет деменции", emoji: "🙂"),
-        DementiaLevel(level: 2, title: "Раняя", emoji: "🤔"),
-        DementiaLevel(level: 3, title: "Средняя", emoji: "😐"),
-        DementiaLevel(level: 4, title: "Поздняя", emoji: "😬"),
+        DementiaLevel(level: .unknown, title: "Неизвестная", emoji: "🤥"),
+        DementiaLevel(level: .noDementia, title: "Нет деменции", emoji: "🙂"),
+        DementiaLevel(level: .early, title: "Раняя", emoji: "🤔"),
+        DementiaLevel(level: .middle, title: "Средняя", emoji: "😐"),
+        DementiaLevel(level: .late, title: "Поздняя", emoji: "😬"),
     ]
     
     var cellData: [PatientCellData] {
@@ -73,12 +141,7 @@ class PatientDataViewModel {
             PatientCellData(title: "Адрес", cellType: .address),
             PatientCellData(title: "Регион", cellType: .region),
             PatientCellData(title: "Дата приёма", cellType: .date),
-            PatientCellData(title: "Ответственный", cellType: .doctor),
-            PatientCellData(title: "MoCA", cellType: .moca),
-            PatientCellData(title: "MMSE", cellType: .mmse),
-            PatientCellData(title: "HADS", cellType: .hads),
-            PatientCellData(title: "HARS", cellType: .hars),
-            PatientCellData(title: "Mini-Cog", cellType: .miniCog)
+            PatientCellData(title: "Ответственный", cellType: .doctor)
         ]
     }
     
@@ -90,7 +153,7 @@ class PatientDataViewModel {
         return items[index]
     }
     
-    func getDementiaLevel(by id: Int) -> DementiaLevel? {
+    func getDementiaLevel(by id: Level) -> DementiaLevel? {
         return levels.first { $0.level == id }
     }
 }
