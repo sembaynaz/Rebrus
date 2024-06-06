@@ -2,7 +2,6 @@
     //  SignupViewController.swift
     //  Rebrus
     //
-    //  Created by Nazerke Sembay on 19.01.2024.
     //
 
 import UIKit
